@@ -12,6 +12,11 @@ body {
     min-height: 100vh;
     display: flex;
 }
+
+#root {
+    width: 100%;
+}
+
 /* ========== FIXED LEFT MENU ========== */
 .left-menu {
     position: fixed;

@@ -1,3 +1,4 @@
+import Header from "./components/Header"
 import MainNav from "./components/MainNav"
 
 function App() {
@@ -5,6 +6,10 @@ function App() {
   return (
     <>
       <MainNav/>
+
+      <div className="main-panel">
+        <Header/>
+      </div>
     </>
   )
 }
