@@ -85,7 +85,6 @@ body {
 }
 .exercise-list li {
     border-radius: 12px;
-    transition: all 0.1s ease;
 }
 .exercise-list li a {
     display: flex;
@@ -97,7 +96,6 @@ body {
     font-size: 0.95rem;
     font-weight: 450;
     border-radius: 12px;
-    transition: 0.15s;
     border: 1px solid transparent;
 }
 .exercise-list li a i { 
