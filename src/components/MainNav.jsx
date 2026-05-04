@@ -1,17 +1,9 @@
 import { useState } from "react";
 import { _GL } from "../globals/global";
+import UdemyLogo from "../assets/udemy_logo.png"
 
 const MainNav = ({displayExercize, data}) => {
   const [activeLinkId, setActiveLinkId] = useState()
-
- 
-
-
-
-  const displayQuestions = (listItem) => {
-    setActiveLinkId(listItem.id)
-    displayExercize(listItem)
-  }
 
   return (
     <nav className="left-menu">
@@ -19,7 +11,9 @@ const MainNav = ({displayExercize, data}) => {
           <h2>📘 JS drills </h2>
         </div>
         <div className="course-link">
-          <a href="https://example.com/js-course" target="_blank" rel="noopener">🎓 Go to JS Course</a>
+          <a href="https://example.com/js-course" target="_blank" rel="noopener">
+          <span><img style={{height: '15px'}} src={UdemyLogo}/></span> 
+          Go to JS Course</a>
         </div>
         <ul className="exercise-list" >
           <h2 className="pl-2 font-bold">Udemy Video Numbers</h2>
@@ -27,7 +21,10 @@ const MainNav = ({displayExercize, data}) => {
             <li 
               className={`exercise-item ${activeLinkId === listItem.id ? 'active-exercise' : ''}`} 
               key={listItem.id} 
-              onClick={() => displayQuestions(listItem)}>
+              onClick={() => {
+                setActiveLinkId(listItem.id)
+                displayExercize(listItem)
+              }}>
               <a href="#"><i>{_GL.UTIL.formatNum(index)}</i> {listItem.title} 
               {/* <span className="status-dot" ></span> */}
               </a>

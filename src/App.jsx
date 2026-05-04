@@ -1,175 +1,102 @@
 import { useState } from "react"
 import Header from "./components/Header"
 import MainNav from "./components/MainNav"
+import QuizQuestion from "./components/QuizQuestion"
 
 function App() {
   const [exercizes, setExercizes] = useState(null)
+  
 
-  const data = [
-    {
-      id: '9012310293812903810',
-      title: 'Variables',
-      questions: [
-        {
-          id: '98102830219839021',
-          title: 'Variable hoisting',
-          questions: "console.log(myVar);\nvar myVar = 5;\nconsole.log(myVar);",
-          options: [
-            { id: 'a', text: 'undefined then 5', correct: true, selected: false },
-            { id: 'b', text: 'undefined then 5', correct: false, selected: false },
-            { id: 'c', text: 'undefined then 5', correct: false, selected: false },
-            { id: 'd', text: 'undefined then 5', correct: false, selected: false },
-          ]
-        },
-        {
-          id: '98102830229839221',
-          title: 'Temporal dead zone',
-          questions: "console.log(a);\nlet a = 10;",
-          options: [
-            { id: 'a', text: 'undefined then 5', correct: false, selected: false },
-            { id: 'b', text: 'undefined then 5', correct: false, selected: false },
-            { id: 'c', text: 'undefined then 5', correct: true, selected: false },
-            { id: 'd', text: 'undefined then 5', correct: false, selected: false },
-          ]
-        },
-      ],
-      tasks: [
-        {
-          id: '901482f0aj921901290h',
-          title: "Reverse a string",
-          description: "Write a function {{reverseString(str)}} that takes a string and returns it reversed.",
-          example: '{{reverseString("hello")}} → {{"olleh"}}',
-          note: "implement in your editor / console",
-          solution: "const reverseString = str => str.split('').reverse().join('');"
-        },
-        {
-          id: '901122f0aj921901290h',
-          title: "Filter even numbers",
-          description: "Write a function {{filterEvens(arr)}} that returns a new array containing only the even numbers.",
-          example: '{{filterEvens([1, 2, 3, 4, 5, 6])}} → {{[2, 4, 6]}}',
-          note: "implement in your editor / console",
-          solution: "const filterEvens = arr => arr.filter(num => num % 2 === 0);"
-        },
-      ]
-    },
-  ]
+  const data = {
+    id: 123,
+    version: '1.0',
+    allQuestions: [
+      {
+        id: '9012310293812903810',
+        title: 'Variables',
+        questions: [
+          {
+            id: '98102830219839021',
+            title: 'Variable hoisting',
+            question: "console.log(myVar);\nvar myVar = 5;\nconsole.log(myVar);",
+            options: [
+              { id: '21412323412341', option: 'a', text: 'undefined then 5', correct: true, selected: false },
+              { id: '21431523412341', option: 'b', text: 'ReferenceError', correct: false, selected: false },
+              { id: '21431234124141', option: 'c', text: '5 then 5', correct: false, selected: false },
+              { id: '21431255555341', option: 'd', text: 'null then 5', correct: false, selected: false },
+            ],
+            correctAnswer: 'c'
+          },
+          {
+            id: '98102830229839221',
+            title: 'Temporal dead zone',
+            question: "console.log(a);\nlet a = 10;",
+            options: [
+              { id: '22212323412341', option: 'a', text: 'undefined', correct: false, selected: false },
+              { id: '21412323417741', option: 'b', text: '10', correct: false, selected: false },
+              { id: '21411123412341', option: 'c', text: 'ReferenceError', correct: true, selected: false },
+              { id: '21412443412341', option: 'd', text: 'null', correct: false, selected: false },
+            ],
+            correctAnswer: 'c'
+          },
+        ],
+        tasks: [
+          {
+            id: '901482f0aj921901290h',
+            title: "Reverse a string",
+            description: "Write a function {{reverseString(str)}} that takes a string and returns it reversed.",
+            example: '{{reverseString("hello")}} → {{"olleh"}}',
+            note: "implement in your editor / console",
+            solution: "const reverseString = str => str.split('').reverse().join('');"
+          },
+          {
+            id: '901122f0aj921901290h',
+            title: "Filter even numbers",
+            description: "Write a function {{filterEvens(arr)}} that returns a new array containing only the even numbers.",
+            example: '{{filterEvens([1, 2, 3, 4, 5, 6])}} → {{[2, 4, 6]}}',
+            note: "implement in your editor / console",
+            solution: "const filterEvens = arr => arr.filter(num => num % 2 === 0);"
+          },
+        ]
+      },
+    ]
+  }
 
   const displayQuestions = (exercizeData) => {
-  console.log('exercizeData: ', exercizeData);
+    setExercizes(exercizeData)
+  }
+
+  const handleChoseOption = (option) => {
+  console.log('option: ', option);
   
 
   }
 
   return (
     <>
-      <MainNav data={data} displayExercize={displayQuestions}/>
+      <MainNav data={data.allQuestions} displayExercize={displayQuestions}/>
 
       <div className="main-panel">
         <Header/>
 
         <main className="content-area" id="mainContent">
+
+          {!exercizes ? (
+              <div>Welcome</div>
+            ) : 
+          (
+            <div>
+
             <div className="content-header">
                 <h1 className="page-title">🧠 JavaScript Drills</h1>
                 <button className="left-reset-btn" id="leftSideResetBtn"><span>↻</span> reset all</button>
             </div>
 
 
-            <div className="question-card" id="ex1" data-ex-id="1" data-correct="a">
-                <div className="question-title"><span className="q-icon">1</span> Variable hoisting</div>
-                <div className="code-block">{`console.log(myVar);\nvar myVar = 5;\nconsole.log(myVar);`}</div>
-                <div className="options-grid">
-                    <label className="option-item" data-opt="a"><span className="option-prefix">A</span> undefined then 5</label>
-                    <label className="option-item" data-opt="b"><span className="option-prefix">B</span> ReferenceError</label>
-                    <label className="option-item" data-opt="c"><span className="option-prefix">C</span> 5 then 5</label>
-                    <label className="option-item" data-opt="d"><span className="option-prefix">D</span> null then 5</label>
-                </div>
-                <div className="action-row">
-                    <div className="feedback-msg" id="fb1"></div>
-                    <button className="reveal-btn" data-reveal="1">🔍 Reveal solution</button>
-                </div>
-                <div id="solution1" style={{display: 'none'}}><span className="solution-badge">✓ correct answer: A</span></div>
-            </div>
+            {exercizes?.questions.map((question, index) => (
+              <QuizQuestion key={question.id} index={index} question={question} choseOption={handleChoseOption}/>
+            ))}
 
-{/*      
-            <div className="question-card" id="ex2" data-ex-id="2" data-correct="b">
-                <div className="question-title"><span className="q-icon">2</span> Closure value</div>
-                <div className="code-block">for (var i = 0; i < 3; i++) {\n  setTimeout(() => console.log(i), 0);\n}</div>
-                <div className="options-grid">
-                    <label className="option-item" data-opt="a"><span className="option-prefix">A</span> 0,1,2</label>
-                    <label className="option-item" data-opt="b"><span className="option-prefix">B</span> 3,3,3</label>
-                    <label className="option-item" data-opt="c"><span className="option-prefix">C</span> 2,2,2</label>
-                    <label className="option-item" data-opt="d"><span className="option-prefix">D</span> undefined x3</label>
-                </div>
-                <div className="action-row">
-                    <div className="feedback-msg" id="fb2"></div>
-                    <button className="reveal-btn" data-reveal="2">🔍 Reveal solution</button>
-                </div>
-                <div id="solution2" style="display: none;"><span className="solution-badge">✓ correct answer: B</span></div>
-            </div>
-
-            <div className="question-card" id="ex3" data-ex-id="3" data-correct="c">
-                <div className="question-title"><span className="q-icon">3</span> Temporal dead zone</div>
-                <div className="code-block">console.log(a);\nlet a = 10;</div>
-                <div className="options-grid">
-                    <label className="option-item" data-opt="a"><span className="option-prefix">A</span> undefined</label>
-                    <label className="option-item" data-opt="b"><span className="option-prefix">B</span> 10</label>
-                    <label className="option-item" data-opt="c"><span className="option-prefix">C</span> ReferenceError</label>
-                    <label className="option-item" data-opt="d"><span className="option-prefix">D</span> null</label>
-                </div>
-                <div className="action-row">
-                    <div className="feedback-msg" id="fb3"></div>
-                    <button className="reveal-btn" data-reveal="3">🔍 Reveal solution</button>
-                </div>
-                <div id="solution3" style="display: none;"><span className="solution-badge">✓ correct answer: C</span></div>
-            </div>
-
-            <div className="question-card" id="ex4" data-ex-id="4" data-correct="b">
-                <div className="question-title"><span className="q-icon">4</span> Promise execution</div>
-                <div className="code-block">Promise.resolve(1)\n  .then(x => x + 1)\n  .then(console.log)</div>
-                <div className="options-grid">
-                    <label className="option-item" data-opt="a"><span className="option-prefix">A</span> 1</label>
-                    <label className="option-item" data-opt="b"><span className="option-prefix">B</span> 2</label>
-                    <label className="option-item" data-opt="c"><span className="option-prefix">C</span> undefined</label>
-                    <label className="option-item" data-opt="d"><span className="option-prefix">D</span> [object Promise]</label>
-                </div>
-                <div className="action-row">
-                    <div className="feedback-msg" id="fb4"></div>
-                    <button className="reveal-btn" data-reveal="4">🔍 Reveal solution</button>
-                </div>
-                <div id="solution4" style="display: none;"><span className="solution-badge">✓ correct answer: B</span></div>
-            </div>
-
-            <div className="question-card" id="ex5" data-ex-id="5" data-correct="b">
-                <div className="question-title"><span className="q-icon">5</span> “this” in event</div>
-                <div className="code-block">const obj = {\n  name: 'Alice',\n  greet: () => { console.log(this.name); }\n};\nobj.greet();</div>
-                <div className="options-grid">
-                    <label className="option-item" data-opt="a"><span className="option-prefix">A</span> 'Alice'</label>
-                    <label className="option-item" data-opt="b"><span className="option-prefix">B</span> undefined (global)</label>
-                    <label className="option-item" data-opt="c"><span className="option-prefix">C</span> window / global</label>
-                    <label className="option-item" data-opt="d"><span className="option-prefix">D</span> TypeError</label>
-                </div>
-                <div className="action-row">
-                    <div className="feedback-msg" id="fb5"></div>
-                    <button className="reveal-btn" data-reveal="5">🔍 Reveal solution</button>
-                </div>
-                <div id="solution5" style="display: none;"><span className="solution-badge">✓ correct answer: B</span></div>
-            </div>
-
-            <div className="question-card" id="ex6" data-ex-id="6" data-correct="a">
-                <div className="question-title"><span className="q-icon">6</span> Array map</div>
-                <div className="code-block">[1, 2, 3].map(num => {\n  if (num > 1) return num * 2;\n});</div>
-                <div className="options-grid">
-                    <label className="option-item" data-opt="a"><span className="option-prefix">A</span> [undefined, 4, 6]</label>
-                    <label className="option-item" data-opt="b"><span className="option-prefix">B</span> [2, 4, 6]</label>
-                    <label className="option-item" data-opt="c"><span className="option-prefix">C</span> [4, 6]</label>
-                    <label className="option-item" data-opt="d"><span className="option-prefix">D</span> [undefined, undefined, undefined]</label>
-                </div>
-                <div className="action-row">
-                    <div className="feedback-msg" id="fb6"></div>
-                    <button className="reveal-btn" data-reveal="6">🔍 Reveal solution</button>
-                </div>
-                <div id="solution6" style="display: none;"><span className="solution-badge">✓ correct answer: A</span></div>
-            </div> */}
 
             <h2 style={{margin: '2.5rem 0 1rem', display: 'flex', gap: '10px', alignItems: 'center'}}>
                 <span style={{background: '#f97316', width: '8px', height: '32px', borderRadius: '8px'}}></span> 
@@ -223,6 +150,9 @@ function App() {
                     <div className="code-block">function delayedMessage(msg, delay) {\n  setTimeout(() => console.log(msg), delay);\n}</div>
                 </div>
             </div> */}
+
+          </div>
+          )}
         </main>
       </div>
     </>
