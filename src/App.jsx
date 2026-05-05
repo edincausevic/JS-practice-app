@@ -4,7 +4,6 @@ import MainNav from "./components/MainNav"
 import QuizQuestion from "./components/QuizQuestion"
 
 function App() {
-  const [exercises, setExercises] = useState(null)
   const [selectedExercise, setSelectedExercise] = useState(null)
   const [courseData, setCourseData] = useState({
     id: 123,
@@ -62,9 +61,8 @@ function App() {
   })
 
   
-
   const displayQuestions = (exerciseData) => {
-    setExercises(exerciseData)
+    setSelectedExercise(exerciseData)
   }
 
   const handleChoseOption = (optionId) => {
@@ -79,25 +77,24 @@ function App() {
           options: question.options.map(opt => {
             if (opt.id === optionId) {
               return { ...opt, selected: true };
+            }else {
+              return { ...opt, selected: false };
             }
-            return opt;
           })
         }))
       }))
     };
 
-    // save on the server
-
-
-    // set setExercises
-    console.log('@@', exercises.id)
-
-    updatedData.allExercises.forEach(exercise => {
-      
     
 
+    // display exercises
+    updatedData.allExercises.forEach(exercise => {
+      if(selectedExercise.id === exercise.id) {
+        setSelectedExercise(exercise)
+      }
     })
     
+    // save on the server
     setCourseData(updatedData)
   }
 
@@ -110,7 +107,7 @@ function App() {
 
         <main className="content-area" id="mainContent">
 
-          {!exercises ? (
+          {!selectedExercise ? (
               <div>Welcome</div>
             ) : 
           (
@@ -122,7 +119,7 @@ function App() {
             </div>
 
 
-            {exercises?.questions.map((question, index) => (
+            {selectedExercise?.questions.map((question, index) => (
               <QuizQuestion key={question.id} index={index} question={question} choseOption={handleChoseOption}/>
             ))}
 
