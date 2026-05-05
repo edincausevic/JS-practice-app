@@ -11,7 +11,7 @@ const QuizQuestion = ({question, index, choseOption}) => {
           <div className="options-grid">
             {question.options.map(option => (
               <label 
-                onClick={() => choseOption(option.id)} 
+                onClick={() => choseOption(option.id, question.id)} 
                 key={option.id}
                 className={`option-item ${option.correct && option.selected ? 'correct-guess' : ''} ${!option.correct && option.selected ? 'wrong-guess' : ''}`} >
                   <span className="option-prefix">{option.option.toUpperCase()}</span> {option.text}

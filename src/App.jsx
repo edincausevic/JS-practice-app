@@ -2,90 +2,40 @@ import { useState } from "react"
 import Header from "./components/Header"
 import MainNav from "./components/MainNav"
 import QuizQuestion from "./components/QuizQuestion"
+import { initDB, saveDB, getDB } from "./db/init"
 
 function App() {
+  initDB()
+
   const [selectedExercise, setSelectedExercise] = useState(null)
-  const [courseData, setCourseData] = useState({
-    id: 123,
-    version: '1.0',
-    allExercises: [
-      {
-        id: '9012310293812903810',
-        title: 'Variables',
-        questions: [
-          {
-            id: '98102830219839021',
-            title: 'Variable hoisting',
-            question: "console.log(myVar);\nvar myVar = 5;\nconsole.log(myVar);",
-            options: [
-              { id: '21412323412341', option: 'a', text: 'undefined then 5', correct: true, selected: false },
-              { id: '21431523412341', option: 'b', text: 'ReferenceError', correct: false, selected: false },
-              { id: '21431234124141', option: 'c', text: '5 then 5', correct: false, selected: false },
-              { id: '21431255555341', option: 'd', text: 'null then 5', correct: false, selected: false },
-            ],
-            correctAnswer: 'c'
-          },
-          {
-            id: '98102830229839221',
-            title: 'Temporal dead zone',
-            question: "console.log(a);\nlet a = 10;",
-            options: [
-              { id: '22212323412341', option: 'a', text: 'undefined', correct: false, selected: false },
-              { id: '21412323417741', option: 'b', text: '10', correct: false, selected: false },
-              { id: '21411123412341', option: 'c', text: 'ReferenceError', correct: true, selected: false },
-              { id: '21412443412341', option: 'd', text: 'null', correct: false, selected: false },
-            ],
-            correctAnswer: 'c'
-          },
-        ],
-        tasks: [
-          {
-            id: '901482f0aj921901290h',
-            title: "Reverse a string",
-            description: "Write a function {{reverseString(str)}} that takes a string and returns it reversed.",
-            example: '{{reverseString("hello")}} → {{"olleh"}}',
-            note: "implement in your editor / console",
-            solution: "const reverseString = str => str.split('').reverse().join('');"
-          },
-          {
-            id: '901122f0aj921901290h',
-            title: "Filter even numbers",
-            description: "Write a function {{filterEvens(arr)}} that returns a new array containing only the even numbers.",
-            example: '{{filterEvens([1, 2, 3, 4, 5, 6])}} → {{[2, 4, 6]}}',
-            note: "implement in your editor / console",
-            solution: "const filterEvens = arr => arr.filter(num => num % 2 === 0);"
-          },
-        ]
-      },
-    ]
-  })
+  const [courseData, setCourseData] = useState(getDB())
 
   
   const displayQuestions = (exerciseData) => {
     setSelectedExercise(exerciseData)
   }
 
-  const handleChoseOption = (optionId) => {
-    
+  const handleChoseOption = (optionId, questionID) => {
     
     const updatedData = {
       ...courseData,
       allExercises: courseData.allExercises.map(exercise => ({
         ...exercise,
-        questions: exercise.questions.map(question => ({
-          ...question,
-          options: question.options.map(opt => {
-            if (opt.id === optionId) {
-              return { ...opt, selected: true };
-            }else {
-              return { ...opt, selected: false };
-            }
-          })
-        }))
+        questions: exercise.questions.map(question => {
+          if(question.id === questionID) {
+            return {...question, options: question.options.map(opt => {
+              if (opt.id === optionId) {
+                return { ...opt, selected: true };
+              }else {
+                return { ...opt, selected: false };
+              }
+            })}
+          }
+          return {...question}
+        }
+      )
       }))
     };
-
-    
 
     // display exercises
     updatedData.allExercises.forEach(exercise => {
@@ -94,8 +44,10 @@ function App() {
       }
     })
     
-    // save on the server
     setCourseData(updatedData)
+    
+    // save on the server
+    saveDB(updatedData)
   }
 
   return (
