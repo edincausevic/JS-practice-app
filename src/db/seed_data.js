@@ -563,179 +563,451 @@ export const seedData = {
       ]
     },
     {
-      "id": "truthy-falsy-section-109",
-      "title": "Truthy vs. Falsy Values",
-      "videoID": "13",
+      "id": "if-else-logic-level-113",
+      "title": "if else",
+      "videoID": "14",
       "questions": [
         {
-          "id": "q-tf-001",
-          "title": "The Number Zero",
-          "question": "What is the boolean result of !!0?",
+          "id": "q-if-016",
+          "title": "Block Scoping with Let",
+          "question": "let status = 'idle';\nif (true) {\n  let status = 'active';\n}\nconsole.log(status);",
           "options": [
-            { "id": "opt-tf1", "option": "a", "text": "true", "correct": false, "selected": false },
-            { "id": "opt-tf2", "option": "b", "text": "false", "correct": true, "selected": false },
-            { "id": "opt-tf3", "option": "c", "text": "undefined", "correct": false, "selected": false },
-            { "id": "opt-tf4", "option": "d", "text": "NaN", "correct": false, "selected": false }
+            { "id": "opt-i61", "option": "a", "text": "active", "correct": false, "selected": false },
+            { "id": "opt-i62", "option": "b", "text": "idle", "correct": true, "selected": false },
+            { "id": "opt-i63", "option": "c", "text": "undefined", "correct": false, "selected": false },
+            { "id": "opt-i64", "option": "d", "text": "Error", "correct": false, "selected": false }
           ],
           "correctAnswer": "b"
         },
         {
-          "id": "q-tf-002",
-          "title": "Empty Strings",
-          "question": "Which of the following is a Falsy value?",
+          "id": "q-if-017",
+          "title": "Negation Logic",
+          "question": "const hasAccess = false;\nif (!hasAccess) {\n  console.log('Denied');\n}",
           "options": [
-            { "id": "opt-tf5", "option": "a", "text": "' ' (string with a space)", "correct": false, "selected": false },
-            { "id": "opt-tf6", "option": "b", "text": "'0'", "correct": false, "selected": false },
-            { "id": "opt-tf7", "option": "c", "text": "'' (empty string)", "correct": true, "selected": false },
-            { "id": "opt-tf8", "option": "d", "text": "'false'", "correct": false, "selected": false }
-          ],
-          "correctAnswer": "c"
-        },
-        {
-          "id": "q-tf-003",
-          "title": "Evaluating NaN",
-          "question": "What is the result of Boolean(NaN)?",
-          "options": [
-            { "id": "opt-tf9", "option": "a", "text": "true", "correct": false, "selected": false },
-            { "id": "opt-tf10", "option": "b", "text": "false", "correct": true, "selected": false },
-            { "id": "opt-tf11", "option": "c", "text": "null", "correct": false, "selected": false },
-            { "id": "opt-tf12", "option": "d", "text": "TypeError", "correct": false, "selected": false }
+            { "id": "opt-i65", "option": "a", "text": "Nothing is logged", "correct": false, "selected": false },
+            { "id": "opt-i66", "option": "b", "text": "Denied", "correct": true, "selected": false },
+            { "id": "opt-i67", "option": "c", "text": "false", "correct": false, "selected": false },
+            { "id": "opt-i68", "option": "d", "text": "Error", "correct": false, "selected": false }
           ],
           "correctAnswer": "b"
         },
         {
-          "id": "q-tf-004",
-          "title": "Truthiness of Numbers",
-          "question": "Which of these will evaluate to true?",
+          "id": "q-if-018",
+          "title": "Branching Result",
+          "question": "const points = 0;\nif (points) {\n  console.log('Winner');\n} else {\n  console.log('Player');\n}",
           "options": [
-            { "id": "opt-tf13", "option": "a", "text": "!!-1", "correct": true, "selected": false },
-            { "id": "opt-tf14", "option": "b", "text": "!!0", "correct": false, "selected": false },
-            { "id": "opt-tf15", "option": "c", "text": "!!null", "correct": false, "selected": false },
-            { "id": "opt-tf16", "option": "d", "text": "!!undefined", "correct": false, "selected": false }
+            { "id": "opt-i69", "option": "a", "text": "Winner", "correct": false, "selected": false },
+            { "id": "opt-i70", "option": "b", "text": "Player", "correct": true, "selected": false },
+            { "id": "opt-i71", "option": "c", "text": "0", "correct": false, "selected": false },
+            { "id": "opt-i72", "option": "d", "text": "undefined", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "q-if-019",
+          "title": "The Empty String Trick",
+          "question": "let folder = ' ';\nif (folder) {\n  console.log('Found');\n} else {\n  console.log('Missing');\n}",
+          "options": [
+            { "id": "opt-i73", "option": "a", "text": "Found", "correct": true, "selected": false },
+            { "id": "opt-i74", "option": "b", "text": "Missing", "correct": false, "selected": false },
+            { "id": "opt-i75", "option": "c", "text": "undefined", "correct": false, "selected": false },
+            { "id": "opt-i76", "option": "d", "text": "Error", "correct": false, "selected": false }
           ],
           "correctAnswer": "a"
         },
         {
-          "id": "q-tf-005",
-          "title": "Strings with Content",
-          "question": "Is the string 'false' truthy or falsy?",
+          "id": "q-if-020",
+          "title": "The NaN Comparison",
+          "question": "if ('hello' / 2) {\n  console.log('Math works');\n} else {\n  console.log('Math failed');\n}",
           "options": [
-            { "id": "opt-tf17", "option": "a", "text": "Truthy", "correct": true, "selected": false },
-            { "id": "opt-tf18", "option": "b", "text": "Falsy", "correct": false, "selected": false }
-          ],
-          "correctAnswer": "a"
-        },
-        {
-          "id": "q-tf-006",
-          "title": "Undefined Status",
-          "question": "let x;\nconsole.log(!!x);",
-          "options": [
-            { "id": "opt-tf19", "option": "a", "text": "true", "correct": false, "selected": false },
-            { "id": "opt-tf20", "option": "b", "text": "false", "correct": true, "selected": false },
-            { "id": "opt-tf21", "option": "c", "text": "ReferenceError", "correct": false, "selected": false },
-            { "id": "opt-tf22", "option": "d", "text": "undefined", "correct": false, "selected": false }
+            { "id": "opt-i77", "option": "a", "text": "Math works", "correct": false, "selected": false },
+            { "id": "opt-i78", "option": "b", "text": "Math failed", "correct": true, "selected": false },
+            { "id": "opt-i79", "option": "c", "text": "NaN", "correct": false, "selected": false },
+            { "id": "opt-i80", "option": "d", "text": "undefined", "correct": false, "selected": false }
           ],
           "correctAnswer": "b"
-        },
-        {
-          "id": "q-tf-007",
-          "title": "Logical NOT on Truthy",
-          "question": "What is the result of !'Hello'?",
-          "options": [
-            { "id": "opt-tf23", "option": "a", "text": "true", "correct": false, "selected": false },
-            { "id": "opt-tf24", "option": "b", "text": "false", "correct": true, "selected": false },
-            { "id": "opt-tf25", "option": "c", "text": "'Hello'", "correct": false, "selected": false },
-            { "id": "opt-tf26", "option": "d", "text": "''", "correct": false, "selected": false }
-          ],
-          "correctAnswer": "b"
-        },
-        {
-          "id": "q-tf-008",
-          "title": "Null Check",
-          "question": "What does !!null return?",
-          "options": [
-            { "id": "opt-tf27", "option": "a", "text": "true", "correct": false, "selected": false },
-            { "id": "opt-tf28", "option": "b", "text": "false", "correct": true, "selected": false },
-            { "id": "opt-tf29", "option": "c", "text": "null", "correct": false, "selected": false },
-            { "id": "opt-tf30", "option": "d", "text": "object", "correct": false, "selected": false }
-          ],
-          "correctAnswer": "b"
-        },
-        {
-          "id": "q-tf-009",
-          "title": "Numbers as Strings",
-          "question": "What is the result of Boolean('0')?",
-          "options": [
-            { "id": "opt-tf31", "option": "a", "text": "true", "correct": true, "selected": false },
-            { "id": "opt-tf32", "option": "b", "text": "false", "correct": false, "selected": false }
-          ],
-          "correctAnswer": "a"
-        },
-        {
-          "id": "q-tf-010",
-          "title": "The Negative Zero",
-          "question": "What is the truthiness of the value -0?",
-          "options": [
-            { "id": "opt-tf33", "option": "a", "text": "Truthy", "correct": false, "selected": false },
-            { "id": "opt-tf34", "option": "b", "text": "Falsy", "correct": true, "selected": false }
-          ],
-          "correctAnswer": "b"
-        },
-        {
-          "id": "q-tf-011",
-          "title": "Double NOT on String",
-          "question": "What does !!' ' (a string with one space) return?",
-          "options": [
-            { "id": "opt-tf35", "option": "a", "text": "true", "correct": true, "selected": false },
-            { "id": "opt-tf36", "option": "b", "text": "false", "correct": false, "selected": false }
-          ],
-          "correctAnswer": "a"
-        },
-        {
-          "id": "q-tf-012",
-          "title": "Mixed Types Review",
-          "question": "If let val = '10' - 10;, what is !!val?",
-          "options": [
-            { "id": "opt-tf37", "option": "a", "text": "true", "correct": false, "selected": false },
-            { "id": "opt-tf38", "option": "b", "text": "false", "correct": true, "selected": false }
-          ],
-          "correctAnswer": "b"
-        },
-        {
-          "id": "q-tf-013",
-          "title": "Template Literal Truthiness",
-          "question": "What is the truthiness of a template literal: !!`${null}`?",
-          "options": [
-            { "id": "opt-tf39", "option": "a", "text": "true (it becomes the string 'null')", "correct": true, "selected": false },
-            { "id": "opt-tf40", "option": "b", "text": "false (it stays as null)", "correct": false, "selected": false }
-          ],
-          "correctAnswer": "a"
-        },
-        {
-          "id": "q-tf-014",
-          "title": "Logical NOT on NaN",
-          "question": "What is the result of !NaN?",
-          "options": [
-            { "id": "opt-tf41", "option": "a", "text": "true", "correct": true, "selected": false },
-            { "id": "opt-tf42", "option": "b", "text": "false", "correct": false, "selected": false }
-          ],
-          "correctAnswer": "a"
-        },
-        {
-          "id": "q-tf-015",
-          "title": "Falsy Summary",
-          "question": "Which of these is NOT a falsy value?",
-          "options": [
-            { "id": "opt-tf43", "option": "a", "text": "undefined", "correct": false, "selected": false },
-            { "id": "opt-tf44", "option": "b", "text": "0", "correct": false, "selected": false },
-            { "id": "opt-tf45", "option": "c", "text": "1", "correct": true, "selected": false },
-            { "id": "opt-tf46", "option": "d", "text": "null", "correct": false, "selected": false }
-          ],
-          "correctAnswer": "c"
         }
       ],
-      "tasks": []
+      "tasks": [
+        {
+          "id": "task-if-014",
+          "title": "The Welcome Message",
+          "description": "Declare a const %guest = 'Alex'%. Create an %if(true)% block. Inside, declare a const %welcome% using a template literal: %`Welcome, ${guest}`% and log it to the console.",
+          "result": "%Welcome, Alex%",
+          "note": "Focus on using the variable inside the block scope",
+          "solution": "const guest = 'Alex';\nif (true) {\n  const welcome = `Welcome, ${guest}`;\n  console.log(welcome);\n}"
+        },
+        {
+          "id": "task-if-015",
+          "title": "One-Line Alert",
+          "description": "Declare a variable %isMuted = true%. Use a single-line %if% statement (no curly braces) to log %'Silence...'% if the variable is true.",
+          "result": "%Silence...%",
+          "note": "Practice the shorthand one-line syntax",
+          "solution": "const isMuted = true;\nif (isMuted) console.log('Silence...');"
+        },
+        {
+          "id": "task-if-016",
+          "title": "Battery Check",
+          "description": "Declare %isLow = false%. Use %if / else% to log %'Battery Low'% if true, and %'Battery Full'% otherwise.",
+          "result": "%Battery Full%",
+          "note": "Simple branching using a boolean check",
+          "solution": "const isLow = false;\nif (isLow) {\n  console.log('Battery Low');\n} else {\n  console.log('Battery Full');\n}"
+        }
+      ]
     },
-    
+    {
+      "id": "comparison-ops-115",
+      "title": "Comparison Operators",
+      "videoID": "15",
+      "questions": [
+        {
+          "id": "q-comp-001",
+          "title": "Greater Than or Equal",
+          "question": "What is the result of console.log(15 >= 15)?",
+          "options": [
+            { "id": "opt-c1", "option": "a", "text": "true", "correct": true, "selected": false },
+            { "id": "opt-c2", "option": "b", "text": "false", "correct": false, "selected": false },
+            { "id": "opt-c3", "option": "c", "text": "undefined", "correct": false, "selected": false },
+            { "id": "opt-c4", "option": "d", "text": "NaN", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "q-comp-002",
+          "title": "Loose Equality Quirk",
+          "question": "What does console.log(0 == false) output?",
+          "options": [
+            { "id": "opt-c5", "option": "a", "text": "true", "correct": true, "selected": false },
+            { "id": "opt-c6", "option": "b", "text": "false", "correct": false, "selected": false },
+            { "id": "opt-c7", "option": "c", "text": "null", "correct": false, "selected": false },
+            { "id": "opt-c8", "option": "d", "text": "TypeError", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "q-comp-003",
+          "title": "Strict Inequality",
+          "question": "Which comparison returns true?",
+          "options": [
+            { "id": "opt-c9", "option": "a", "text": "10 !== '10'", "correct": true, "selected": false },
+            { "id": "opt-c10", "option": "b", "text": "10 != '10'", "correct": false, "selected": false },
+            { "id": "opt-c11", "option": "c", "text": "5 === '5'", "correct": false, "selected": false },
+            { "id": "opt-c12", "option": "d", "text": "null === undefined", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "q-comp-004",
+          "title": "Comparison in Logic",
+          "question": "let x = 10;\nif (x <= 10) {\n  x = x + 5;\n}\nconsole.log(x);",
+          "options": [
+            { "id": "opt-c17", "option": "a", "text": "10", "correct": false, "selected": false },
+            { "id": "opt-c18", "option": "b", "text": "15", "correct": true, "selected": false },
+            { "id": "opt-c19", "option": "c", "text": "5", "correct": false, "selected": false },
+            { "id": "opt-c20", "option": "d", "text": "true", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "q-comp-005",
+          "title": "Strict Comparison Trick",
+          "question": "let age = '25';\nif (age === 25) {\n  console.log('Match');\n} else {\n  console.log('No Match');\n}",
+          "options": [
+            { "id": "opt-c21", "option": "a", "text": "Match", "correct": false, "selected": false },
+            { "id": "opt-c22", "option": "b", "text": "No Match", "correct": true, "selected": false }
+          ],
+          "correctAnswer": "b"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "task-comp-001",
+          "title": "Price Check",
+          "description": "Declare a variable %budget = 50%. Write an %if% statement that checks if %budget% is less than %60%. If true, log %'Within budget'%.",
+          "result": "%Within budget%",
+          "note": "Use the < operator",
+          "solution": "let budget = 50;\nif (budget < 60) {\n  console.log('Within budget');\n}"
+        },
+        {
+          "id": "task-comp-002",
+          "title": "Strict Identity Verification",
+          "description": "Declare %enteredPin = '1234'%. Compare it to %actualPin = 1234% using %===%. If they are NOT strictly equal, log %'Invalid Type'%.",
+          "result": "%Invalid Type%",
+          "note": "A string is never strictly equal to a number",
+          "solution": "const enteredPin = '1234';\nconst actualPin = 1234;\nif (enteredPin !== actualPin) {\n  console.log('Invalid Type');\n}"
+        },
+        {
+          "id": "task-comp-004",
+          "title": "Score Evaluation",
+          "description": "Declare %score = 80%. Use %if / else% to log %'Pass'% if %score >= 70%, otherwise log %'Fail'%.",
+          "result": "%Pass%",
+          "note": "Check for greater than or equal to",
+          "solution": "let score = 80;\nif (score >= 70) {\n  console.log('Pass');\n} else {\n  console.log('Fail');\n}"
+        },
+        {
+          "id": "task-comp-005",
+          "title": "Comparison Assignment",
+          "description": "Declare %count = 10%. If %count !== 20%, reassign %count% to %20%. Finally, log %count%.",
+          "result": "%20%",
+          "note": "Strict inequality ensures we only update if the value/type is different",
+          "solution": "let count = 10;\nif (count !== 20) {\n  count = 20;\n}\nconsole.log(count);"
+        }
+      ]
+    },
+    {
+      "id": "milestone-foundations-01",
+      "title": "MILESTONE EXERCISES 1",
+      "videoID": "16",
+      "questions": [
+        {
+          "id": "q-rev-001",
+          "title": "Variable Reassignment",
+          "question": "const x = 10;\nx = 20;\nconsole.log(x);",
+          "options": [
+            { "id": "opt-r1", "option": "a", "text": "20", "correct": false, "selected": false },
+            { "id": "opt-r2", "option": "b", "text": "10", "correct": false, "selected": false },
+            { "id": "opt-r3", "option": "c", "text": "TypeError", "correct": true, "selected": false },
+            { "id": "opt-r4", "option": "d", "text": "undefined", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "c"
+        },
+        {
+          "id": "q-rev-002",
+          "title": "Type Concatenation",
+          "question": "What is typeof (10 + '5')?",
+          "options": [
+            { "id": "opt-r5", "option": "a", "text": "number", "correct": false, "selected": false },
+            { "id": "opt-r6", "option": "b", "text": "string", "correct": true, "selected": false },
+            { "id": "opt-r7", "option": "c", "text": "NaN", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "q-rev-003",
+          "title": "The Null Type",
+          "question": "What does typeof null return?",
+          "options": [
+            { "id": "opt-r8", "option": "a", "text": "null", "correct": false, "selected": false },
+            { "id": "opt-r9", "option": "b", "text": "object", "correct": true, "selected": false },
+            { "id": "opt-r10", "option": "c", "text": "undefined", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "q-rev-004",
+          "title": "Truthy Strings",
+          "question": "Which of these evaluates to true?",
+          "options": [
+            { "id": "opt-r11", "option": "a", "text": "Boolean('')", "correct": false, "selected": false },
+            { "id": "opt-r12", "option": "b", "text": "Boolean('false')", "correct": true, "selected": false },
+            { "id": "opt-r13", "option": "c", "text": "Boolean(0)", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "q-rev-005",
+          "title": "Else If Logic",
+          "question": "let temp = 15;\nif (temp > 20) {\n  console.log('Hot');\n} else if (temp > 10) {\n  console.log('Warm');\n} else {\n  console.log('Cold');\n}",
+          "options": [
+            { "id": "opt-r14", "option": "a", "text": "Hot", "correct": false, "selected": false },
+            { "id": "opt-r15", "option": "b", "text": "Warm", "correct": true, "selected": false },
+            { "id": "opt-r16", "option": "c", "text": "Cold", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "q-rev-006",
+          "title": "Strict Equality",
+          "question": "100 === '100'",
+          "options": [
+            { "id": "opt-r17", "option": "a", "text": "true", "correct": false, "selected": false },
+            { "id": "opt-r18", "option": "b", "text": "false", "correct": true, "selected": false }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "q-rev-007",
+          "title": "Loose Equality",
+          "question": "100 == '100'",
+          "options": [
+            { "id": "opt-r19", "option": "a", "text": "true", "correct": true, "selected": false },
+            { "id": "opt-r20", "option": "b", "text": "false", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "q-rev-008",
+          "title": "The Bang Operator",
+          "question": "What is !null?",
+          "options": [
+            { "id": "opt-r21", "option": "a", "text": "true", "correct": true, "selected": false },
+            { "id": "opt-r22", "option": "b", "text": "false", "correct": false, "selected": false },
+            { "id": "opt-r23", "option": "c", "text": "null", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "q-rev-009",
+          "title": "Undefined Check",
+          "question": "let x;\nif (x === undefined) {\n  console.log('Yes');\n}",
+          "options": [
+            { "id": "opt-r24", "option": "a", "text": "Yes", "correct": true, "selected": false },
+            { "id": "opt-r25", "option": "b", "text": "Nothing logs", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "q-rev-010",
+          "title": "Template Literals",
+          "question": "const val = 5;\nconsole.log(`Result: ${val + val}`);",
+          "options": [
+            { "id": "opt-r26", "option": "a", "text": "Result: 55", "correct": false, "selected": false },
+            { "id": "opt-r27", "option": "b", "text": "Result: 10", "correct": true, "selected": false }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "q-rev-011",
+          "title": "Falsy Values",
+          "question": "Which of these is NOT a falsy value?",
+          "options": [
+            { "id": "opt-r28", "option": "a", "text": "0", "correct": false, "selected": false },
+            { "id": "opt-r29", "option": "b", "text": "undefined", "correct": false, "selected": false },
+            { "id": "opt-r30", "option": "c", "text": "' ' (String with a space)", "correct": true, "selected": false },
+            { "id": "opt-r31", "option": "d", "text": "NaN", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "c"
+        },
+        {
+          "id": "q-rev-012",
+          "title": "Double Negation",
+          "question": "What is !!'Hello'?",
+          "options": [
+            { "id": "opt-r32", "option": "a", "text": "true", "correct": true, "selected": false },
+            { "id": "opt-r33", "option": "b", "text": "false", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "q-rev-013",
+          "title": "If Block Scope",
+          "question": "if (true) { let a = 5; }\nconsole.log(a);",
+          "options": [
+            { "id": "opt-r34", "option": "a", "text": "5", "correct": false, "selected": false },
+            { "id": "opt-r35", "option": "b", "text": "ReferenceError", "correct": true, "selected": false }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "q-rev-014",
+          "title": "Boolean Conversion",
+          "question": "What is Boolean(1)?",
+          "options": [
+            { "id": "opt-r36", "option": "a", "text": "true", "correct": true, "selected": false },
+            { "id": "opt-r37", "option": "b", "text": "false", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "q-rev-015",
+          "title": "Undefined Addition",
+          "question": "What is the result of 5 + undefined?",
+          "options": [
+            { "id": "opt-r39", "option": "a", "text": "5", "correct": false, "selected": false },
+            { "id": "opt-r40", "option": "b", "text": "NaN", "correct": true, "selected": false }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "q-rev-016",
+          "title": "Relational Operators",
+          "question": "What is the result of 10 >= 10?",
+          "options": [
+            { "id": "opt-r41", "option": "a", "text": "true", "correct": true, "selected": false },
+            { "id": "opt-r42", "option": "b", "text": "false", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "q-rev-017",
+          "title": "Strict Inequality",
+          "question": "'apple' !== 'Apple'",
+          "options": [
+            { "id": "opt-r43", "option": "a", "text": "true", "correct": true, "selected": false },
+            { "id": "opt-r44", "option": "b", "text": "false", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "q-rev-018",
+          "title": "Logical NOT on Truthy",
+          "question": "What does !10 return?",
+          "options": [
+            { "id": "opt-r51", "option": "a", "text": "false", "correct": true, "selected": false },
+            { "id": "opt-r52", "option": "b", "text": "true", "correct": false, "selected": false },
+            { "id": "opt-r53", "option": "c", "text": "-10", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "q-rev-020",
+          "title": "Logical NOT with Text",
+          "question": "What is !'JavaScript'?",
+          "options": [
+            { "id": "opt-r49", "option": "a", "text": "true", "correct": false, "selected": false },
+            { "id": "opt-r50", "option": "b", "text": "false", "correct": true, "selected": false }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "q-rev-022",
+          "title": "TypeOf Comparison",
+          "question": "What is the output of: console.log(typeof (10 === 10));",
+          "options": [
+            { "id": "opt-r57", "option": "a", "text": "'boolean'", "correct": true, "selected": false },
+            { "id": "opt-r58", "option": "b", "text": "'number'", "correct": false, "selected": false },
+            { "id": "opt-r59", "option": "c", "text": "'string'", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "a"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "t-rev-001",
+          "title": "The Grade System",
+          "description": "Declare %score = 85%. Use branching logic to log: %'A'% if the score is greater than or equal to 90, %'B'% if the score is greater than or equal to 80, and %'C'% for all other cases.",
+          "result": "%B%",
+          "solution": "let score = 85;\nif (score >= 90) {\n  console.log('A');\n} else if (score >= 80) {\n  console.log('B');\n} else {\n  console.log('C');\n}"
+        },
+        {
+          "id": "t-rev-002",
+          "title": "User Status Review",
+          "description": "Declare %username = null%. Use conditional logic to log %'Welcome guest'% if the username does not have a truthy value. If it does have a value, log a greeting using the name and a template literal.",
+          "result": "%Welcome guest%",
+          "solution": "const username = null;\nif (username) {\n  console.log(`Welcome ${username}`);\n} else {\n  console.log('Welcome guest');\n}"
+        },
+        {
+          "id": "t-rev-003",
+          "title": "Temperature Guard",
+          "description": "Declare %temp = 32%. Check if the temperature is strictly equal to 32 and log %'Freezing point'%. Otherwise, check if the temperature is greater than 32 and log %'Above freezing'%.",
+          "result": "%Freezing point%",
+          "solution": "let temp = 32;\nif (temp === 32) {\n  console.log('Freezing point');\n} else if (temp > 32) {\n  console.log('Above freezing');\n}"
+        },
+        {
+          "id": "t-rev-004",
+          "title": "Strict Type Filter",
+          "description": "Declare %input = '5'%. Write logic that logs %'Number'% only if the input is strictly equal to the number 5. If the type of the input is a string, log %'String'%.",
+          "result": "%String%",
+          "solution": "let input = '5';\nif (input === 5) {\n  console.log('Number');\n} else if (typeof input === 'string') {\n  console.log('String');\n}"
+        },
+        {
+          "id": "t-rev-005",
+          "title": "The Double Check",
+          "description": "Declare %val = 0%. If the value is strictly equal to 0, change the value to 10. Then, using a completely separate block of logic, log %'Success'% if the value is now greater than 5.",
+          "result": "%Success%",
+          "solution": "let val = 0;\nif (val === 0) { val = 10; }\nif (val > 5) { console.log('Success'); }"
+        }
+      ]
+    },
   ]
 }
