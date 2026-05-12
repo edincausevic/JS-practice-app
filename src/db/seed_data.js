@@ -756,7 +756,7 @@ export const seedData = {
     },
     {
       "id": "milestone-foundations-01",
-      "title": "MILESTONE EXERCISES 1",
+      "title": "- MILESTONE EXERCISES 1 -",
       "videoID": "16",
       "questions": [
         {
@@ -1009,5 +1009,235 @@ export const seedData = {
         }
       ]
     },
+    {
+      "id": "intro-to-arrays-117",
+      "title": "Arrays",
+      "videoID": "17",
+      "questions": [
+        {
+          "id": "q-arr-101",
+          "title": "The Type Trap",
+          "question": "const temperatures = [32, 35, 40];\nconsole.log(typeof temperatures);",
+          "options": [
+            { "id": "opt-ax1", "option": "a", "text": "'array'", "correct": false, "selected": false },
+            { "id": "opt-ax2", "option": "b", "text": "'object'", "correct": true, "selected": false },
+            { "id": "opt-ax3", "option": "c", "text": "'number'", "correct": false, "selected": false },
+            { "id": "opt-ax4", "option": "d", "text": "'undefined'", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "q-arr-102",
+          "title": "Logical Array Check",
+          "question": "let guests = [];\nif (Boolean(guests)) {\n  console.log('Open Door');\n} else {\n  console.log('Closed');\n}",
+          "options": [
+            { "id": "opt-ax5", "option": "a", "text": "Open Door", "correct": true, "selected": false },
+            { "id": "opt-ax6", "option": "b", "text": "Closed", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "q-arr-103",
+          "title": "Index Mystery",
+          "question": "const colors = ['Red', 'Green', 'Blue'];\nconsole.log(colors[0]);",
+          "options": [
+            { "id": "opt-ax7", "option": "a", "text": "Green", "correct": false, "selected": false },
+            { "id": "opt-ax8", "option": "b", "text": "Red", "correct": true, "selected": false },
+            { "id": "opt-ax9", "option": "c", "text": "Blue", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "q-arr-104",
+          "title": "Constructor Practice",
+          "question": "const scores = new Array(10, 20, 30);\nconsole.log(scores[2]);",
+          "options": [
+            { "id": "opt-ax10", "option": "a", "text": "10", "correct": false, "selected": false },
+            { "id": "opt-ax11", "option": "b", "text": "20", "correct": false, "selected": false },
+            { "id": "opt-ax12", "option": "c", "text": "30", "correct": true, "selected": false }
+          ],
+          "correctAnswer": "c"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "task-arr-101",
+          "title": "Stock Inventory",
+          "description": "Declare an array %stock% containing %150%, %'In Transit'%, and %true%. Log the second element to the console.",
+          "result": "%In Transit%",
+          "note": "Arrays can hold mixed data types including numbers, strings, and booleans.",
+          "solution": "const stock = [150, 'In Transit', true];\nconsole.log(stock[1]);"
+        },
+        {
+          "id": "task-arr-102",
+          "title": "The Truth Test",
+          "description": "Declare a variable %collection% using the %new Array()% syntax with any three names. Log a %Boolean% conversion of the entire array.",
+          "result": "%true%",
+          "note": "Even if an array is created via the constructor, it remains truthy.",
+          "solution": "const collection = new Array('Alice', 'Bob', 'Charlie');\nconsole.log(Boolean(collection));"
+        },
+        {
+          "id": "task-arr-103",
+          "title": "Type Validation",
+          "description": "Create an array called %playlist%. Write a line of code that logs the %typeof% this variable.",
+          "result": "%object%",
+          "note": "Always remember that arrays are a special type of object in JS.",
+          "solution": "const playlist = ['Song 1', 'Song 2'];\nconsole.log(typeof playlist);"
+        }
+      ]
+    },
+    {
+      "id": "mastering-length-property-118",
+      "title": "The Length Property",
+      "videoID": "18",
+      "questions": [
+        {
+          "id": "q-len-201",
+          "title": "String Length Basics",
+          "question": "const city = 'New York';\nconsole.log(city.length);",
+          "options": [
+            { "id": "opt-l1", "option": "a", "text": "7", "correct": false, "selected": false },
+            { "id": "opt-l2", "option": "b", "text": "8", "correct": true, "selected": false },
+            { "id": "opt-l3", "option": "c", "text": "undefined", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "q-len-202",
+          "title": "Empty vs Space",
+          "question": "const input = ' ';\nconsole.log(input.length);",
+          "options": [
+            { "id": "opt-l4", "option": "a", "text": "0", "correct": false, "selected": false },
+            { "id": "opt-l5", "option": "b", "text": "1", "correct": true, "selected": false },
+            { "id": "opt-l6", "option": "c", "text": "null", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "q-len-203",
+          "title": "The Last Index Formula",
+          "question": "const nums = [10, 20, 30, 40];\nconsole.log(nums[nums.length - 1]);",
+          "options": [
+            { "id": "opt-l7", "option": "a", "text": "40", "correct": true, "selected": false },
+            { "id": "opt-l8", "option": "b", "text": "30", "correct": false, "selected": false },
+            { "id": "opt-l9", "option": "c", "text": "4", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "q-len-204",
+          "title": "Length Comparison",
+          "question": "const tags = ['js', 'code'];\nif (tags.length > 2) {\n  console.log('Large');\n} else {\n  console.log('Small');\n}",
+          "options": [
+            { "id": "opt-l10", "option": "a", "text": "Large", "correct": false, "selected": false },
+            { "id": "opt-l11", "option": "b", "text": "Small", "correct": true, "selected": false }
+          ],
+          "correctAnswer": "b"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "task-len-201",
+          "title": "Password Validator",
+          "description": "Declare %pass = '12345'%. If the length is less than 6, log %'Weak'%. Otherwise, log %'Strong'%.",
+          "result": "%Weak%",
+          "note": "A common real-world use for .length is checking input requirements.",
+          "solution": "const pass = '12345';\nif (pass.length < 6) {\n  console.log('Weak');\n} else {\n  console.log('Strong');\n}"
+        },
+        {
+          "id": "task-len-202",
+          "title": "Dynamic Last Item",
+          "description": "Declare an array %colors% with 4 values. Log the very last item by using the %length - 1% pattern.",
+          "result": "%(Your last color)%",
+          "note": "Using length - 1 ensures you always get the last item regardless of how many are in the array.",
+          "solution": "const colors = ['Red', 'Green', 'Blue', 'Yellow'];\nconsole.log(colors[colors.length - 1]);"
+        },
+        {
+          "id": "task-len-203",
+          "title": "The Bio Counter",
+          "description": "Declare %bio = 'Hello world'%. Create a variable %left% that subtracts the length of the bio from a limit of %50%. Log %`Remaining: ${left}`%.",
+          "result": "%Remaining: 39%",
+          "note": "Template literals combined with .length are great for UI feedback.",
+          "solution": "const bio = 'Hello world';\nconst left = 50 - bio.length;\nconsole.log(`Remaining: ${left}`);"
+        }
+      ]
+    },
+    {
+      "id": "object-fundamentals-119",
+      "title": "Objects",
+      "videoID": "19",
+      "questions": [
+        {
+          "id": "q-obj-301",
+          "title": "Object Type Identification",
+          "question": "const laptop = { brand: 'Apple', year: 2024 };\nconsole.log(typeof laptop);",
+          "options": [
+            { "id": "opt-o1", "option": "a", "text": "'object'", "correct": true, "selected": false },
+            { "id": "opt-o2", "option": "b", "text": "'dictionary'", "correct": false, "selected": false },
+            { "id": "opt-o3", "option": "c", "text": "'array'", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "q-obj-302",
+          "title": "Accessing Properties",
+          "question": "const user = { name: 'Alice', age: 28 };\nconsole.log(user.name);",
+          "options": [
+            { "id": "opt-o4", "option": "a", "text": "Alice", "correct": true, "selected": false },
+            { "id": "opt-o5", "option": "b", "text": "name", "correct": false, "selected": false },
+            { "id": "opt-o6", "option": "c", "text": "undefined", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "q-obj-303",
+          "title": "The Missing Property",
+          "question": "const book = { title: 'JS Basics' };\nconsole.log(book.author);",
+          "options": [
+            { "id": "opt-o7", "option": "a", "text": "null", "correct": false, "selected": false },
+            { "id": "opt-o8", "option": "b", "text": "Error", "correct": false, "selected": false },
+            { "id": "opt-o9", "option": "c", "text": "undefined", "correct": true, "selected": false }
+          ],
+          "correctAnswer": "c"
+        },
+        {
+          "id": "q-obj-304",
+          "title": "Special Key Access",
+          "question": "const data = { 'user-id': 101 };\nHow do you access user-id?",
+          "options": [
+            { "id": "opt-o10", "option": "a", "text": "data.user-id", "correct": false, "selected": false },
+            { "id": "opt-o11", "option": "b", "text": "data['user-id']", "correct": true, "selected": false },
+            { "id": "opt-o12", "option": "c", "text": "data(user-id)", "correct": false, "selected": false }
+          ],
+          "correctAnswer": "b"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "task-obj-301",
+          "title": "Create a Profile",
+          "description": "Declare an object %product% with %name: 'Phone'% and %price: 500%. Then, add a %color% property using dot notation after the object is created.",
+          "result": "%Phone 500 (color value)%",
+          "note": "Objects are mutable, meaning you can add properties at any time.",
+          "solution": "const product = { name: 'Phone', price: 500 };\nproduct.color = 'Silver';\nconsole.log(product.name, product.price, product.color);"
+        },
+        {
+          "id": "task-obj-302",
+          "title": "The Boolean Check",
+          "description": "Declare an empty object %settings%. Log its %Boolean% value to the console.",
+          "result": "%true%",
+          "note": "Just like arrays, even an empty object {} is truthy.",
+          "solution": "const settings = {};\nconsole.log(Boolean(settings));"
+        },
+        {
+          "id": "task-obj-303",
+          "title": "Special Properties",
+          "description": "Declare an object %movie% with a property key %'release-year'% set to %2024%. Log that specific property using bracket notation.",
+          "result": "%2024%",
+          "note": "If a key has a hyphen or space, dot notation will break.",
+          "solution": "const movie = { 'release-year': 2024 };\nconsole.log(movie['release-year']);"
+        }
+      ]
+    }
   ]
 }
