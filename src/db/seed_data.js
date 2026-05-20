@@ -2598,6 +2598,742 @@ export const seedData = {
           "solution": "function countRemainingItems(items) {\n  const [first, second, ...leftovers] = items;\n  return leftovers.length;\n}\nconsole.log(countRemainingItems(['pen', 'paper', 'clip', 'ruler', 'tape']));"
         }
       ]
+    },
+    {
+      "id": "crud-operations-01",
+      "title": "CRUD Operations on Arrays and Objects",
+      "videoID": "34",
+      "questions": [
+        {
+          "id": "coq1-01",
+          "title": "Adding Elements to Arrays",
+          "question": "const fruits = ['apple', 'banana'];\nconst updated = ['kiwi', ...fruits, 'mango'];\nconsole.log(updated[0]);",
+          "options": [
+            { "id": "o1", "option": "a", "text": "'kiwi'", "correct": true },
+            { "id": "o2", "option": "b", "text": "'apple'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "coq1-02",
+          "title": "Targeting the Last Array Element",
+          "question": "const items = ['pen', 'paper', 'clip'];\nconst last = items.at(-1);\nconsole.log(last);",
+          "options": [
+            { "id": "o3", "option": "a", "text": "'clip'", "correct": true },
+            { "id": "o4", "option": "b", "text": "'pen'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "coq1-03",
+          "title": "Removing the Last Array Element",
+          "question": "const list = ['a', 'b', 'c'];\nconst subset = [...list.slice(0, -1)];\nconsole.log(subset.length);",
+          "options": [
+            { "id": "o5", "option": "a", "text": "2", "correct": true },
+            { "id": "o6", "option": "b", "text": "3", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "coq1-04",
+          "title": "Updating Object States",
+          "question": "const user = { name: 'Pablo', isOnline: false };\nconst updatedUser = { ...user, isOnline: true, isAdmin: true };\nconsole.log(updatedUser.isOnline);",
+          "options": [
+            { "id": "o7", "option": "a", "text": "true", "correct": true },
+            { "id": "o8", "option": "b", "text": "false", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "coq1-05",
+          "title": "Removing Properties via Rest",
+          "question": "const account = { id: 1, age: 23, role: 'user' };\nconst { age, ...cleanAccount } = account;\nconsole.log(cleanAccount.age);",
+          "options": [
+            { "id": "o9", "option": "a", "text": "undefined", "correct": true },
+            { "id": "o10", "option": "b", "text": "23", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "coq1-06",
+          "title": "Array Tail Extraction",
+          "question": "const colors = ['red', 'green', 'blue'];\nconst [first, ...restOfColors] = colors;\nconsole.log(restOfColors[0]);",
+          "options": [
+            { "id": "o11", "option": "a", "text": "'green'", "correct": true },
+            { "id": "o12", "option": "b", "text": "'red'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "cot1-01",
+          "title": "Array Boundary Inserter Function",
+          "description": "Create a function named %wrapArray(items, leading, trailing)% that accepts an array and two string elements. Use the spread operator to return a new array where %leading% is placed at the start, followed by all original items, and %trailing% is placed at the very end. Input example: %['banana']%, %'kiwi'%, and %'mango'%.",
+          "result": "%['kiwi', 'banana', 'mango']%",
+          "solution": "function wrapArray(items, leading, trailing) {\n  return [leading, ...items, trailing];\n}\nconsole.log(wrapArray(['banana'], 'kiwi', 'mango'));"
+        },
+        {
+          "id": "cot1-02",
+          "title": "Array Tail Dropper Function",
+          "description": "Create a function named %removeLastElement(list)% that receives an array. Use the slice method inside an array literal combined with the spread operator to copy and return a new array containing all elements except the very last one. Input example: %['apple', 'banana', 'orange']%.",
+          "result": "%['apple', 'banana']%",
+          "solution": "function removeLastElement(list) {\n  return [...list.slice(0, -1)];\n}\nconsole.log(removeLastElement(['apple', 'banana', 'orange']));"
+        },
+        {
+          "id": "cot1-03",
+          "title": "Object Editor and Extender Function",
+          "description": "Create a function named %activateAdmin(userObj)% that accepts an identity object. Use the object spread operator to create a new object that copies the original properties, updates %isOnline% to %true%, and adds a new property named %isAdmin% set to %true%. Return this new object. Input example: %{ name: 'Pablo', age: 23, isOnline: false }%.",
+          "result": "%{ name: 'Pablo', age: 23, isOnline: true, isAdmin: true }%",
+          "solution": "function activateAdmin(userObj) {\n  return { ...userObj, isOnline: true, isAdmin: true };\n}\nconsole.log(activateAdmin({ name: 'Pablo', age: 23, isOnline: false }));"
+        },
+        {
+          "id": "cot1-04",
+          "title": "Property Exclusion Filter Function",
+          "description": "Create a function named %removeAgeField(profile)% that accepts an object. Use object destructuring and the rest operator to extract and isolate the %age% property into its own variable while collecting all other properties into a separate object. Return that separate object without the age field. Input example: %{ name: 'Pablo', age: 23, isOnline: false }%.",
+          "result": "%{ name: 'Pablo', isOnline: false }%",
+          "solution": "function removeAgeField(profile) {\n  const { age, ...userWithoutAge } = profile;\n  return userWithoutAge;\n}\nconsole.log(removeAgeField({ name: 'Pablo', age: 23, isOnline: false }));"
+        }
+      ]
+    },
+    {
+      "id": "milestone-exercises-03",
+      "title": "Milestone Exercises 3",
+      "videoID": "35",
+      "questions": [
+        {
+          "id": "mq3-01",
+          "title": "String Length Check",
+          "question": "const username = 'alpha_dev';\nconsole.log(username.length);",
+          "options": [
+            { "id": "o1", "option": "a", "text": "9", "correct": true },
+            { "id": "o2", "option": "b", "text": "8", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-02",
+          "title": "Substring Evaluation with Includes",
+          "question": "const email = 'support@company.com';\nconsole.log(email.includes('@'));",
+          "options": [
+            { "id": "o3", "option": "a", "text": "true", "correct": true },
+            { "id": "o4", "option": "b", "text": "false", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-03",
+          "title": "Prefix Validation",
+          "question": "const url = 'https://api.com';\nconsole.log(url.startsWith('https'));",
+          "options": [
+            { "id": "o5", "option": "a", "text": "true", "correct": true },
+            { "id": "o6", "option": "b", "text": "false", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-04",
+          "title": "Suffix Validation",
+          "question": "const file = 'invoice.pdf';\nconsole.log(file.endsWith('.pdf'));",
+          "options": [
+            { "id": "o7", "option": "a", "text": "true", "correct": true },
+            { "id": "o8", "option": "b", "text": "false", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-05",
+          "title": "JavaScript Primitives",
+          "question": "Which of the following options lists ONLY primitive data types in JavaScript, excluding bigint and symbol?",
+          "options": [
+            { "id": "o9", "option": "a", "text": "String, Number, Boolean, undefined, null", "correct": true },
+            { "id": "o10", "option": "b", "text": "String, Number, Boolean, Object, Array", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-06",
+          "title": "String Splice and Isolation",
+          "question": "const text = 'JavaScript';\nconsole.log(text.slice(0, 4));",
+          "options": [
+            { "id": "o11", "option": "a", "text": "'Java'", "correct": true },
+            { "id": "o12", "option": "b", "text": "'Script'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-07",
+          "title": "Case Transformation Upper",
+          "question": "const code = 'promo10';\nconsole.log(code.toUpperCase());",
+          "options": [
+            { "id": "o13", "option": "a", "text": "'PROMO10'", "correct": true },
+            { "id": "o14", "option": "b", "text": "'promo10'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-08",
+          "title": "Case Transformation Lower",
+          "question": "const input = 'USER_NAME';\nconsole.log(input.toLowerCase());",
+          "options": [
+            { "id": "o15", "option": "a", "text": "'user_name'", "correct": true },
+            { "id": "o16", "option": "b", "text": "'username'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-09",
+          "title": "String Parsing into Arrays",
+          "question": "const tags = 'html,css,js';\nconst list = tags.split(',');\nconsole.log(list[1]);",
+          "options": [
+            { "id": "o17", "option": "a", "text": "'css'", "correct": true },
+            { "id": "o18", "option": "b", "text": "'html'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-10",
+          "title": "Array Aggregation into Strings",
+          "question": "const path = ['usr', 'bin'];\nconsole.log(path.join('/'));",
+          "options": [
+            { "id": "o19", "option": "a", "text": "'usr/bin'", "correct": true },
+            { "id": "o20", "option": "b", "text": "'usr,bin'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-11",
+          "title": "Whitespace Cleanup",
+          "question": "const input = '   admin   ';\nconsole.log(input.trim());",
+          "options": [
+            { "id": "o21", "option": "a", "text": "'admin'", "correct": true },
+            { "id": "o22", "option": "b", "text": "'   admin'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-12",
+          "title": "Identifying Falsy Values",
+          "question": "Which of the following evaluations represents a falsy value in standard JavaScript conditions?",
+          "options": [
+            { "id": "o23", "option": "a", "text": "0", "correct": true },
+            { "id": "o24", "option": "b", "text": "'0'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-13",
+          "title": "Single Character Replacement",
+          "question": "const phrase = 'test-case';\nconsole.log(phrase.replace('-', '_'));",
+          "options": [
+            { "id": "o25", "option": "a", "text": "'test_case'", "correct": true },
+            { "id": "o26", "option": "b", "text": "'testcase'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-14",
+          "title": "Global Occurrence Replacement",
+          "question": "const path = '2026/05/20';\nconsole.log(path.replaceAll('/', '-'));",
+          "options": [
+            { "id": "o27", "option": "a", "text": "'2026-05-20'", "correct": true },
+            { "id": "o28", "option": "b", "text": "'2026/05-20'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-15",
+          "title": "Float Precision Formatting",
+          "question": "const balance = 10.5678;\nconsole.log(balance.toFixed(2));",
+          "options": [
+            { "id": "o29", "option": "a", "text": "'10.57'", "correct": true },
+            { "id": "o30", "option": "b", "text": "10.57", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-16",
+          "title": "Explicit Type Parsing",
+          "question": "const entry = '4';\nconst parsed = Number(entry);\nconsole.log(typeof parsed);",
+          "options": [
+            { "id": "o31", "option": "a", "text": "'number'", "correct": true },
+            { "id": "o32", "option": "b", "text": "'string'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-17",
+          "title": "Array Head Discarding Pattern",
+          "question": "const fruits = ['apple', 'banana', 'orange'];\nconst [, ...tail] = fruits;\nconsole.log(tail[0]);",
+          "options": [
+            { "id": "o33", "option": "a", "text": "'banana'", "correct": true },
+            { "id": "o34", "option": "b", "text": "'apple'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-18",
+          "title": "Object Key Extraction Safety",
+          "question": "const data = { id: 5, score: 90 };\nconst { id, ...remainder } = data;\nconsole.log(remainder.id);",
+          "options": [
+            { "id": "o35", "option": "a", "text": "undefined", "correct": true },
+            { "id": "o36", "option": "b", "text": "5", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-19",
+          "title": "Array Head Extraction",
+          "question": "const queue = ['task1', 'task2'];\nconst [nextTask] = queue;\nconsole.log(nextTask);",
+          "options": [
+            { "id": "o37", "option": "a", "text": "'task1'", "correct": true },
+            { "id": "o38", "option": "b", "text": "'task2'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-20",
+          "title": "Understanding Hoisting",
+          "question": "console.log(greet());\nfunction greet() {\n  return 'hello';\n}",
+          "options": [
+            { "id": "o39", "option": "a", "text": "'hello'", "correct": true },
+            { "id": "o40", "option": "b", "text": "TypeError", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-21",
+          "title": "Relative Array Indexing",
+          "question": "const speeds = [30, 50, 80];\nconsole.log(speeds.at(-1));",
+          "options": [
+            { "id": "o41", "option": "a", "text": "80", "correct": true },
+            { "id": "o42", "option": "b", "text": "30", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-22",
+          "title": "Array Leftover Collection",
+          "question": "const logs = ['error1', 'info1', 'info2'];\nconst [first, ...remaining] = logs;\nconsole.log(remaining.length);",
+          "options": [
+            { "id": "o43", "option": "a", "text": "2", "correct": true },
+            { "id": "o44", "option": "b", "text": "3", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-23",
+          "title": "Array Element Prepending",
+          "question": "const systems = ['linux'];\nconst collection = ['macOS', ...systems];\nconsole.log(collection[0]);",
+          "options": [
+            { "id": "o45", "option": "a", "text": "'macOS'", "correct": true },
+            { "id": "o46", "option": "b", "text": "'linux'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-24",
+          "title": "Array Element Replacement Slicing",
+          "question": "const original = ['x', 'y', 'z'];\nconst [, ...withoutFirstEl] = original;\nconst updated = [...withoutFirstEl, 'w'];\nconsole.log(updated[1]);",
+          "options": [
+            { "id": "o47", "option": "a", "text": "'z'", "correct": true },
+            { "id": "o48", "option": "b", "text": "'y'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-25",
+          "title": "Array Element Appending",
+          "question": "const stack = ['git'];\nconst fullStack = [...stack, 'docker'];\nconsole.log(fullStack.at(-1));",
+          "options": [
+            { "id": "o49", "option": "a", "text": "'docker'", "correct": true },
+            { "id": "o50", "option": "b", "text": "'git'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-26",
+          "title": "State Update Overwrites",
+          "question": "const user = { name: 'Pablo', isOnline: false };\nconst nextUser = { ...user, isOnline: true, isAdmin: true };\nconsole.log(nextUser.isOnline);",
+          "options": [
+            { "id": "o51", "option": "a", "text": "true", "correct": true },
+            { "id": "o52", "option": "b", "text": "false", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-27",
+          "title": "Object Field Extraction Exclusion",
+          "question": "const client = { uid: 99, age: 23, plan: 'basic' };\nconst { age, ...clientWithoutAge } = client;\nconsole.log(clientWithoutAge.age);",
+          "options": [
+            { "id": "o53", "option": "a", "text": "undefined", "correct": true },
+            { "id": "o54", "option": "b", "text": "23", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-28",
+          "title": "Function Scope Isolation",
+          "question": "function run() {\n  let internal = 'secured';\n}\nrun();\nconsole.log(typeof internal);",
+          "options": [
+            { "id": "o55", "option": "a", "text": "'undefined'", "correct": true },
+            { "id": "o56", "option": "b", "text": "'string'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-29",
+          "title": "Destructured Defaults Evaluation",
+          "question": "const data = { token: 'xyz' };\nconst { token, type = 'Bearer' } = data;\nconsole.log(type);",
+          "options": [
+            { "id": "o57", "option": "a", "text": "'Bearer'", "correct": true },
+            { "id": "o58", "option": "b", "text": "undefined", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-30",
+          "title": "Argument Binding via Destruction",
+          "question": "function show({ title }) {\n  return title;\n}\nconsole.log(show({ id: 5, title: 'Book' }));",
+          "options": [
+            { "id": "o59", "option": "a", "text": "'Book'", "correct": true },
+            { "id": "o60", "option": "b", "text": "undefined", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-31",
+          "title": "Renaming During State Spread",
+          "question": "const original = { categoryId: 10 };\nconst { categoryId: id } = original;\nconsole.log(id);",
+          "options": [
+            { "id": "o61", "option": "a", "text": "10", "correct": true },
+            { "id": "o62", "option": "b", "text": "undefined", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-32",
+          "title": "Array Boundary Relative Indexing",
+          "question": "const devices = ['phone', 'tablet', 'laptop'];\nconsole.log(devices.at(-1));",
+          "options": [
+            { "id": "o63", "option": "a", "text": "'laptop'", "correct": true },
+            { "id": "o64", "option": "b", "text": "'phone'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-33",
+          "title": "String Conditional Matching",
+          "question": "const alertMessage = 'ERROR: Database failed';\nconsole.log(alertMessage.startsWith('ERROR'));",
+          "options": [
+            { "id": "o65", "option": "a", "text": "true", "correct": true },
+            { "id": "o66", "option": "b", "text": "false", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-34",
+          "title": "Object Variable Value Injection",
+          "question": "const status = 'active';\nconst config = { status, version: 1 };\nconsole.log(config.status);",
+          "options": [
+            { "id": "o67", "option": "a", "text": "'active'", "correct": true },
+            { "id": "o68", "option": "b", "text": "undefined", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-35",
+          "title": "Array Element Isolation via Rest",
+          "question": "const rates = [1.2, 3.4, 5.6];\nconst [primary, ...restRates] = rates;\nconsole.log(restRates[0]);",
+          "options": [
+            { "id": "o69", "option": "a", "text": "3.4", "correct": true },
+            { "id": "o70", "option": "b", "text": "1.2", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-36",
+          "title": "Number Evaluation of Fixed Values",
+          "question": "const score = 9.99;\nconst output = score.toFixed(0);\nconsole.log(typeof output);",
+          "options": [
+            { "id": "o71", "option": "a", "text": "'string'", "correct": true },
+            { "id": "o72", "option": "b", "text": "'number'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-37",
+          "title": "Character Replacement Chain",
+          "question": "const item = 'tea cup';\nconsole.log(item.replace(' ', '-'));",
+          "options": [
+            { "id": "o73", "option": "a", "text": "'tea-cup'", "correct": true },
+            { "id": "o74", "option": "b", "text": "'teacup'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-38",
+          "title": "Block Scope Constraints",
+          "question": "if (true) {\n  let temporary = 'inside';\n}\nconsole.log(typeof temporary);",
+          "options": [
+            { "id": "o75", "option": "a", "text": "'undefined'", "correct": true },
+            { "id": "o76", "option": "b", "text": "'string'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-39",
+          "title": "String Suffix Evaluation",
+          "question": "const file = 'main.js';\nconsole.log(file.endsWith('.js'));",
+          "options": [
+            { "id": "o77", "option": "a", "text": "true", "correct": true },
+            { "id": "o78", "option": "b", "text": "false", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-41",
+          "title": "Property Accumulation via Spreading",
+          "question": "const base = { x: 1 };\nconst point = { ...base, y: 2, x: 3 };\nconsole.log(point.x);",
+          "options": [
+            { "id": "o81", "option": "a", "text": "3", "correct": true },
+            { "id": "o82", "option": "b", "text": "1", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-42",
+          "title": "Substring Match Inclusion Check",
+          "question": "const msg = 'Welcome administrator';\nconsole.log(msg.includes('admin'));",
+          "options": [
+            { "id": "o83", "option": "a", "text": "true", "correct": true },
+            { "id": "o84", "option": "b", "text": "false", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-43",
+          "title": "Explicit Real Number Assignment",
+          "question": "const metric = '42';\nconsole.log(Number(metric) + 1);",
+          "options": [
+            { "id": "o85", "option": "a", "text": "43", "correct": true },
+            { "id": "o86", "option": "b", "text": "'421'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-44",
+          "title": "String Cleansing Operations",
+          "question": "const token = ' token_val ';\nconsole.log(token.trim().length);",
+          "options": [
+            { "id": "o87", "option": "a", "text": "9", "correct": true },
+            { "id": "o88", "option": "b", "text": "11", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-45",
+          "title": "Object Key Removal Isolation",
+          "question": "const entity = { k1: 'v1', k2: 'v2' };\nconst { k1, ...restEntity } = entity;\nconsole.log(restEntity.k1);",
+          "options": [
+            { "id": "o89", "option": "a", "text": "undefined", "correct": true },
+            { "id": "o90", "option": "b", "text": "'v1'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-46",
+          "title": "Array Conversion via Division",
+          "question": "const phrase = 'a b c';\nconsole.log(phrase.split(' ').length);",
+          "options": [
+            { "id": "o91", "option": "a", "text": "3", "correct": true },
+            { "id": "o92", "option": "b", "text": "1", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-47",
+          "title": "String Character Transformations",
+          "question": "const label = 'Item';\nconsole.log(label.toUpperCase() === 'ITEM');",
+          "options": [
+            { "id": "o93", "option": "a", "text": "true", "correct": true },
+            { "id": "o94", "option": "b", "text": "false", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-48",
+          "title": "Array Bound Indexing Offset",
+          "question": "const codes = [99, 101];\nconsole.log(codes.at(-1));",
+          "options": [
+            { "id": "o95", "option": "a", "text": "101", "correct": true },
+            { "id": "o96", "option": "b", "text": "99", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-49",
+          "title": "Global Replacements Chain Evaluation",
+          "question": "const route = 'one.two.three';\nconsole.log(route.replaceAll('.', '/'));",
+          "options": [
+            { "id": "o97", "option": "a", "text": "'one/two/three'", "correct": true },
+            { "id": "o98", "option": "b", "text": "'one/two.three'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "mq3-50",
+          "title": "Destructured Parameter Value Reassignments",
+          "question": "function compute({ scale = 2 }) {\n  return scale * 10;\n}\nconsole.log(compute({}));",
+          "options": [
+            { "id": "o99", "option": "a", "text": "20", "correct": true },
+            { "id": "o100", "option": "b", "text": "NaN", "correct": false }
+          ],
+          "correctAnswer": "a"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "mt3-01",
+          "title": "User Promo Code Normalizer Function",
+          "description": "Create a function named %normalizePromoCode(rawCode)% that cleans up user voucher string inputs. Trim any trailing or leading empty white spaces, convert the entire text value to lowercase characters, and return the cleaned string. Input example: %'  WINTER50 '%.",
+          "result": "%'winter50'%",
+          "solution": "function normalizePromoCode(rawCode) {\n  return rawCode.trim().toLowerCase();\n}\nconsole.log(normalizePromoCode('  WINTER50 '));"
+        },
+        {
+          "id": "mt3-02",
+          "title": "Secure API Path Detector Function",
+          "description": "Create a function named %isSecureEndpoint(url)% that checks if an API target URL matches necessary security requirements. Return true if the endpoint starts precisely with the secure token string protocol %'https'%, and false otherwise. Input example: %'https://api.gateway.io'%.",
+          "result": "%true%",
+          "solution": "function isSecureEndpoint(url) {\n  return url.startsWith('https');\n}\nconsole.log(isSecureEndpoint('https://api.gateway.io'));"
+        },
+        {
+          "id": "mt3-03",
+          "title": "Document Extension Guard Function",
+          "description": "Create a function named %validatePdfFile(filename)% that takes a string. Check if the string ends with %'.pdf'%. Convert the filename to lowercase before checking to ensure it catches uppercase variations. Return true if valid, or false if not. Input example: %'INVOICE.PDF'%.",
+          "result": "%true%",
+          "solution": "function validatePdfFile(filename) {\n  const lower = filename.toLowerCase();\n  return lower.endsWith('.pdf');\n}\nconsole.log(validatePdfFile('INVOICE.PDF'));"
+        },
+        {
+          "id": "mt3-04",
+          "title": "Slug Text Generator Function",
+          "description": "Create a function named %generateSlug(title)% that converts an article header title string into a url safe string. Transform all characters to lowercase, replace every blank empty space with a single dash connector symbol %'-'%, and return the final string. Input example: %'My First Post'%.",
+          "result": "%'my-first-post'%",
+          "solution": "function generateSlug(title) {\n  return title.toLowerCase().replaceAll(' ', '-');\n}\nconsole.log(generateSlug('My First Post'));"
+        },
+        {
+          "id": "mt3-05",
+          "title": "Product Cost Estimator Function",
+          "description": "Create a function named %formatTotalCost(priceString, quantity)% that accepts a price as a string and a quantity number. Explicitly convert the price string into a real number, multiply it by the quantity, format the outcome down to exactly 2 decimal locations as a string, and return it. Input example: %'12.345'% and %3%.",
+          "result": "%'37.04'%",
+          "solution": "function formatTotalCost(priceString, quantity) {\n  const numericPrice = Number(priceString);\n  const total = numericPrice * quantity;\n  return total.toFixed(2);\n}\nconsole.log(formatTotalCost('12.345', 3));"
+        },
+        {
+          "id": "mt3-06",
+          "title": "CSV Row Parser Function",
+          "description": "Create a function named %extractFirstColumn(csvRow)% that parses values from comma-separated logs. Split the text record wherever a comma separator is found, use array destructuring to capture only the first separated item entry, and return that item value. Input example: %'active_user,2026,true'%.",
+          "result": "%'active_user'%",
+          "solution": "function extractFirstColumn(csvRow) {\n  const [firstItem] = csvRow.split(',');\n  return firstItem;\n}\nconsole.log(extractFirstColumn('active_user,2026,true'));"
+        },
+        {
+          "id": "mt3-07",
+          "title": "System Log Stream Prepend Function",
+          "description": "Create a function named %prependUrgentLog(logs, newLog)% that accepts an array of strings and a single urgent message log string. Use the spread operator to place the %newLog% at the very front index of a new array, followed by all elements from the existing logs array, and return it. Input example: %['info1', 'info2']% and %'critical_error'%.",
+          "result": "%['critical_error', 'info1', 'info2']%",
+          "solution": "function prependUrgentLog(logs, newLog) {\n  return [newLog, ...logs];\n}\nconsole.log(prependUrgentLog(['info1', 'info2'], 'critical_error'));"
+        },
+        {
+          "id": "mt3-08",
+          "title": "Database Connection String Masker Function",
+          "description": "Create a function named %maskSecretKey(apiKey)% that keeps sensitive information secure. Extract the first 4 characters of the key string using the slice method, append three asterisks %'***'% directly to the end of that sliced chunk, and return the masked sequence. Input example: %'secret_api_key_99'%.",
+          "result": "%'secr***'%",
+          "solution": "function maskSecretKey(apiKey) {\n  return apiKey.slice(0, 4) + '***';\n}\nconsole.log(maskSecretKey('secret_api_key_99'));"
+        },
+        {
+          "id": "mt3-09",
+          "title": "E-Commerce Recent Item Tracker Function",
+          "description": "Create a function named %getLastViewedItem(history)% that receives a customer's history array of items. Extract the very last item in the collection array without altering the original array data structure using the modern array index relative locator method, and return it. Input example: %['shoes', 'bag', 'jacket']%.",
+          "result": "%'jacket'%",
+          "solution": "function getLastViewedItem(history) {\n  return history.at(-1);\n}\nconsole.log(getLastViewedItem(['shoes', 'bag', 'jacket']));"
+        },
+        {
+          "id": "mt3-10",
+          "title": "User Account Activator and Upgrade Function",
+          "description": "Create a function named %upgradeUserSession(sessionObj)% that modifies an active connection status state. Use the object spread operator to duplicate the existing properties, modify %isOnline% directly to true, and add a new %isAdmin% property set to true. Return this customized object configuration. Input example: %{ name: 'Pablo', age: 23, isOnline: false }%.",
+          "result": "%{ name: 'Pablo', age: 23, isOnline: true, isAdmin: true }%",
+          "solution": "function upgradeUserSession(sessionObj) {\n  return { ...sessionObj, isOnline: true, isAdmin: true };\n}\nconsole.log(upgradeUserSession({ name: 'Pablo', age: 23, isOnline: false }));"
+        },
+        {
+          "id": "mt3-11",
+          "title": "PII Data Scrubbing Function",
+          "description": "Create a function named %stripAgeData(payload)% that filters structured customer metadata. Use object destructuring and the rest operator together in a clean single assignment statement to split out the %age% property onto its own variable, and return only the remaining database safe profile fields wrapped in an object. Input example: %{ name: 'Pablo', age: 23, isOnline: false }%.",
+          "result": "%{ name: 'Pablo', isOnline: false }%",
+          "solution": "function stripAgeData(payload) {\n  const { age, ...userWithoutAge } = payload;\n  return userWithoutAge;\n}\nconsole.log(stripAgeData({ name: 'Pablo', age: 23, isOnline: false }));"
+        },
+        {
+          "id": "mt3-12",
+          "title": "Domain Name Extractor Function",
+          "description": "Create a function named %extractDomain(email)% that extracts web infrastructure targets. Use the split method to break up the email address string at the %'@'% separator symbol, use array destructuring to grab the second part of the resulting array split, and return it. Input example: %'dev@code.io'%.",
+          "result": "%'code.io'%",
+          "solution": "function extractDomain(email) {\n  const [, domain] = email.split('@');\n  return domain;\n}\nconsole.log(extractDomain('dev@code.io'));"
+        },
+        {
+          "id": "mt3-14",
+          "title": "Structured Address Formatter Function",
+          "description": "Create a function named %formatAddress({ city, zip })% that accepts an object containing customer location indicators. Destructure both fields directly within the function argument parameter list, combine them into a uniform human readable string formatted with a space separator, and return it. Input example: %{ city: 'Vienna', zip: '1010' }%.",
+          "result": "%'Vienna 1010'%",
+          "solution": "function formatAddress({ city, zip }) {\n  return city + ' ' + zip;\n}\nconsole.log(formatAddress({ city: 'Vienna', zip: '1010' }));"
+        },
+        {
+          "id": "mt3-15",
+          "title": "Subdomain URL Normalizer Function",
+          "description": "Create a function named %cleanSubdomain(host)% that processes network infrastructure references. Use the replaceAll method to switch out every occurrence of a dot descriptor symbol %'.'% with a uniform dash connector symbol %'-'%, transform the entire string to uppercase, and return it. Input example: %'dev.api.v1'%.",
+          "result": "%'DEV-API-V1'%",
+          "solution": "function cleanSubdomain(host) {\n  return host.replaceAll('.', '-').toUpperCase();\n}\nconsole.log(cleanSubdomain('dev.api.v1'));"
+        },
+        {
+          "id": "mt3-16",
+          "title": "Dynamic Cart Item Append Function",
+          "description": "Create a function named %addItemToCart(currentCart, item)% that preserves structural integrity. Use the array spread operator to assemble a completely new list structure that copies all active elements from the %currentCart% array and appends the new %item% string cleanly onto the end position, returning it. Input example: %['kiwi', 'banana']% and %'mango'%.",
+          "result": "%['kiwi', 'banana', 'mango']%",
+          "solution": "function addItemToCart(currentCart, item) {\n  return [...currentCart, item];\n}\nconsole.log(addItemToCart(['kiwi', 'banana'], 'mango'));"
+        },
+        {
+          "id": "mt3-16.1",
+          "title": "Property Exclusion Filter Function",
+          "description": "Create a function named %removeAgeField(profile)% that accepts an object. Use object destructuring and the rest operator to extract and isolate the %age% property into its own variable while collecting all other properties into a separate object. Return that separate object without the age field. Input example: %{ name: 'Pablo', age: 23, isOnline: false }%.",
+          "result": "%{ name: 'Pablo', isOnline: false }%",
+          "solution": "function removeAgeField(profile) {\n  const { age, ...userWithoutAge } = profile;\n  return userWithoutAge;\n}\nconsole.log(removeAgeField({ name: 'Pablo', age: 23, isOnline: false }));"
+        },
+        {
+          "id": "mt3-17",
+          "title": "Compact Description Snippet Function",
+          "description": "Create a function named %createSnippet(text)% that generates small overview feeds. Extract the first 10 character components using the slice method, append an ellipsis sequence string %'...'%, and return that final combined string statement. Input example: %'Learn JavaScript basics'%.",
+          "result": "%'Learn Java...'%",
+          "solution": "function createSnippet(text) {\n  return text.slice(0, 10) + '...';\n}\nconsole.log(createSnippet('Learn JavaScript basics'));"
+        },
+        {
+          "id": "mt3-18",
+          "title": "Data Inventory Identifier Extractor Function",
+          "description": "Create a function named %extractAssetMetadata(assetRecord)% that unpacks complex tracking details. Use object destructuring inside the function signature to capture an attribute named %skuCode% but rename it locally onto a distinct working variable called %id%, then return its value. Input example: %{ skuCode: 'MN-92', price: 450 }%.",
+          "result": "%'MN-92'%",
+          "solution": "function extractAssetMetadata({ skuCode: id }) {\n  return id;\n}\nconsole.log(extractAssetMetadata({ skuCode: 'MN-92', price: 450 }));"
+        },
+        {
+          "id": "mt3-19",
+          "title": "Search Keyword Matcher Function",
+          "description": "Create a function named %hasSearchKeyword(sentence, keyword)% that verifies text records. Transform both the source sentence and target keyword parameter string elements completely into lowercase characters first, then use the includes method to check if the sentence contains the keyword, returning true or false. Input example: %'React Query Tutorial'%, %'query'%.",
+          "result": "%true%",
+          "solution": "function hasSearchKeyword(sentence, keyword) {\n  const lowerSentence = sentence.toLowerCase();\n  const lowerKeyword = keyword.toLowerCase();\n  return lowerSentence.includes(lowerKeyword);\n}\nconsole.log(hasSearchKeyword('React Query Tutorial', 'query'));"
+        },
+        {
+          "id": "mt3-20",
+          "title": "Array Tail Elements Rest Isolator Function",
+          "description": "Create a function named %getTailElements(items)% that breaks down structured listings. Use array destructuring along with the rest operator to catch and split off the first array element entry index, saving all remaining items leftover neatly inside a single sub-array package, and return that sub-array. Input example: %['apple', 'banana', 'orange']%.",
+          "result": "%['banana', 'orange']%",
+          "solution": "function getTailElements(items) {\n  const [first, ...withoutFirstEl] = items;\n  return withoutFirstEl;\n}\nconsole.log(getTailElements(['apple', 'banana', 'orange']));"
+        }
+      ]
     }
   ]
 }
