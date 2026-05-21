@@ -757,6 +757,7 @@ export const seedData = {
     {
       "id": "milestone-foundations-01",
       "title": "- MILESTONE EXERCISES 1 -",
+      "milestone": true,
       "videoID": "16",
       "questions": [
         {
@@ -1657,6 +1658,7 @@ export const seedData = {
     {
       "id": "milestone-logic-functions-02",
       "title": "- MILESTONE EXERCISES 2 -",
+      "milestone": true,
       "videoID": "25",
       "questions": [
         { "id": "mq2-01", "title": "Identifying Arrays", "question": "const favoriteColors = ['red', 'blue'];\nconsole.log(typeof favoriteColors);", "options": [{ "id": "o1", "option": "a", "text": "'array'", "correct": false }, { "id": "o2", "option": "b", "text": "'object'", "correct": true }], "correctAnswer": "b" },
@@ -2698,7 +2700,8 @@ export const seedData = {
     },
     {
       "id": "milestone-exercises-03",
-      "title": "Milestone Exercises 3",
+      "title": "- MILESTONE EXERCISES 3 -",
+      "milestone": true,
       "videoID": "35",
       "questions": [
         {
@@ -3333,6 +3336,159 @@ export const seedData = {
           "result": "%['banana', 'orange']%",
           "solution": "function getTailElements(items) {\n  const [first, ...withoutFirstEl] = items;\n  return withoutFirstEl;\n}\nconsole.log(getTailElements(['apple', 'banana', 'orange']));"
         }
+      ]
+    },
+    {
+      "id": "ternary-operator-01",
+      "title": "Ternary Operator",
+      "videoID": "36",
+      "questions": [
+        {
+          "id": "toq1-01",
+          "title": "Basic Ternary Execution",
+          "question": "const isActive = true;\nconst status = isActive ? 'Active' : 'Inactive';\nconsole.log(status);",
+          "options": [
+            { "id": "o1", "option": "a", "text": "'Active'", "correct": true },
+            { "id": "o2", "option": "b", "text": "'Inactive'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "toq1-02",
+          "title": "Falsy Condition Evaluation",
+          "question": "const score = 0;\nconst result = score ? 'Has Score' : 'No Score';\nconsole.log(result);",
+          "options": [
+            { "id": "o3", "option": "a", "text": "'No Score'", "correct": true },
+            { "id": "o4", "option": "b", "text": "'Has Score'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "toq1-03",
+          "title": "Ternary with Template Literals",
+          "question": "const isPremium = true;\nconst message = `Status: ${isPremium ? 'VIP' : 'Guest'}`;\nconsole.log(message);",
+          "options": [
+            { "id": "o7", "option": "a", "text": "'Status: VIP'", "correct": true },
+            { "id": "o8", "option": "b", "text": "'Status: Guest'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "toq1-04",
+          "title": "Executing Function Calls",
+          "question": "function getLeft() { return 'Left'; }\nfunction getRight() { return 'Right'; }\nconst direction = false ? getLeft() : getRight();\nconsole.log(direction);",
+          "options": [
+            { "id": "o9", "option": "a", "text": "'Right'", "correct": true },
+            { "id": "o10", "option": "b", "text": "'Left'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "toq1-05",
+          "title": "Nested Ternary Evaluation",
+          "question": "const speed = 120;\nconst alert = speed > 100 ? (speed > 130 ? 'Danger' : 'Warning') : 'Normal';\nconsole.log(alert);",
+          "options": [
+            { "id": "o11", "option": "a", "text": "'Warning'", "correct": true },
+            { "id": "o12", "option": "b", "text": "'Danger'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "tot1-01",
+          "title": "Light Mode and Dark Mode Theme Picker",
+          "description": "Create a function named %getTheme(isDarkMode)% that accepts a boolean parameter. Use a ternary operator to return the string %'dark'% if true, and %'light'% if false. Input example: %true%.",
+          "result": "%'dark'%",
+          "solution": "function getTheme(isDarkMode) {\n  return isDarkMode ? 'dark' : 'light';\n}\nconsole.log(getTheme(true));"
+        },
+        {
+          "id": "tot1-02",
+          "title": "Dynamic Welcome Message Dashboard Flag",
+          "description": "Create a function named %greetUser(username)% that accepts a string. Use a ternary operator to check if %username% has a truthy value. If it does, return %'Hello, ' + username%. If it is empty or null, return %'Welcome, Guest'%. Input example: %'Alex'%.",
+          "result": "%'Hello, Alex'%",
+          "solution": "function greetUser(username) {\n  return username ? 'Hello, ' + username : 'Welcome, Guest';\n}\nconsole.log(greetUser('Alex'));"
+        },
+        {
+          "id": "tot1-03",
+          "title": "E-commerce Basket Free Shipping Calculator",
+          "description": "Create a function named %checkShipping(total)% that takes a total order amount number as a parameter. Using a ternary operator, return %0% if the total amount is greater than or equal to 100. Otherwise, return a shipping cost of %15%. Input example: %120%.",
+          "result": "%0%",
+          "solution": "function checkShipping(total) {\n  return total >= 100 ? 0 : 15;\n}\nconsole.log(checkShipping(120));"
+        }
+      ]
+    },
+    {
+      "id": "logical-and-01",
+      "title": "Logical Operator AND (&&)",
+      "videoID": "37",
+      "questions": [
+        {
+          "id": "laq1-01",
+          "title": "Basic Boolean AND Evaluation",
+          "question": "const hasKey = true;\nconst hasPermission = false;\nconst canEnter = hasKey && hasPermission;\nconsole.log(canEnter);",
+          "options": [
+            { "id": "o1", "option": "a", "text": "false", "correct": true },
+            { "id": "o2", "option": "b", "text": "true", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "laq1-02",
+          "title": "Short Circuit with Falsy Value",
+          "question": "const points = 0;\nconst status = points && 'Active Player';\nconsole.log(status);",
+          "options": [
+            { "id": "o3", "option": "a", "text": "0", "correct": true },
+            { "id": "o4", "option": "b", "text": "'Active Player'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "laq1-03",
+          "title": "Short Circuit Returning Last Truthy",
+          "question": "const isLoggedIn = true;\nconst userRole = 'Editor';\nconst currentAccess = isLoggedIn && userRole;\nconsole.log(currentAccess);",
+          "options": [
+            { "id": "o5", "option": "a", "text": "'Editor'", "correct": true },
+            { "id": "o6", "option": "b", "text": "true", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "laq1-04",
+          "title": "Multiple Chain Evaluation Short Circuit",
+          "question": "const result = 'Hello' && '' && 'World';\nconsole.log(result);",
+          "options": [
+            { "id": "o7", "option": "a", "text": "''", "correct": true },
+            { "id": "o8", "option": "b", "text": "'World'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "laq1-05",
+          "title": "Guarded Function Execution",
+          "question": "let value = 10;\nconst logValue = () => { value = 20; return true; };\nfalse && logValue();\nconsole.log(value);",
+          "options": [
+            { "id": "o9", "option": "a", "text": "10", "correct": true },
+            { "id": "o10", "option": "b", "text": "20", "correct": false }
+          ],
+          "correctAnswer": "a"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "lat1-01",
+          "title": "Account Access Double Verification Gate",
+          "description": "Create a function named %verifyAccess(hasToken, isVerified)% that accepts two boolean parameters. Use the logical AND operator to return %true% if both conditions are met, otherwise return %false%. Input example: %true% and %false%.",
+          "result": "%false%",
+          "solution": "function verifyAccess(hasToken, isVerified) {\n  return hasToken && isVerified;\n}\nconsole.log(verifyAccess(true, false));"
+        },
+        {
+          "id": "lat1-02",
+          "title": "Dashboard Element Conditional Text Guard",
+          "description": "Create a function named %renderWidget(isLoaded, textContent)% that accepts a boolean and a string parameter. Use the short-circuit behavior of the logical AND operator to return %textContent% only if %isLoaded% is true. If %isLoaded% is false, it must return the false condition value. Input example: %true% and %'Analytics Dashboard'%.",
+          "result": "%'Analytics Dashboard'%",
+          "solution": "function renderWidget(isLoaded, textContent) {\n  return isLoaded && textContent;\n}\nconsole.log(renderWidget(true, 'Analytics Dashboard'));"
+        },
       ]
     }
   ]

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { _GL } from "../globals/global";
 import UdemyLogo from "../assets/udemy_logo.png"
 
 const MainNav = ({displayExercise, data}) => {
@@ -25,7 +24,7 @@ const MainNav = ({displayExercise, data}) => {
                 setActiveLinkId(listItem.id)
                 displayExercise(listItem)
               }}>
-              <a href="#"><i>{listItem.videoID} </i> {listItem.title} 
+              <a href="#"><i style={{color: listItem.milestone ? '#f37a7a' : '#38bdf8'}}>{listItem.videoID} </i> {listItem.title} 
               {/* <span className="status-dot" ></span> */}
               </a>
             </li>
@@ -35,7 +34,7 @@ const MainNav = ({displayExercise, data}) => {
           <li className="exercise-item"><a href="#challenge3"><i>⚡</i> Delay log</a></li> */}
         </ul>
         <div style={{marginTop: 'auto', fontSize: '0.8rem', color: '#5f6c80', padding: '1rem', borderTop: '1px solid #1e2b3f'}}>
-          ⚡ green = correct · red = wrong
+          What to add: code color coding, copy code icon, stats of one and all exercises, btn on taskt 'click to make as DONE', each item in the menu should have green icon if all is done, milestne number should be red
         </div>
     </nav>
   )
