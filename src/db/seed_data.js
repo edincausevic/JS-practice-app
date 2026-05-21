@@ -3402,20 +3402,6 @@ export const seedData = {
           "result": "%'dark'%",
           "solution": "function getTheme(isDarkMode) {\n  return isDarkMode ? 'dark' : 'light';\n}\nconsole.log(getTheme(true));"
         },
-        {
-          "id": "tot1-02",
-          "title": "Dynamic Welcome Message Dashboard Flag",
-          "description": "Create a function named %greetUser(username)% that accepts a string. Use a ternary operator to check if %username% has a truthy value. If it does, return %'Hello, ' + username%. If it is empty or null, return %'Welcome, Guest'%. Input example: %'Alex'%.",
-          "result": "%'Hello, Alex'%",
-          "solution": "function greetUser(username) {\n  return username ? 'Hello, ' + username : 'Welcome, Guest';\n}\nconsole.log(greetUser('Alex'));"
-        },
-        {
-          "id": "tot1-03",
-          "title": "E-commerce Basket Free Shipping Calculator",
-          "description": "Create a function named %checkShipping(total)% that takes a total order amount number as a parameter. Using a ternary operator, return %0% if the total amount is greater than or equal to 100. Otherwise, return a shipping cost of %15%. Input example: %120%.",
-          "result": "%0%",
-          "solution": "function checkShipping(total) {\n  return total >= 100 ? 0 : 15;\n}\nconsole.log(checkShipping(120));"
-        }
       ]
     },
     {
@@ -3490,6 +3476,383 @@ export const seedData = {
           "solution": "function renderWidget(isLoaded, textContent) {\n  return isLoaded && textContent;\n}\nconsole.log(renderWidget(true, 'Analytics Dashboard'));"
         },
       ]
-    }
+    },
+    {
+      "id": "logical-or-nullish-01",
+      "title": "Logical OR (||) and Nullish Coalescing (??)",
+      "videoID": "38",
+      "questions": [
+        {
+          "id": "onq1-01",
+          "title": "Logical OR Falsy Fallback",
+          "question": "const userTheme = '';\nconst defaultTheme = 'dark';\nconst theme = userTheme || defaultTheme;\nconsole.log(theme);",
+          "options": [
+            { "id": "o1", "option": "a", "text": "'dark'", "correct": true },
+            { "id": "o2", "option": "b", "text": "''", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "onq1-02",
+          "title": "Nullish Coalescing with Empty String",
+          "question": "const userTheme = '';\nconst defaultTheme = 'dark';\nconst theme = userTheme ?? defaultTheme;\nconsole.log(theme);",
+          "options": [
+            { "id": "o3", "option": "a", "text": "''", "correct": true },
+            { "id": "o4", "option": "b", "text": "'dark'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "onq1-03",
+          "title": "Logical OR with Numeric Zero",
+          "question": "const customTimeout = 0;\nconst timeout = customTimeout || 3000;\nconsole.log(timeout);",
+          "options": [
+            { "id": "o5", "option": "a", "text": "3000", "correct": true },
+            { "id": "o6", "option": "b", "text": "0", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "onq1-04",
+          "title": "Nullish Coalescing with Numeric Zero",
+          "question": "const customTimeout = 0;\nconst timeout = customTimeout ?? 3000;\nconsole.log(timeout);",
+          "options": [
+            { "id": "o7", "option": "a", "text": "0", "correct": true },
+            { "id": "o8", "option": "b", "text": "3000", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "onq1-05",
+          "title": "Nullish Coalescing with Undefined and Null",
+          "question": "const config = null;\nconst result = config ?? 'default-config';\nconsole.log(result);",
+          "options": [
+            { "id": "o9", "option": "a", "text": "'default-config'", "correct": true },
+            { "id": "o10", "option": "b", "text": "null", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "onq1-06",
+          "title": "Chained Logical OR Evaluation",
+          "question": "const input = false || null || 'Success';\nconsole.log(input);",
+          "options": [
+            { "id": "o11", "option": "a", "text": "'Success'", "correct": true },
+            { "id": "o12", "option": "b", "text": "null", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "onq1-07",
+          "title": "Nullish Coalescing with False Boolean",
+          "question": "const isAvailable = false;\nconst fallbackStatus = isAvailable ?? true;\nconsole.log(fallbackStatus);",
+          "options": [
+            { "id": "o13", "option": "a", "text": "false", "correct": true },
+            { "id": "o14", "option": "b", "text": "true", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "onq1-10",
+          "title": "Chained Nullish Coalescing Operators",
+          "question": "const score = undefined ?? null ?? 10;\nconsole.log(score);",
+          "options": [
+            { "id": "o19", "option": "a", "text": "10", "correct": true },
+            { "id": "o20", "option": "b", "text": "null", "correct": false }
+          ],
+          "correctAnswer": "a"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "ont1-01",
+          "title": "Configurable Log Level Fallback Function",
+          "description": "Create a function named %getLogLevel(customLevel)% that accepts a string parameter. Use the logical OR operator to return %customLevel% if it is truthy, otherwise return the string default fallback %'info'%. Input example: %''%.",
+          "result": "%'info'%",
+          "solution": "function getLogLevel(customLevel) {\n  return customLevel || 'info';\n}\nconsole.log(getLogLevel(''));"
+        },
+        {
+          "id": "ont1-02",
+          "title": "UI Game Score Counter Zero Guardian",
+          "description": "Create a function named %displayScore(score)% that accepts a variable that might be null, undefined, or a number. Use the nullish coalescing operator to return %score% if it is not nullish, otherwise return a default number fallback of %0%. Input example: %0%.",
+          "result": "%0%",
+          "solution": "function displayScore(score) {\n  return score ?? 0;\n}\nconsole.log(displayScore(0));"
+        }
+      ]
+    },
+    {
+      "id": "logical-not-01",
+      "title": "Logical NOT (!) Operator",
+      "videoID": "39",
+      "questions": [
+        {
+          "id": "lnq1-01",
+          "title": "Basic Inversion of Truthy Value",
+          "question": "const isActive = true;\nconsole.log(!isActive);",
+          "options": [
+            { "id": "o1", "option": "a", "text": "false", "correct": true },
+            { "id": "o2", "option": "b", "text": "true", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "lnq1-02",
+          "title": "Inverting Empty String Falsy Value",
+          "question": "const username = '';\nconsole.log(!username);",
+          "options": [
+            { "id": "o3", "option": "a", "text": "true", "correct": true },
+            { "id": "o4", "option": "b", "text": "false", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "lnq1-05",
+          "title": "NOT Operator with Numeric Zero",
+          "question": "const totalItems = 0;\nconsole.log(!totalItems);",
+          "options": [
+            { "id": "o9", "option": "a", "text": "true", "correct": true },
+            { "id": "o10", "option": "b", "text": "false", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "lnq1-06",
+          "title": "NOT Operator Precedence in Expressions",
+          "question": "const isValid = true;\nconst result = !isValid && false;\nconsole.log(result);",
+          "options": [
+            { "id": "o11", "option": "a", "text": "false", "correct": true },
+            { "id": "o12", "option": "b", "text": "true", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "lnq1-07",
+          "title": "Inverting a Truthy Object Reference",
+          "question": "const profile = { name: 'Alex' };\nconsole.log(!profile);",
+          "options": [
+            { "id": "o13", "option": "a", "text": "false", "correct": true },
+            { "id": "o14", "option": "b", "text": "true", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "lnq1-09",
+          "title": "NOT Operator with Logical OR",
+          "question": "const status = !(false || true);\nconsole.log(status);",
+          "options": [
+            { "id": "o17", "option": "a", "text": "false", "correct": true },
+            { "id": "o18", "option": "b", "text": "true", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+      ],
+      "tasks": [
+        {
+          "id": "lnt1-01",
+          "title": "Form Validation Empty String Check",
+          "description": "Create a function named %isFieldEmpty(inputString)% that accepts a string parameter. Use the logical NOT operator to return %true% if the string is empty, and %false% if it contains text. Input example: %''%.",
+          "result": "%true%",
+          "solution": "function isFieldEmpty(inputString) {\n  return !inputString;\n}\nconsole.log(isFieldEmpty(''));"
+        }
+      ]
+    },
+    {
+      "id": "double-not-operator-01",
+      "title": "Double NOT (!!) Operator",
+      "videoID": "40",
+      "questions": [
+        {
+          "id": "dnq1-01",
+          "title": "Boolean Coercion of a Valid String",
+          "question": "const username = 'pablo';\nconsole.log(!!username);",
+          "options": [
+            { "id": "o1", "option": "a", "text": "true", "correct": true },
+            { "id": "o2", "option": "b", "text": "false", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "dnq1-02",
+          "title": "Double NOT with an Empty String",
+          "question": "const input = '';\nconsole.log(!!input);",
+          "options": [
+            { "id": "o3", "option": "a", "text": "false", "correct": true },
+            { "id": "o4", "option": "b", "text": "true", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "dnq1-03",
+          "title": "Boolean Conversion of Numeric Zero",
+          "question": "const score = 0;\nconsole.log(!!score);",
+          "options": [
+            { "id": "o5", "option": "a", "text": "false", "correct": true },
+            { "id": "o6", "option": "b", "text": "true", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "dnq1-04",
+          "title": "Double NOT on a Positive Number",
+          "question": "const total = 42;\nconsole.log(!!total);",
+          "options": [
+            { "id": "o7", "option": "a", "text": "true", "correct": true },
+            { "id": "o8", "option": "b", "text": "false", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "dnq1-05",
+          "title": "Evaluating a Null Reference",
+          "question": "const databaseRecord = null;\nconsole.log(!!databaseRecord);",
+          "options": [
+            { "id": "o9", "option": "a", "text": "false", "correct": true },
+            { "id": "o10", "option": "b", "text": "true", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "dnq1-06",
+          "title": "Double NOT with Undefined variables",
+          "question": "let configuration;\nconsole.log(!!configuration);",
+          "options": [
+            { "id": "o11", "option": "a", "text": "false", "correct": true },
+            { "id": "o12", "option": "b", "text": "true", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "dnq1-07",
+          "title": "Double NOT on a Declared Object Lit",
+          "question": "const userSession = {};\nconsole.log(!!userSession);",
+          "options": [
+            { "id": "o13", "option": "a", "text": "true", "correct": true },
+            { "id": "o14", "option": "b", "text": "false", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "dnq1-08",
+          "title": "Double NOT on a Declared Array",
+          "question": "const itemsList = [];\nconsole.log(!!itemsList);",
+          "options": [
+            { "id": "o15", "option": "a", "text": "true", "correct": true },
+            { "id": "o16", "option": "b", "text": "false", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "dnq1-09",
+          "title": "Double NOT within Logical Expressions",
+          "question": "const status = !!'Hello' && !!0;\nconsole.log(status);",
+          "options": [
+            { "id": "o17", "option": "a", "text": "false", "correct": true },
+            { "id": "o18", "option": "b", "text": "true", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "dnq1-10",
+          "title": "Strict Type Matching via Double NOT",
+          "question": "const rawValue = 'Token';\nconst converted = !!rawValue;\nconsole.log(typeof converted);",
+          "options": [
+            { "id": "o19", "option": "a", "text": "'boolean'", "correct": true },
+            { "id": "o20", "option": "b", "text": "'string'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        }
+      ],
+      "tasks": [
+      ]
+    },
+    {
+      "id": "optional-chaining-01",
+      "title": "Optional Chaining (?.)",
+      "videoID": "41",
+      "questions": [
+        {
+          "id": "ocq1-01",
+          "title": "Accessing Existing Nested Properties",
+          "question": "const user = { profile: { name: 'Alice' } };\nconsole.log(user.profile?.name);",
+          "options": [
+            { "id": "o1", "option": "a", "text": "'Alice'", "correct": true },
+            { "id": "o2", "option": "b", "text": "undefined", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "ocq1-02",
+          "title": "Accessing Missing Nested Keys Safely",
+          "question": "const user = { id: 1 };\nconsole.log(user.profile?.name);",
+          "options": [
+            { "id": "o3", "option": "a", "text": "undefined", "correct": true },
+            { "id": "o4", "option": "b", "text": "ReferenceError", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "ocq1-03",
+          "title": "Optional Chaining on Null Objects",
+          "question": "const product = null;\nconsole.log(product?.price);",
+          "options": [
+            { "id": "o5", "option": "a", "text": "undefined", "correct": true },
+            { "id": "o6", "option": "b", "text": "TypeError", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "ocq1-04",
+          "title": "Optional Chaining on Undefined Base",
+          "question": "let response;\nconsole.log(response?.data?.items);",
+          "options": [
+            { "id": "o7", "option": "a", "text": "undefined", "correct": true },
+            { "id": "o8", "option": "b", "text": "TypeError", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "ocq1-07",
+          "title": "Dynamic Property Bracket Bracket Access",
+          "question": "const key = 'location';\nconst client = { meta: { location: 'NY' } };\nconsole.log(client.meta?.[key]);",
+          "options": [
+            { "id": "o13", "option": "a", "text": "'NY'", "correct": true },
+            { "id": "o14", "option": "b", "text": "undefined", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "ocq1-08",
+          "title": "Combining Optional Chain and Nullish Coalescing",
+          "question": "const user = { settings: null };\nconst theme = user.settings?.theme ?? 'light';\nconsole.log(theme);",
+          "options": [
+            { "id": "o15", "option": "a", "text": "'light'", "correct": true },
+            { "id": "o16", "option": "b", "text": "null", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "ocq1-09",
+          "title": "Optional Chaining Array Element Access",
+          "question": "const data = { scores: [90, 85] };\nconsole.log(data.scores?.[0]);",
+          "options": [
+            { "id": "o17", "option": "a", "text": "90", "correct": true },
+            { "id": "o18", "option": "b", "text": "undefined", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "ocq1-10",
+          "title": "Chaining Past Nullish Middle Nodes",
+          "question": "const apiResponse = { status: 200, error: null };\nconsole.log(apiResponse.error?.message?.code);",
+          "options": [
+            { "id": "o19", "option": "a", "text": "undefined", "correct": true },
+            { "id": "o20", "option": "b", "text": "null", "correct": false }
+          ],
+          "correctAnswer": "a"
+        }
+      ],
+      "tasks": []
+    },
+
   ]
 }

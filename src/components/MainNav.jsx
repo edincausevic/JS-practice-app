@@ -34,7 +34,7 @@ const MainNav = ({displayExercise, data}) => {
           <li className="exercise-item"><a href="#challenge3"><i>⚡</i> Delay log</a></li> */}
         </ul>
         <div style={{marginTop: 'auto', fontSize: '0.8rem', color: '#5f6c80', padding: '1rem', borderTop: '1px solid #1e2b3f'}}>
-          What to add: code color coding, copy code icon, stats of one and all exercises, btn on taskt 'click to make as DONE', each item in the menu should have green icon if all is done, milestne number should be red
+          What to add: code color coding, copy code icon, stats of one and all exercises, btn on taskt 'click to make as DONE', each item in the menu should have green icon if all is done, milestne number should be red, za lake stvari ostavi samo pitanja a smakni tasks
         </div>
     </nav>
   )
