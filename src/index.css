@@ -35,7 +35,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 330px;
+    width: 372px;
     height: 100vh;
     background: #0b1120;
     color: #e2e8f0;
@@ -144,7 +144,7 @@ body {
 /* ========== MAIN PANEL ========== */
 .main-panel {
     flex: 1;
-    margin-left: 330px;
+    margin-left: 372px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;

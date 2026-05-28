@@ -24,7 +24,8 @@ const MainNav = ({displayExercise, data}) => {
                 setActiveLinkId(listItem.id)
                 displayExercise(listItem)
               }}>
-              <a href="#"><i style={{color: listItem.milestone ? '#f37a7a' : '#38bdf8'}}>{listItem.videoID} </i> {listItem.title} 
+              <a href="#"><i style={{color: listItem.milestone ? '#f37a7a' : '#38bdf8'}}>{listItem.videoID} </i> 
+              {listItem.title} 
               {/* <span className="status-dot" ></span> */}
               </a>
             </li>

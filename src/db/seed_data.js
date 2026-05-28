@@ -4649,6 +4649,152 @@ export const seedData = {
           "solution": "function calculateLoyaltyTier(purchasePoints) {\n  if (purchasePoints >= 500) {\n    return 'Platinum';\n  }\n  if (purchasePoints >= 200) {\n    return 'Gold';\n  }\n  return 'Silver';\n}\nconsole.log(calculateLoyaltyTier(250));"
         }
       ]
+    },
+    {
+      "id": "array-map-01",
+      "title": ".map()",
+      "videoID": "44",
+      "questions": [
+        {
+          "id": "maq1-01",
+          "title": "Mapping to a New Object Shape",
+          "question": "const users = [\n  { firstName: 'Ali', lastName: 'Khan' },\n  { firstName: 'Lee', lastName: 'Chen' }\n];\nconst names = users.map(user => {\n  return { fullName: `${user.firstName} ${user.lastName}` };\n});\nconsole.log(names[0].fullName);",
+          "options": [
+            { "id": "o1", "option": "a", "text": "undefined", "correct": false },
+            { "id": "o2", "option": "b", "text": "'Ali Khan'", "correct": true }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "maq1-02",
+          "title": "Conditional Property Injection",
+          "question": "const users = [\n  { name: 'Ali', age: 17 },\n  { name: 'Lee', age: 23 }\n];\nconst updated = users.map(user => {\n  return {\n    ...user,\n    isAdult: user.age > 19 ? true : false\n  };\n});\nconsole.log(updated[0].isAdult);",
+          "options": [
+            { "id": "o3", "option": "a", "text": "false", "correct": true },
+            { "id": "o4", "option": "b", "text": "true", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "maq1-03",
+          "title": "Excluding Properties via Rest Operator",
+          "question": "const users = [\n  { id: 1, name: 'Kofi', role: 'admin' }\n];\nconst sanitized = users.map(user => {\n  const { role, ...rest } = user;\n  return rest;\n});\nconsole.log(sanitized[0].role);",
+          "options": [
+            { "id": "o5", "option": "a", "text": "'admin'", "correct": false },
+            { "id": "o6", "option": "b", "text": "undefined", "correct": true }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "maq1-04",
+          "title": "Map Index Parameter Usage",
+          "question": "const items = ['apple', 'banana'];\nconst result = items.map((item, index) => {\n  return { id: index + 1, name: item };\n});\nconsole.log(result[1].id);",
+          "options": [
+            { "id": "o7", "option": "a", "text": "2", "correct": true },
+            { "id": "o8", "option": "b", "text": "1", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "maq1-05",
+          "title": "Original Array Immutability",
+          "question": "const nums = [1, 2];\nconst doubled = nums.map(n => n * 2);\nconsole.log(nums[0]);",
+          "options": [
+            { "id": "o9", "option": "a", "text": "2", "correct": false },
+            { "id": "o10", "option": "b", "text": "1", "correct": true }
+          ],
+          "correctAnswer": "b"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "mat1-01",
+          "title": "Generate VIP Guest Passes",
+          "description": "Create a function named %generatePasses(usersArray)% that accepts an array of user objects containing %firstName% and %lastName%. Use the %map% method to return a new array of objects where each object has a single key %passName% formatted as %'Name: firstName lastName'%. Input example: %[{firstName: 'Ali', lastName: 'Khan'}]%.",
+          "result": "%[{passName: 'Name: Ali Khan'}]%",
+          "solution": "function generatePasses(usersArray) {\n  return usersArray.map(user => {\n    return { passName: `Name: ${user.firstName} ${user.lastName}` };\n  });\n}\nconsole.log(generatePasses([{firstName: 'Ali', lastName: 'Khan'}]));"
+        },
+        {
+          "id": "mat1-02",
+          "title": "Strip Confidential Role Data",
+          "description": "Create a function named %removeSystemRoles(usersArray)% that takes an array of user objects. Use the %map% method along with object restructuring/rest syntax to return a new array of objects containing all original properties except the %role% property. Input example: %[{id: 1, name: 'Lee', role: 'user'}]%.",
+          "result": "%[{id: 1, name: 'Lee'}]%",
+          "solution": "function removeSystemRoles(usersArray) {\n  return usersArray.map(user => {\n    const { role, ...rest } = user;\n    return rest;\n  });\n}\nconsole.log(removeSystemRoles([{id: 1, name: 'Lee', role: 'user'}]));"
+        }
+      ]
+    },
+    {
+      "id": "array-find-filter-02",
+      "title": ".find() and .filter()",
+      "videoID": "45",
+      "questions": [
+        {
+          "id": "ffq2-01",
+          "title": "Data Extraction with Specific Criteria",
+          "question": "const users = [\n  { id: 1, firstName: 'Ali', role: 'moderator' },\n  { id: 2, firstName: 'Lee', role: 'user' },\n  { id: 3, firstName: 'John', role: 'user' }\n];\nconst match = users.find(user => user.role === 'user');\nconsole.log(match.firstName);",
+          "options": [
+            { "id": "o1", "option": "a", "text": "'John'", "correct": false },
+            { "id": "o2", "option": "b", "text": "'Lee'", "correct": true }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "ffq2-02",
+          "title": "Result Array Length on Multiple Fits",
+          "question": "const users = [\n  { firstName: 'Lee', age: 23 },\n  { firstName: 'Kofi', age: 42 },\n  { firstName: 'John', age: 22 }\n];\nconst adults = users.filter(user => user.age > 20);\nconsole.log(adults.length);",
+          "options": [
+            { "id": "o3", "option": "a", "text": "3", "correct": true },
+            { "id": "o4", "option": "b", "text": "1", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "ffq2-03",
+          "title": "Handling Destructured Missing Target",
+          "question": "const users = [\n  { firstName: 'Ali', lastName: 'Khan' },\n  { firstName: 'Lee', lastName: 'Chen' }\n];\nconst person = users.find(({ lastName }) => lastName === 'Diallo');\nconsole.log(person);",
+          "options": [
+            { "id": "o5", "option": "a", "text": "[]", "correct": false },
+            { "id": "o6", "option": "b", "text": "undefined", "correct": true }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "ffq2-04",
+          "title": "Filter with Property Mutation Safeguard",
+          "question": "const users = [\n  { id: 4, firstName: 'John', role: 'user' }\n];\nconst group = users.filter(user => user.id === 4);\nconsole.log(Array.isArray(group));",
+          "options": [
+            { "id": "o7", "option": "a", "text": "true", "correct": true },
+            { "id": "o8", "option": "b", "text": "false", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "ffq2-05",
+          "title": "Dynamic Destructuring and Sub-matching",
+          "question": "const users = [\n  { firstName: 'Ali', age: 17 },\n  { firstName: 'Kofi', age: 42 }\n];\nconst outcome = users.filter(({ age }) => age < 18);\nconsole.log(outcome[0].firstName);",
+          "options": [
+            { "id": "o9", "option": "a", "text": "'Kofi'", "correct": false },
+            { "id": "o10", "option": "b", "text": "'Ali'", "correct": true }
+          ],
+          "correctAnswer": "b"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "fft2-01",
+          "title": "Pinpoint Specific User Record",
+          "description": "Create a function named %getTargetUser(usersArray, targetLastName)% that receives an array of user objects containing %firstName% and %lastName%. Use the %find% method to locate and return the full object of the first user with a matching %lastName%. Input example: %[{firstName: 'Ali', lastName: 'Khan'}, {firstName: 'Lee', lastName: 'Chen'}], 'Chen'%.",
+          "result": "%{firstName: 'Lee', lastName: 'Chen'}%",
+          "solution": "function getTargetUser(usersArray, targetLastName) {\n  return usersArray.find(user => user.lastName === targetLastName);\n}\nconsole.log(getTargetUser([{firstName: 'Ali', lastName: 'Khan'}, {firstName: 'Lee', lastName: 'Chen'}], 'Chen'));"
+        },
+        {
+          "id": "fft2-02",
+          "title": "Filter Active Target Demographics",
+          "description": "Create a function named %getUsersByRole(usersArray, targetRole)% that takes an array of user objects. Use the %filter% method to return a completely new array containing only those user objects whose %role% matches the %targetRole% string parameter. Input example: %[{firstName: 'Lee', role: 'user'}, {firstName: 'Kofi', role: 'admin'}], 'user'%.",
+          "result": "%[{firstName: 'Lee', role: 'user'}]%",
+          "solution": "function getUsersByRole(usersArray, targetRole) {\n  return usersArray.filter(user => user.role === targetRole);\n}\nconsole.log(getUsersByRole([{firstName: 'Lee', role: 'user'}, {firstName: 'Kofi', role: 'admin'}], 'user'));"
+        }
+      ]
     }
   ]
 }
