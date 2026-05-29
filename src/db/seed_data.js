@@ -4725,7 +4725,7 @@ export const seedData = {
     },
     {
       "id": "array-find-filter-02",
-      "title": ".find() and .filter()",
+      "title": ".find() vs .filter()",
       "videoID": "45",
       "questions": [
         {
@@ -4795,6 +4795,506 @@ export const seedData = {
           "solution": "function getUsersByRole(usersArray, targetRole) {\n  return usersArray.filter(user => user.role === targetRole);\n}\nconsole.log(getUsersByRole([{firstName: 'Lee', role: 'user'}, {firstName: 'Kofi', role: 'admin'}], 'user'));"
         }
       ]
-    }
+    },
+    {
+      "id": "array-some-every-02",
+      "title": ".some() vs .every",
+      "videoID": "46",
+      "questions": [
+        {
+          "id": "seq2-01",
+          "title": "Verifying Uniform Group Roles",
+          "question": "const users = [\n  { firstName: 'Ali', role: 'user' },\n  { firstName: 'Lee', role: 'user' },\n  { firstName: 'Kofi', role: 'admin' }\n];\nconst checkingAll = users.every(user => user.role === 'user');\nconsole.log(checkingAll);",
+          "options": [
+            { "id": "o1", "option": "a", "text": "false", "correct": true },
+            { "id": "o2", "option": "b", "text": "true", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "seq2-02",
+          "title": "Targeting Single Profile Exception",
+          "question": "const users = [\n  { firstName: 'Lee', age: 23 },\n  { firstName: 'Kofi', age: 42 },\n  { firstName: 'Ali', age: 17 }\n];\nconst hasMinors = users.some(user => user.age < 18);\nconsole.log(hasMinors);",
+          "options": [
+            { "id": "o3", "option": "a", "text": "false", "correct": false },
+            { "id": "o4", "option": "b", "text": "true", "correct": true }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "seq2-03",
+          "title": "Conditional Checking on Roles",
+          "question": "const users = [\n  { firstName: 'Ali', role: 'moderator' },\n  { firstName: 'Kofi', role: 'admin' }\n];\nconst dynamicCheck = users.some(user => user.role === 'user');\nconsole.log(dynamicCheck);",
+          "options": [
+            { "id": "o5", "option": "a", "text": "false", "correct": true },
+            { "id": "o6", "option": "b", "text": "true", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "seq2-04",
+          "title": "Strict Age Boundary Evaluation",
+          "question": "const users = [\n  { firstName: 'Lee', age: 23 },\n  { firstName: 'John', age: 22 }\n];\nconst verifyingAges = users.every(user => user.age > 20);\nconsole.log(verifyingAges);",
+          "options": [
+            { "id": "o7", "option": "a", "text": "false", "correct": false },
+            { "id": "o8", "option": "b", "text": "true", "correct": true }
+          ],
+          "correctAnswer": "b"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "set2-01",
+          "title": "Verify Premium Content Gate Access",
+          "description": "Create a function named %hasModeratorAccess(usersArray)% that accepts an array of user objects. Use the %some% method to check if at least one individual in the group holds the %'moderator'% role. Return %true% if found, otherwise return %false%. Input example: %[{firstName: 'Lee', role: 'user'}, {firstName: 'Ali', role: 'moderator'}]%.",
+          "result": "%true%",
+          "solution": "function hasModeratorAccess(usersArray) {\n  return usersArray.some(user => user.role === 'moderator');\n}\nconsole.log(hasModeratorAccess([{firstName: 'Lee', role: 'user'}, {firstName: 'Ali', role: 'moderator'}]));"
+        },
+        {
+          "id": "set2-02",
+          "title": "Validate Global Age Restriction Compliance",
+          "description": "Create a function named %validateCompliance(usersArray)% that takes an array of user objects. Use the %every% method to determine if every single user in the array is at least %18% years old. Input example: %[{firstName: 'Lee', age: 23}, {firstName: 'Kofi', age: 42}]%.",
+          "result": "%true%",
+          "solution": "function validateCompliance(usersArray) {\n  return usersArray.every(user => user.age >= 18);\n}\nconsole.log(validateCompliance([{firstName: 'Lee', age: 23}, {firstName: 'Kofi', age: 42}]));"
+        },
+        {
+          "id": "set2-03",
+          "title": "Check for System Name Completeness",
+          "description": "Create a function named %areProfilesComplete(usersArray)% that checks an array of user objects. Use the %every% method to confirm that all users have a valid %lastName% property (meaning the string is not empty). Input example: %[{firstName: 'Ali', lastName: 'Khan'}, {firstName: 'John', lastName: ''}]%.",
+          "result": "%false%",
+          "solution": "function areProfilesComplete(usersArray) {\n  return usersArray.every(user => user.lastName !== '');\n}\nconsole.log(areProfilesComplete([{firstName: 'Ali', lastName: 'Khan'}, {firstName: 'John', lastName: ''}]));"
+        }
+      ]
+    },
+    {
+      "id": "includes-method-01",
+      "title": ".includes()",
+      "videoID": "47",
+      "questions": [
+        {
+          "id": "incq-01",
+          "title": "Array Primitive Element Presence",
+          "question": "const roles = ['admin', 'moderator', 'user'];\nconst hasEditor = roles.includes('editor');\nconsole.log(hasEditor);",
+          "options": [
+            { "id": "o1", "option": "a", "text": "true", "correct": false },
+            { "id": "o2", "option": "b", "text": "false", "correct": true }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "incq-03",
+          "title": "String Substring Case Sensitivity Check",
+          "question": "const bannerText = 'Welcome back Admin to the control dashboard';\nconst isMatched = bannerText.includes('admin');\nconsole.log(isMatched);",
+          "options": [
+            { "id": "o5", "option": "a", "text": "false", "correct": true },
+            { "id": "o6", "option": "b", "text": "true", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "incq-04",
+          "title": "String Substring Position Check",
+          "question": "const route = '/api/v1/users/profile';\nconst isUsersApi = route.includes('/users', 5);\nconsole.log(isUsersApi);",
+          "options": [
+            { "id": "o7", "option": "a", "text": "false", "correct": false },
+            { "id": "o8", "option": "b", "text": "true", "correct": true }
+          ],
+          "correctAnswer": "b"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "inct-01",
+          "title": "Restricted Area Access Controller",
+          "description": "Create a function named %checkRolePermission(allowedRoles, currentRole)% that receives an array of strings representing %allowedRoles% and a single string %currentRole%. Use the array %includes% method to return %true% if the current role is allowed, otherwise return %false%. Input example: %['admin', 'moderator'], 'user'%.",
+          "result": "%false%",
+          "solution": "function checkRolePermission(allowedRoles, currentRole) {\n  return allowedRoles.includes(currentRole);\n}\nconsole.log(checkRolePermission(['admin', 'moderator'], 'user'));"
+        },
+        {
+          "id": "inct-02",
+          "title": "Route Pattern Security Verification",
+          "description": "Create a function named %isSecureRoute(urlPath)% that checks a string parameter. Use the string %includes% method to verify if the path contains the substring %'v2/admin'%. Return %true% if it does, and %false% if it doesn't. Input example: %'/api/v2/admin/dashboard'%.",
+          "result": "%true%",
+          "solution": "function isSecureRoute(urlPath) {\n  return urlPath.includes('v2/admin');\n}\nconsole.log(isSecureRoute('/api/v2/admin/dashboard'));"
+        }
+      ]
+    },
+    {
+      "id": "array-reduce-01",
+      "title": ".reduce()",
+      "videoID": "48",
+      "questions": [
+        {
+          "id": "redq-01",
+          "title": "Accumulating Object Properties",
+          "question": "const users = [\n  { firstName: 'Ali', age: 17 },\n  { firstName: 'Lee', age: 23 },\n  { firstName: 'Kofi', age: 40 }\n];\nconst totalAge = users.reduce((accumulator, user) => {\n  return accumulator + user.age;\n}, 0);\nconsole.log(totalAge);",
+          "options": [
+            { "id": "o1", "option": "a", "text": "50", "correct": false },
+            { "id": "o2", "option": "b", "text": "80", "correct": true }
+          ],
+          "correctAnswer": "b"
+        },
+      ],
+      "tasks": [
+        {
+          "id": "redt-01",
+          "title": "Calculate Total System Age",
+          "description": "Create a function named %sumUserAges(usersArray)% that accepts an array of user objects. Use the %reduce% method with an initial value of %0% to compute and return the total sum of all users' %age% properties. Input example: %[{firstName: 'Lee', age: 23}, {firstName: 'Kofi', age: 42}]%.",
+          "result": "%65%",
+          "solution": "function sumUserAges(usersArray) {\n  return usersArray.reduce((acc, user) => {\n    return acc + user.age;\n  }, 0);\n}\nconsole.log(sumUserAges([{firstName: 'Lee', age: 23}, {firstName: 'Kofi', age: 42}]));"
+        }
+      ]
+    },
+    {
+      "id": "array-methods-mastery-01",
+      "title": "- MILESTONE EXERCISES 5 -",
+      "videoID": "49",
+      "milestone": true,
+      "questions": [
+        {
+          "id": "cmq-01",
+          "title": "Map Shape Transformation Check",
+          "question": "const users = [\n  { firstName: 'Ali', lastName: 'Khan' },\n  { firstName: 'Lee', lastName: 'Chen' }\n];\nconst payload = users.map(u => ({ name: `${u.firstName} ${u.lastName}` }));\nconsole.log(payload[1].name);",
+          "options": [
+            { "id": "o1", "option": "a", "text": "'Lee Chen'", "correct": true },
+            { "id": "o2", "option": "b", "text": "undefined", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "cmq-02",
+          "title": "Find First Match Evaluation",
+          "question": "const users = [\n  { firstName: 'Ali', age: 17 },\n  { firstName: 'Lee', age: 23 },\n  { firstName: 'John', age: 22 }\n];\nconst person = users.find(u => u.age > 20);\nconsole.log(person.firstName);",
+          "options": [
+            { "id": "o3", "option": "a", "text": "'John'", "correct": false },
+            { "id": "o4", "option": "b", "text": "'Lee'", "correct": true }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "cmq-03",
+          "title": "Filter Non-Matching Elements",
+          "question": "const users = [\n  { firstName: 'Ali', role: 'moderator' },\n  { firstName: 'Kofi', role: 'admin' }\n];\nconst matches = users.filter(u => u.role === 'user');\nconsole.log(matches.length);",
+          "options": [
+            { "id": "o5", "option": "a", "text": "0", "correct": true },
+            { "id": "o6", "option": "b", "text": "undefined", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "cmq-04",
+          "title": "Some Method Single Match Verification",
+          "question": "const users = [\n  { firstName: 'Lee', age: 23 },\n  { firstName: 'Ali', age: 17 }\n];\nconst outcome = users.some(u => u.age < 18);\nconsole.log(outcome);",
+          "options": [
+            { "id": "o7", "option": "a", "text": "false", "correct": false },
+            { "id": "o8", "option": "b", "text": "true", "correct": true }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "cmq-05",
+          "title": "Every Method Uniformity Failure",
+          "question": "const users = [\n  { firstName: 'Lee', role: 'user' },\n  { firstName: 'Kofi', role: 'admin' }\n];\nconst check = users.every(u => u.role === 'user');\nconsole.log(check);",
+          "options": [
+            { "id": "o9", "option": "a", "text": "false", "correct": true },
+            { "id": "o10", "option": "b", "text": "true", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "cmq-06",
+          "title": "Array Primitive Includes Check",
+          "question": "const systems = ['Auth', 'Database', 'Storage'];\nconst hasCache = systems.includes('Cache');\nconsole.log(hasCache);",
+          "options": [
+            { "id": "o11", "option": "a", "text": "true", "correct": false },
+            { "id": "o12", "option": "b", "text": "false", "correct": true }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "cmq-07",
+          "title": "Map Conditional Age Property Injection",
+          "question": "const profiles = [\n  { name: 'Ali', age: 17 },\n  { name: 'Kofi', age: 42 }\n];\nconst processed = profiles.map(p => ({ ...p, vip: p.age > 40 }));\nconsole.log(processed[0].vip);",
+          "options": [
+            { "id": "o13", "option": "a", "text": "false", "correct": true },
+            { "id": "o14", "option": "b", "text": "true", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "cmq-08",
+          "title": "Find Element No Match Result",
+          "question": "const users = [{ firstName: 'Lee', role: 'user' }];\nconst res = users.find(u => u.role === 'admin');\nconsole.log(res);",
+          "options": [
+            { "id": "o15", "option": "a", "text": "null", "correct": false },
+            { "id": "o16", "option": "b", "text": "undefined", "correct": true }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "cmq-09",
+          "title": "Filter Extracting Sub-group Counts",
+          "question": "const users = [\n  { name: 'Ali', role: 'user' },\n  { name: 'John', role: 'user' }\n];\nconst list = users.filter(u => u.role === 'user');\nconsole.log(list.length);",
+          "options": [
+            { "id": "o17", "option": "a", "text": "2", "correct": true },
+            { "id": "o18", "option": "b", "text": "1", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "cmq-10",
+          "title": "String Includes Case Sensitivity Rules",
+          "question": "const alertMsg = 'CRITICAL: System over temperature';\nconst isCritical = alertMsg.includes('critical');\nconsole.log(isCritical);",
+          "options": [
+            { "id": "o19", "option": "a", "text": "true", "correct": false },
+            { "id": "o20", "option": "b", "text": "false", "correct": true }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "cmq-11",
+          "title": "Rest Destructuring and Property Removal",
+          "question": "const collection = [\n  { id: 1, name: 'Ali', status: 'active' }\n];\nconst clean = collection.map(({ status, ...rest }) => rest);\nconsole.log(clean[0].status);",
+          "options": [
+            { "id": "o21", "option": "a", "text": "undefined", "correct": true },
+            { "id": "o22", "option": "b", "text": "'active'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "cmq-12",
+          "title": "Every Method Strict Age Verification",
+          "question": "const accounts = [\n  { name: 'Lee', age: 20 },\n  { name: 'John', age: 19 }\n];\nconst verified = accounts.every(acc => acc.age >= 19);\nconsole.log(verified);",
+          "options": [
+            { "id": "o23", "option": "a", "text": "false", "correct": false },
+            { "id": "o24", "option": "b", "text": "true", "correct": true }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "cmq-13",
+          "title": "Some Method Conditional Search Match",
+          "question": "const workers = [\n  { name: 'Kofi', dept: 'Engineering' },\n  { name: 'Ali', dept: 'Design' }\n];\nconst checkDept = workers.some(w => w.dept === 'Support');\nconsole.log(checkDept);",
+          "options": [
+            { "id": "o25", "option": "a", "text": "false", "correct": true },
+            { "id": "o26", "option": "b", "text": "true", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "cmq-14",
+          "title": "Map Array Index Argument Application",
+          "question": "const list = [{ name: 'Lee' }, { name: 'Ali' }];\nconst targets = list.map((u, index) => ({ ...u, position: index }));\nconsole.log(targets[1].position);",
+          "options": [
+            { "id": "o27", "option": "a", "text": "2", "correct": false },
+            { "id": "o28", "option": "b", "text": "1", "correct": true }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "cmq-15",
+          "title": "Filter with Exact Id Match Return Shape",
+          "question": "const nodes = [{ id: 101, label: 'NodeA' }];\nconst singleNode = nodes.filter(n => n.id === 101);\nconsole.log(Array.isArray(singleNode));",
+          "options": [
+            { "id": "o29", "option": "a", "text": "true", "correct": true },
+            { "id": "o30", "option": "b", "text": "false", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "cmq-16",
+          "title": "Array Includes FromIndex Offset Check",
+          "question": "const tags = ['v1', 'v2', 'beta', 'prod'];\nconst hasV1 = tags.includes('v1');\nconsole.log(hasV1);",
+          "options": [
+            { "id": "o31", "option": "a", "text": "true", "correct": true },
+            { "id": "o32", "option": "b", "text": "false", "correct": false }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "cmq-17",
+          "title": "Find Destructured Field Filtering Match",
+          "question": "const storage = [\n  { code: 'A1', qty: 5 },\n  { code: 'B2', qty: 0 }\n];\nconst outOfStock = storage.find(({ qty }) => qty === 0);\nconsole.log(outOfStock.code);",
+          "options": [
+            { "id": "o33", "option": "a", "text": "'B2'", "correct": true },
+            { "id": "o34", "option": "b", "text": "'A1'", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "cmq-18",
+          "title": "String Includes Substring Trailing Parameter",
+          "question": "const endpoint = '/v1/users/login';\nconst checksOut = endpoint.includes('v1/users');\nconsole.log(checksOut);",
+          "options": [
+            { "id": "o35", "option": "a", "text": "false", "correct": false },
+            { "id": "o36", "option": "b", "text": "true", "correct": true }
+          ],
+          "correctAnswer": "b"
+        },
+        {
+          "id": "cmq-19",
+          "title": "Every Validation vs Empty Array Context",
+          "question": "const levels = [\n  { level: 3, verified: true },\n  { level: 5, verified: true }\n];\nconst checkStatus = levels.every(l => l.verified);\nconsole.log(checkStatus);",
+          "options": [
+            { "id": "o37", "option": "a", "text": "true", "correct": true },
+            { "id": "o38", "option": "b", "text": "false", "correct": false }
+          ],
+          "correctAnswer": "a"
+        },
+        {
+          "id": "cmq-20",
+          "title": "Some Method First Match Stopping Truth",
+          "question": "const ranks = [{ tier: 1 }, { tier: 2 }, { tier: 3 }];\nconst isHighRank = ranks.some(r => r.tier > 1);\nconsole.log(isHighRank);",
+          "options": [
+            { "id": "o39", "option": "a", "text": "false", "correct": false },
+            { "id": "o40", "option": "b", "text": "true", "correct": true }
+          ],
+          "correctAnswer": "b"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "cmt-01",
+          "title": "Generate User Full Names List",
+          "description": "Create a function named %buildFullNames(usersArray)% that takes an array of user objects containing %firstName% and %lastName%. Use the %map% method to return a new array of objects where each object contains a key %fullName% matching the layout: %'firstName lastName'%. Input example: %[{firstName: 'Ali', lastName: 'Khan'}]%.",
+          "result": "%[{fullName: 'Ali Khan'}]%",
+          "solution": "function buildFullNames(usersArray) {\n  return usersArray.map(user => {\n    return { fullName: `${user.firstName} ${user.lastName}` };\n  });\n}\nconsole.log(buildFullNames([{firstName: 'Ali', lastName: 'Khan'}]));"
+        },
+        {
+          "id": "cmt-02",
+          "title": "Locate Target Administrative Member",
+          "description": "Create a function named %findAdminUser(usersArray)% that searches through an array of user objects. Use the %find% method to find and return the entire object of the first user whose %role% equals %'admin'%. Input example: %[{firstName: 'Lee', role: 'user'}, {firstName: 'Kofi', role: 'admin'}]%.",
+          "result": "%{firstName: 'Kofi', role: 'admin'}%",
+          "solution": "function findAdminUser(usersArray) {\n  return usersArray.find(user => user.role === 'admin');\n}\nconsole.log(findAdminUser([{firstName: 'Lee', role: 'user'}, {firstName: 'Kofi', role: 'admin'}]));"
+        },
+        {
+          "id": "cmt-03",
+          "title": "Isolate Underage Accounts Profile Group",
+          "description": "Create a function named %extractMinors(usersArray)% that accepts an array of user objects. Use the %filter% method to filter and return a new array containing all user objects where %age% is less than %18%. Input example: %[{firstName: 'Ali', age: 17}, {firstName: 'Lee', age: 23}]%.",
+          "result": "%[{firstName: 'Ali', age: 17}]%",
+          "solution": "function extractMinors(usersArray) {\n  return usersArray.filter(user => user.age < 18);\n}\nconsole.log(extractMinors([{firstName: 'Ali', age: 17}, {firstName: 'Lee', age: 23}]));"
+        },
+        {
+          "id": "cmt-04",
+          "title": "Verify Target Moderation Roles Presence",
+          "description": "Create a function named %hasModerator(usersArray)% that looks inside an array of user objects. Use the %some% method to check if at least one user object has a %role% parameter that equals %'moderator'%. Return %true% or %false%. Input example: %[{firstName: 'John', role: 'user'}, {firstName: 'Ali', role: 'moderator'}]%.",
+          "result": "%true%",
+          "solution": "function hasModerator(usersArray) {\n  return usersArray.some(user => user.role === 'moderator');\n}\nconsole.log(hasModerator([{firstName: 'John', role: 'user'}, {firstName: 'Ali', role: 'moderator'}]));"
+        },
+        {
+          "id": "cmt-05",
+          "title": "Check Universal Age Verification Gate",
+          "description": "Create a function named %checkAllAdults(usersArray)% that checks an array of user objects. Use the %every% method to evaluate if every person's %age% property inside the array is greater than or equal to %18%. Input example: %[{firstName: 'Lee', age: 23}, {firstName: 'Ali', age: 17}]%.",
+          "result": "%false%",
+          "solution": "function checkAllAdults(usersArray) {\n  return usersArray.every(user => user.age >= 18);\n}\nconsole.log(checkAllAdults([{firstName: 'Lee', age: 23}, {firstName: 'Ali', age: 17}]));"
+        },
+        {
+          "id": "cmt-06",
+          "title": "System Blacklisted Token Flag Checker",
+          "description": "Create a function named %isRoleAllowed(allowedRoles, roleToFind)% that accepts an array of strings representing %allowedRoles% and a string parameter %roleToFind%. Use the array %includes% method to return %true% if the role exists in the configuration, otherwise return %false%. Input example: %['admin', 'moderator'], 'user'%.",
+          "result": "%false%",
+          "solution": "function isRoleAllowed(allowedRoles, roleToFind) {\n  return allowedRoles.includes(roleToFind);\n}\nconsole.log(isRoleAllowed(['admin', 'moderator'], 'user'));"
+        },
+        {
+          "id": "cmt-07",
+          "title": "Strip Secure Properties with Reconstruction",
+          "description": "Create a function named %stripRoles(usersArray)% that transforms an array of user objects. Use the %map% method alongside object rest parameters to return a new array where each object contains all parameters except the %role% parameter. Input example: %[{firstName: 'Lee', role: 'user'}]%.",
+          "result": "%[{firstName: 'Lee'}]%",
+          "solution": "function stripRoles(usersArray) {\n  return usersArray.map(user => {\n    const { role, ...rest } = user;\n    return rest;\n  });\n}\nconsole.log(stripRoles([{firstName: 'Lee', role: 'user'}]));"
+        },
+        {
+          "id": "cmt-08",
+          "title": "Isolate First Inactive Object Match",
+          "description": "Create a function named %findInactiveUser(usersArray)% that receives an array of user objects containing a boolean %isActive% value. Use the %find% method to track down and return the first user object who has an %isActive% parameter set to %false%. Input example: %[{name: 'John', isActive: true}, {name: 'Ali', isActive: false}]%.",
+          "result": "%{name: 'Ali', isActive: false}%",
+          "solution": "function findInactiveUser(usersArray) {\n  return usersArray.find(user => user.isActive === false);\n}\nconsole.log(findInactiveUser([{name: 'John', isActive: true}, {name: 'Ali', isActive: false}]));"
+        },
+        {
+          "id": "cmt-09",
+          "title": "Collect Specific Department Staff Profiles",
+          "description": "Create a function named %filterByRole(usersArray, targetRole)% that takes an array of user objects and a string configuration parameter. Use the %filter% method to produce a new array containing only individuals whose %role% property exactly equals %targetRole%. Input example: %[{name: 'Kofi', role: 'admin'}], 'admin'%.",
+          "result": "%[{name: 'Kofi', role: 'admin'}]%",
+          "solution": "function filterByRole(usersArray, targetRole) {\n  return usersArray.filter(user => user.role === targetRole);\n}\nconsole.log(filterByRole([{name: 'Kofi', role: 'admin'}], 'admin'));"
+        },
+        {
+          "id": "cmt-10",
+          "title": "Secure Route Signature Substring Match",
+          "description": "Create a function named %detectAdminPath(urlPath)% that inspects a route path string. Use the string %includes% method to verify whether the string value has the pattern %'/admin/'% embedded inside it. Return %true% if it does, and %false% if it doesn't. Input example: %'/dashboard/admin/settings'%.",
+          "result": "%true%",
+          "solution": "function detectAdminPath(urlPath) {\n  return urlPath.includes('/admin/');\n}\nconsole.log(detectAdminPath('/dashboard/admin/settings'));"
+        },
+        {
+          "id": "cmt-11",
+          "title": "Inject Title Strings Conditioned on Age",
+          "description": "Create a function named %injectTitles(usersArray)% that maps over an array of user objects. Use the %map% method to return a new array of objects containing a %title% key. If the user's %age% property is greater than %19%, set %title% to %'Mr'%, otherwise set it to %null%. Input example: %[{firstName: 'Ali', age: 17}]%.",
+          "result": "%[{firstName: 'Ali', age: 17, title: null}]%",
+          "solution": "function injectTitles(usersArray) {\n  return usersArray.map(user => {\n    return {\n      ...user,\n      title: user.age > 19 ? 'Mr' : null\n    };\n  });\n}\nconsole.log(injectTitles([{firstName: 'Ali', age: 17}]));"
+        },
+        {
+          "id": "cmt-12",
+          "title": "Locate Target User Profile via Key String",
+          "description": "Create a function named %findUserByLastName(usersArray, targetLastName)% that cycles through an array of user objects. Use the %find% method to target and return the entire object of the first user with a matching %lastName% value. Input example: %[{firstName: 'Lee', lastName: 'Chen'}], 'Chen'%.",
+          "result": "%{firstName: 'Lee', lastName: 'Chen'}%",
+          "solution": "function findUserByLastName(usersArray, targetLastName) {\n  return usersArray.find(user => user.lastName === targetLastName);\n}\nconsole.log(findUserByLastName([{firstName: 'Lee', lastName: 'Chen'}], 'Chen'));"
+        },
+        {
+          "id": "cmt-13",
+          "title": "Filter Active Target Subscription Groups",
+          "description": "Create a function named %getActiveSubscribers(usersArray)% that accepts an array of user objects with a boolean %isSubscribed% tag. Use the %filter% method to look through the elements and isolate a group where %isSubscribed% is explicitly %true%. Input example: %[{name: 'John', isSubscribed: true}, {name: 'Lee', isSubscribed: false}]%.",
+          "result": "%[{name: 'John', isSubscribed: true}]%",
+          "solution": "function getActiveSubscribers(usersArray) {\n  return usersArray.filter(user => user.isSubscribed);\n}\nconsole.log(getActiveSubscribers([{name: 'John', isSubscribed: true}, {name: 'Lee', isSubscribed: false}]));"
+        },
+        {
+          "id": "cmt-14",
+          "title": "Detect Profile System Content Violations",
+          "description": "Create a function named %hasBannedUsers(usersArray)% that searches an array of user objects. Use the %some% method to check if there is even a single account profile where the %status% attribute matches the value %'banned'%. Input example: %[{name: 'Kofi', status: 'active'}, {name: 'Ali', status: 'banned'}]%.",
+          "result": "%true%",
+          "solution": "function hasBannedUsers(usersArray) {\n  return usersArray.some(user => user.status === 'banned');\n}\nconsole.log(hasBannedUsers([{name: 'Kofi', status: 'active'}, {name: 'Ali', status: 'banned'}]));"
+        },
+        {
+          "id": "cmt-15",
+          "title": "Verify Profile Name Attribute Presence",
+          "description": "Create a function named %validateNameCompleteness(usersArray)% that scans user records. Use the %every% method to double-check that every single user object has a valid %firstName% property that is not equal to an empty string (%''%). Input example: %[{firstName: 'Ali'}, {firstName: ''}]%.",
+          "result": "%false%",
+          "solution": "function validateNameCompleteness(usersArray) {\n  return usersArray.every(user => user.firstName !== '');\n}\nconsole.log(validateNameCompleteness([{firstName: 'Ali'}, {firstName: ''}]));"
+        },
+        {
+          "id": "cmt-16",
+          "title": "Audit Internal File Extention Flags",
+          "description": "Create a function named %checkFileExtension(filename, targetExt)% that receives two string arguments. Use the string %includes% method to determine if the %filename% string incorporates the %targetExt% parameter configuration. Input example: %'backup_user_report.csv', '.csv'%.",
+          "result": "%true%",
+          "solution": "function checkFileExtension(filename, targetExt) {\n  return filename.includes(targetExt);\n}\nconsole.log(checkFileExtension('backup_user_report.csv', '.csv'));"
+        },
+        {
+          "id": "cmt-17",
+          "title": "Attach Sequential Index Tag Parameters",
+          "description": "Create a function named %appendUserIndices(usersArray)% that iterates over a user collection. Use the %map% method's secondary index tracking parameter to return a new array where each object retains all original features, but adds a field %uid% calculated as %index + 100%. Input example: %[{name: 'Ali'}]%.",
+          "result": "%[{name: 'Ali', uid: 100}]%",
+          "solution": "function appendUserIndices(usersArray) {\n  return usersArray.map((user, index) => {\n    return { ...user, uid: index + 100 };\n  });\n}\nconsole.log(appendUserIndices([{name: 'Ali'}]));"
+        },
+        {
+          "id": "cmt-18",
+          "title": "Find Element Matching Nested Fields",
+          "description": "Create a function named %findUserByNestedId(usersArray, targetId)% that processes user objects with an internal metadata sub-object block: %{ name: 'Lee', meta: { id: 2 } }%. Use the %find% method to match and return the user matching %meta.id === targetId%. Input example: %[{name: 'Lee', meta: {id: 2}}], 2%.",
+          "result": "%{name: 'Lee', meta: {id: 2}}%",
+          "solution": "function findUserByNestedId(usersArray, targetId) {\n  return usersArray.find(user => user.meta.id === targetId);\n}\nconsole.log(findUserByNestedId([{name: 'Lee', meta: {id: 2}}], 2));"
+        },
+        {
+          "id": "cmt-19",
+          "title": "Isolate High Tier Premium Customer Profiles",
+          "description": "Create a function named %getHighTierUsers(usersArray)% that reviews data records. Use the %filter% method to discover and extract a subset array comprising only users whose %tier% attribute is strictly greater than numerical rating %3%. Input example: %[{name: 'Kofi', tier: 4}, {name: 'John', tier: 2}]%.",
+          "result": "%[{name: 'Kofi', tier: 4}]%",
+          "solution": "function getHighTierUsers(usersArray) {\n  return usersArray.filter(user => user.tier > 3);\n}\nconsole.log(getHighTierUsers([{name: 'Kofi', tier: 4}, {name: 'John', tier: 2}]));"
+        },
+        {
+          "id": "cmt-20",
+          "title": "Verify At Least One Admin Account Presence",
+          "description": "Create a function named %hasGlobalAdmin(usersArray)% that reads user objects. Use the %some% method to certify if any user profile object has a %role% field set exactly to %'admin'%. Return %true% if an admin is present, and %false% if not. Input example: %[{name: 'John', role: 'user'}]%.",
+          "result": "%false%",
+          "solution": "function hasGlobalAdmin(usersArray) {\n  return usersArray.some(user => user.role === 'admin');\n}\nconsole.log(hasGlobalAdmin([{name: 'John', role: 'user'}]));"
+        }
+      ]
+    },
+    
   ]
 }
