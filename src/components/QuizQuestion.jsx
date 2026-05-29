@@ -7,7 +7,7 @@ const QuizQuestion = ({question, index, choseOption}) => {
     return (
       <div className="question-card" key={question.id}>
           <div className="question-title"><span className="q-icon">{index + 1}</span> {question.title}</div>
-          <div className="code-block">{question.question}</div>
+          <div className="code-block" >{question.question}</div>
           <div className="options-grid">
             {question.options.map(option => (
               <label 

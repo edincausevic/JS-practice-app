@@ -20,7 +20,7 @@ const CodeQuestion = ({title, description, result, solution}) => {
             className="reveal-btn challenge-reveal" >🔍 {isSolutionVisible ? 'Hide' : "Reveal"} Solution</button>
         </div>
         <div className="" >
-            {isSolutionVisible && <div className="code-block">{solution}</div>}
+            {isSolutionVisible && <div className="code-block" >{solution}</div>}
         </div>
     </div>
   )
