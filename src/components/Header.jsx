@@ -24,3 +24,8 @@ const Header = ({onResetBtnClick, stats}) => {
 }
 
 export default Header;
+
+
+let user = 'John';
+
+console.log(user)
