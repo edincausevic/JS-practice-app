@@ -15,6 +15,7 @@ function App() {
     const questionsTotal = allData.allExercises.reduce((n, e) => { return n + e.questions.length}, 0)
     const tasksTotal = allData.allExercises.reduce((n, e) => { return n + e.tasks.length}, 0)
     let totalCorrect = 0;
+    let totalFalse = 0;
 
     allData.allExercises.forEach((section) => {
       section.questions.forEach((question) => {
@@ -22,8 +23,12 @@ function App() {
         const userGotItRight = question.options.some(
           (opt) => opt.correct === true && opt.selected === true
         );
+        const userGotItWrong = question.options.some(
+          (opt) => opt.correct === false && opt.selected === true
+        );
 
         if (userGotItRight) totalCorrect++;
+        if(userGotItWrong) totalFalse++
         
       });
     });
@@ -31,7 +36,7 @@ function App() {
     return {
       numOfQuestions: questionsTotal,
       correctQuestions: totalCorrect,
-      incorrectQuestions: 0,
+      incorrectQuestions: totalFalse,
       numOfAssignments: tasksTotal,
       assignmentsDone: 1,
     }
