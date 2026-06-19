@@ -189,7 +189,7 @@ function App() {
 
             <div className="content-header">
                 <h1 className="page-title">🧠 JavaScript Drills</h1>
-                {/* <button className="left-reset-btn" id="leftSideResetBtn"><span>↻</span> reset all</button> */}
+                <button className="left-reset-btn" id="leftSideResetBtn"><span>↻</span> Reset all</button>
             </div>
 
 

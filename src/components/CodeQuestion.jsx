@@ -22,7 +22,7 @@ const CodeQuestion = ({title, description, result, solution, done, markAsDone, u
             {console.log(done)}
             <div>
               {!done ? 
-                <button  className="reveal-btn challenge-reveal" onClick={markAsDone}>Mark as Done</button> : 
+                <button  className="reveal-btn challenge-reveal" onClick={markAsDone}>Mark as done</button> : 
                 <div className="flex justify-between">
                     <span 
                       className="reveal-btn challenge-reveal mr-2"
