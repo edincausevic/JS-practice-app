@@ -7,14 +7,14 @@ const MainNav = ({displayExercise, data}) => {
   return (
     <nav className="left-menu">
         <div className="menu-header">
-          <h2>📘 JS Drills </h2>
+          <h2>📘 JavaScript Drills </h2>
         </div>
         <div className="course-link">
-          <a href="https://example.com/js-course" target="_blank" rel="noopener">
+          <a href="https://example.com/js-course" target="_blank" rel="noopener" style={{marginRight: '7px'}}>
           <span><img style={{height: '15px'}} src={UdemyLogo}/></span> 
           Go to JS Course</a>
           <a 
-            href="https://youtube.com" 
+            href="https://www.youtube.com/channel/UCxsJ-g3ALVzsn_VCkKfDXxA" 
             target="_blank" 
             rel="noopener noreferrer" 
             style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', textDecoration: 'none', color: 'inherit' }}
