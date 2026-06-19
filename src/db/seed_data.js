@@ -2085,10 +2085,10 @@ export const seedData = {
           "title": "Checking String Length",
           "question": "const password = 'secure123';\nconsole.log(password.length);",
           "options": [
-            { "id": "o2", "option": "a", "text": "10", "correct": false, "selected": false },
-            { "id": "o1", "option": "b", "text": "9", "correct": true, "selected": false }
+            { "id": "o1", "option": "a", "text": "9", "correct": true, "selected": false },
+            { "id": "o2", "option": "b", "text": "10", "correct": false, "selected": false }
           ],
-          "correctAnswer": "b"
+          "correctAnswer": "a"
         },
         {
           "id": "smq3-02",
@@ -2155,10 +2155,10 @@ export const seedData = {
           "title": "Includes Case Sensitivity",
           "question": "const message = 'Hello World';\nconsole.log(message.includes('hello'));",
           "options": [
-            { "id": "o15", "option": "a", "text": "false", "correct": true, "selected": false },
-            { "id": "o16", "option": "b", "text": "true", "correct": false, "selected": false }
+            { "id": "o16", "option": "a", "text": "true", "correct": false, "selected": false },
+            { "id": "o15", "option": "b", "text": "false", "correct": true, "selected": false }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "smq3-09",
@@ -2278,10 +2278,10 @@ export const seedData = {
           "title": "Formatting Decimal Places",
           "question": "const pi = 3.14159;\nconst formatted = pi.toFixed(2);\nconsole.log(formatted);",
           "options": [
-            { "id": "o5", "option": "a", "text": "'3.14'", "correct": true, "selected": false },
-            { "id": "o6", "option": "b", "text": "3.14", "correct": false, "selected": false }
+            { "id": "o6", "option": "a", "text": "3.14", "correct": false, "selected": false },
+            { "id": "o5", "option": "b", "text": "'3.14'", "correct": true, "selected": false }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "nmq1-04",
@@ -2308,10 +2308,10 @@ export const seedData = {
           "title": "Invalid Number Conversion",
           "question": "const dynamicValue = Number('abc');\nconsole.log(isFinite(dynamicValue));",
           "options": [
-            { "id": "o11", "option": "a", "text": "false", "correct": true, "selected": false },
-            { "id": "o12", "option": "b", "text": "true", "correct": false, "selected": false }
+            { "id": "o12", "option": "a", "text": "true", "correct": false, "selected": false },
+            { "id": "o11", "option": "b", "text": "false", "correct": true, "selected": false }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         }
       ],
       "tasks": [
@@ -2371,7 +2371,7 @@ export const seedData = {
             { "id": "o1", "option": "b", "text": "'green'", "correct": true, "selected": false }
           ],
           "correctAnswer": "b"
-        },
+        }, 
         {
           "id": "dq1-02",
           "title": "Skipping Items in Array",
@@ -2387,10 +2387,10 @@ export const seedData = {
           "title": "Basic Object Destructuring",
           "question": "const user = { username: 'alex99', role: 'admin' };\nconst { username } = user;\nconsole.log(username);",
           "options": [
-            { "id": "o6", "option": "a", "text": "undefined", "correct": false, "selected": false },
-            { "id": "o5", "option": "b", "text": "'alex99'", "correct": true, "selected": false }
+            { "id": "o5", "option": "a", "text": "'alex99'", "correct": true, "selected": false },
+            { "id": "o6", "option": "b", "text": "undefined", "correct": false, "selected": false }
           ],
-          "correctAnswer": "b"
+          "correctAnswer": "a"
         },
         {
           "id": "dq1-04",
@@ -2417,10 +2417,10 @@ export const seedData = {
           "title": "Nested Object Destructuring",
           "question": "const profile = { id: 1, info: { email: 'test@test.com' } };\nconst { info: { email } } = profile;\nconsole.log(email);",
           "options": [
-            { "id": "o11", "option": "a", "text": "'test@test.com'", "correct": true, "selected": false },
-            { "id": "o12", "option": "b", "text": "undefined", "correct": false, "selected": false }
+            { "id": "o12", "option": "a", "text": "undefined", "correct": false, "selected": false },
+            { "id": "o11", "option": "b", "text": "'test@test.com'", "correct": true, "selected": false }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         }
       ],
       "tasks": [
@@ -2484,10 +2484,10 @@ export const seedData = {
           "title": "Basic Object Argument Destructuring",
           "question": "function displayUser({ name }) {\n  console.log(name);\n}\ndisplayUser({ name: 'Sarah', age: 31 });",
           "options": [
-            { "id": "o2", "option": "a", "text": "undefined", "correct": false, "selected": false },
-            { "id": "o1", "option": "b", "text": "'Sarah'", "correct": true, "selected": false }
+            { "id": "o1", "option": "a", "text": "'Sarah'", "correct": true, "selected": false },
+            { "id": "o2", "option": "b", "text": "undefined", "correct": false, "selected": false }
           ],
-          "correctAnswer": "b"
+          "correctAnswer": "a"
         },
         {
           "id": "fdq1-02",
@@ -2504,10 +2504,10 @@ export const seedData = {
           "title": "Default Parameter Values",
           "question": "function setVolume({ level = 50 }) {\n  console.log(level);\n}\nsetVolume({});",
           "options": [
-            { "id": "o6", "option": "a", "text": "undefined", "correct": false, "selected": false },
-            { "id": "o5", "option": "b", "text": "50", "correct": true, "selected": false }
+            { "id": "o5", "option": "a", "text": "50", "correct": true, "selected": false },
+            { "id": "o6", "option": "b", "text": "undefined", "correct": false, "selected": false }
           ],
-          "correctAnswer": "b"
+          "correctAnswer": "a"
         },
         {
           "id": "fdq1-04",
@@ -2534,10 +2534,10 @@ export const seedData = {
           "title": "Nested Destructuring in Arguments",
           "question": "function printCity({ address: { city } }) {\n  console.log(city);\n}\nprintCity({ id: 10, address: { city: 'Berlin' } });",
           "options": [
-            { "id": "o12", "option": "a", "text": "undefined", "correct": false, "selected": false },
-            { "id": "o11", "option": "b", "text": "'Berlin'", "correct": true, "selected": false }
+            { "id": "o11", "option": "a", "text": "'Berlin'", "correct": true, "selected": false },
+            { "id": "o12", "option": "b", "text": "undefined", "correct": false, "selected": false }
           ],
-          "correctAnswer": "b"
+          "correctAnswer": "a"
         }
       ],
       "tasks": [
@@ -2601,10 +2601,10 @@ export const seedData = {
           "title": "Spreading Array Elements",
           "question": "const initial = [1, 2];\nconst combined = [...initial, 3, 4];\nconsole.log(combined.length);",
           "options": [
-            { "id": "o2", "option": "a", "text": "3", "correct": false, "selected": false },
-            { "id": "o1", "option": "b", "text": "4", "correct": true, "selected": false }
+            { "id": "o1", "option": "a", "text": "4", "correct": true, "selected": false },
+            { "id": "o2", "option": "b", "text": "3", "correct": false, "selected": false }
           ],
-          "correctAnswer": "b"
+          "correctAnswer": "a"
         },
         {
           "id": "soq1-02",
@@ -2682,20 +2682,20 @@ export const seedData = {
           "title": "Gathering Remaining Arguments",
           "question": "function collectNumbers(first, ...rest) {\n  console.log(rest.length);\n}\ncollectNumbers(10, 20, 30, 40);",
           "options": [
-            { "id": "o2", "option": "a", "text": "4", "correct": false, "selected": false },
-            { "id": "o1", "option": "b", "text": "3", "correct": true, "selected": false }
+            { "id": "o1", "option": "a", "text": "3", "correct": true, "selected": false },
+            { "id": "o2", "option": "b", "text": "4", "correct": false, "selected": false }
           ],
-          "correctAnswer": "b"
+          "correctAnswer": "a"
         },
         {
           "id": "roq1-02",
           "title": "Rest in Array Destructuring",
           "question": "const team = ['Anna', 'Bob', 'Charlie', 'David'];\nconst [leader, ...everyoneElse] = team;\nconsole.log(everyoneElse[0]);",
           "options": [
-            { "id": "o3", "option": "a", "text": "'Bob'", "correct": true, "selected": false },
-            { "id": "o4", "option": "b", "text": "'Anna'", "correct": false, "selected": false }
+            { "id": "o4", "option": "a", "text": "'Anna'", "correct": false, "selected": false },
+            { "id": "o3", "option": "b", "text": "'Bob'", "correct": true, "selected": false }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "roq1-03",
@@ -2722,10 +2722,10 @@ export const seedData = {
           "title": "Missing Values with Rest Parameter",
           "question": "function getMore(...items) {\n  console.log(items[0]);\n}\ngetMore();",
           "options": [
-            { "id": "o9", "option": "a", "text": "undefined", "correct": true, "selected": false },
-            { "id": "o10", "option": "b", "text": "null", "correct": false, "selected": false }
+            { "id": "o10", "option": "a", "text": "null", "correct": false, "selected": false },
+            { "id": "o9", "option": "b", "text": "undefined", "correct": true, "selected": false }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "roq1-06",
@@ -2775,20 +2775,20 @@ export const seedData = {
           "title": "Adding Elements to Arrays",
           "question": "const fruits = ['apple', 'banana'];\nconst updated = ['kiwi', ...fruits, 'mango'];\nconsole.log(updated[0]);",
           "options": [
-            { "id": "o2", "option": "a", "text": "'apple'", "correct": false, "selected": false },
-            { "id": "o1", "option": "b", "text": "'kiwi'", "correct": true, "selected": false }
+            { "id": "o1", "option": "a", "text": "'kiwi'", "correct": true, "selected": false },
+            { "id": "o2", "option": "b", "text": "'apple'", "correct": false, "selected": false }
           ],
-          "correctAnswer": "b"
+          "correctAnswer": "a"
         },
         {
           "id": "coq1-02",
           "title": "Targeting the Last Array Element",
           "question": "const items = ['pen', 'paper', 'clip'];\nconst last = items.at(-1);\nconsole.log(last);",
           "options": [
-            { "id": "o3", "option": "a", "text": "'clip'", "correct": true, "selected": false },
-            { "id": "o4", "option": "b", "text": "'pen'", "correct": false, "selected": false }
+            { "id": "o4", "option": "a", "text": "'pen'", "correct": false, "selected": false },
+            { "id": "o3", "option": "b", "text": "'clip'", "correct": true, "selected": false }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "coq1-03",
@@ -2825,10 +2825,10 @@ export const seedData = {
           "title": "Array Tail Extraction",
           "question": "const colors = ['red', 'green', 'blue'];\nconst [first, ...restOfColors] = colors;\nconsole.log(restOfColors[0]);",
           "options": [
-            { "id": "o11", "option": "a", "text": "'green'", "correct": true, "selected": false },
-            { "id": "o12", "option": "b", "text": "'red'", "correct": false, "selected": false }
+            { "id": "o12", "option": "a", "text": "'red'", "correct": false, "selected": false },
+            { "id": "o11", "option": "b", "text": "'green'", "correct": true, "selected": false }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         }
       ],
       "tasks": [
@@ -2877,20 +2877,20 @@ export const seedData = {
           "title": "String Length Check",
           "question": "const username = 'alpha_dev';\nconsole.log(username.length);",
           "options": [
-            { "id": "o2", "option": "a", "text": "8", "correct": false, "selected": false },
-            { "id": "o1", "option": "b", "text": "9", "correct": true, "selected": false }
+            { "id": "o1", "option": "a", "text": "9", "correct": true, "selected": false },
+            { "id": "o2", "option": "b", "text": "8", "correct": false, "selected": false }
           ],
-          "correctAnswer": "b"
+          "correctAnswer": "a"
         },
         {
           "id": "mq3-02",
           "title": "Substring Evaluation with Includes",
           "question": "const email = 'support@company.com';\nconsole.log(email.includes('@'));",
           "options": [
-            { "id": "o4", "option": "a", "text": "false", "correct": false, "selected": false },
-            { "id": "o3", "option": "b", "text": "true", "correct": true, "selected": false }
+            { "id": "o3", "option": "a", "text": "true", "correct": true, "selected": false },
+            { "id": "o4", "option": "b", "text": "false", "correct": false, "selected": false }
           ],
-          "correctAnswer": "b"
+          "correctAnswer": "a"
         },
         {
           "id": "mq3-03",
@@ -2927,20 +2927,20 @@ export const seedData = {
           "title": "String Splice and Isolation",
           "question": "const text = 'JavaScript';\nconsole.log(text.slice(0, 4));",
           "options": [
-            { "id": "o11", "option": "a", "text": "'Java'", "correct": true, "selected": false },
-            { "id": "o12", "option": "b", "text": "'Script'", "correct": false, "selected": false }
+            { "id": "o12", "option": "a", "text": "'Script'", "correct": false, "selected": false },
+            { "id": "o11", "option": "b", "text": "'Java'", "correct": true, "selected": false }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "mq3-07",
           "title": "Case Transformation Upper",
           "question": "const code = 'promo10';\nconsole.log(code.toUpperCase());",
           "options": [
-            { "id": "o14", "option": "a", "text": "'promo10'", "correct": false, "selected": false },
-            { "id": "o13", "option": "b", "text": "'PROMO10'", "correct": true, "selected": false }
+            { "id": "o13", "option": "a", "text": "'PROMO10'", "correct": true, "selected": false },
+            { "id": "o14", "option": "b", "text": "'promo10'", "correct": false, "selected": false }
           ],
-          "correctAnswer": "b"
+          "correctAnswer": "a"
         },
         {
           "id": "mq3-08",
@@ -2967,10 +2967,10 @@ export const seedData = {
           "title": "Array Aggregation into Strings",
           "question": "const path = ['usr', 'bin'];\nconsole.log(path.join('/'));",
           "options": [
-            { "id": "o19", "option": "a", "text": "'usr/bin'", "correct": true, "selected": false },
-            { "id": "o20", "option": "b", "text": "'usr,bin'", "correct": false, "selected": false }
+            { "id": "o20", "option": "a", "text": "'usr,bin'", "correct": false, "selected": false },
+            { "id": "o19", "option": "b", "text": "'usr/bin'", "correct": true, "selected": false }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "mq3-11",
@@ -3017,20 +3017,20 @@ export const seedData = {
           "title": "Float Precision Formatting",
           "question": "const balance = 10.5678;\nconsole.log(balance.toFixed(2));",
           "options": [
-            { "id": "o30", "option": "a", "text": "10.57", "correct": false, "selected": false },
-            { "id": "o29", "option": "b", "text": "'10.57'", "correct": true, "selected": false }
+            { "id": "o29", "option": "a", "text": "'10.57'", "correct": true, "selected": false },
+            { "id": "o30", "option": "b", "text": "10.57", "correct": false, "selected": false }
           ],
-          "correctAnswer": "b"
+          "correctAnswer": "a"
         },
         {
           "id": "mq3-16",
           "title": "Explicit Type Parsing",
           "question": "const entry = '4';\nconst parsed = Number(entry);\nconsole.log(typeof parsed);",
           "options": [
-            { "id": "o32", "option": "a", "text": "'string'", "correct": false, "selected": false },
-            { "id": "o31", "option": "b", "text": "'number'", "correct": true, "selected": false }
+            { "id": "o31", "option": "a", "text": "'number'", "correct": true, "selected": false },
+            { "id": "o32", "option": "b", "text": "'string'", "correct": false, "selected": false }
           ],
-          "correctAnswer": "b"
+          "correctAnswer": "a"
         },
         {
           "id": "mq3-17",
@@ -3057,20 +3057,20 @@ export const seedData = {
           "title": "Array Head Extraction",
           "question": "const queue = ['task1', 'task2'];\nconst [nextTask] = queue;\nconsole.log(nextTask);",
           "options": [
-            { "id": "o38", "option": "a", "text": "'task2'", "correct": false, "selected": false },
-            { "id": "o37", "option": "b", "text": "'task1'", "correct": true, "selected": false }
+            { "id": "o37", "option": "a", "text": "'task1'", "correct": true, "selected": false },
+            { "id": "o38", "option": "b", "text": "'task2'", "correct": false, "selected": false }
           ],
-          "correctAnswer": "b"
+          "correctAnswer": "a"
         },
         {
           "id": "mq3-20",
           "title": "Understanding Hoisting",
           "question": "console.log(greet());\nfunction greet() {\n  return 'hello';\n}",
           "options": [
-            { "id": "o39", "option": "a", "text": "'hello'", "correct": true, "selected": false },
-            { "id": "o40", "option": "b", "text": "TypeError", "correct": false, "selected": false }
+            { "id": "o40", "option": "a", "text": "TypeError", "correct": false, "selected": false },
+            { "id": "o39", "option": "b", "text": "'hello'", "correct": true, "selected": false }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "mq3-21",
@@ -3087,10 +3087,10 @@ export const seedData = {
           "title": "Array Leftover Collection",
           "question": "const logs = ['error1', 'info1', 'info2'];\nconst [first, ...remaining] = logs;\nconsole.log(remaining.length);",
           "options": [
-            { "id": "o43", "option": "a", "text": "2", "correct": true, "selected": false },
-            { "id": "o44", "option": "b", "text": "3", "correct": false, "selected": false }
+            { "id": "o44", "option": "a", "text": "3", "correct": false, "selected": false },
+            { "id": "o43", "option": "b", "text": "2", "correct": true, "selected": false }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "mq3-23",
@@ -3127,10 +3127,10 @@ export const seedData = {
           "title": "State Update Overwrites",
           "question": "const user = { name: 'Pablo', isOnline: false };\nconst nextUser = { ...user, isOnline: true, isAdmin: true };\nconsole.log(nextUser.isOnline);",
           "options": [
-            { "id": "o51", "option": "a", "text": "true", "correct": true, "selected": false },
-            { "id": "o52", "option": "b", "text": "false", "correct": false, "selected": false }
+            { "id": "o52", "option": "a", "text": "false", "correct": false, "selected": false },
+            { "id": "o51", "option": "b", "text": "true", "correct": true, "selected": false }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "mq3-27",
@@ -3157,20 +3157,20 @@ export const seedData = {
           "title": "Destructured Defaults Evaluation",
           "question": "const data = { token: 'xyz' };\nconst { token, type = 'Bearer' } = data;\nconsole.log(type);",
           "options": [
-            { "id": "o58", "option": "a", "text": "undefined", "correct": false, "selected": false },
-            { "id": "o57", "option": "b", "text": "'Bearer'", "correct": true, "selected": false }
+            { "id": "o57", "option": "a", "text": "'Bearer'", "correct": true, "selected": false },
+            { "id": "o58", "option": "b", "text": "undefined", "correct": false, "selected": false }
           ],
-          "correctAnswer": "b"
+          "correctAnswer": "a"
         },
         {
           "id": "mq3-30",
           "title": "Argument Binding via Destruction",
           "question": "function show({ title }) {\n  return title;\n}\nconsole.log(show({ id: 5, title: 'Book' }));",
           "options": [
-            { "id": "o59", "option": "a", "text": "'Book'", "correct": true, "selected": false },
-            { "id": "o60", "option": "b", "text": "undefined", "correct": false, "selected": false }
+            { "id": "o60", "option": "a", "text": "undefined", "correct": false, "selected": false },
+            { "id": "o59", "option": "b", "text": "'Book'", "correct": true, "selected": false }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "mq3-31",
@@ -3197,10 +3197,10 @@ export const seedData = {
           "title": "String Conditional Matching",
           "question": "const alertMessage = 'ERROR: Database failed';\nconsole.log(alertMessage.startsWith('ERROR'));",
           "options": [
-            { "id": "o65", "option": "a", "text": "true", "correct": true, "selected": false },
-            { "id": "o66", "option": "b", "text": "false", "correct": false, "selected": false }
+            { "id": "o66", "option": "a", "text": "false", "correct": false, "selected": false },
+            { "id": "o65", "option": "b", "text": "true", "correct": true, "selected": false }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "mq3-34",
@@ -3217,10 +3217,10 @@ export const seedData = {
           "title": "Array Element Isolation via Rest",
           "question": "const rates = [1.2, 3.4, 5.6];\nconst [primary, ...restRates] = rates;\nconsole.log(restRates[0]);",
           "options": [
-            { "id": "o69", "option": "a", "text": "3.4", "correct": true, "selected": false },
-            { "id": "o70", "option": "b", "text": "1.2", "correct": false, "selected": false }
+            { "id": "o70", "option": "a", "text": "1.2", "correct": false, "selected": false },
+            { "id": "o69", "option": "b", "text": "3.4", "correct": true, "selected": false }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "mq3-36",
@@ -3237,10 +3237,10 @@ export const seedData = {
           "title": "Character Replacement Chain",
           "question": "const item = 'tea cup';\nconsole.log(item.replace(' ', '-'));",
           "options": [
-            { "id": "o74", "option": "a", "text": "'teacup'", "correct": false, "selected": false },
-            { "id": "o73", "option": "b", "text": "'tea-cup'", "correct": true, "selected": false }
+            { "id": "o73", "option": "a", "text": "'tea-cup'", "correct": true, "selected": false },
+            { "id": "o74", "option": "b", "text": "'teacup'", "correct": false, "selected": false }
           ],
-          "correctAnswer": "b"
+          "correctAnswer": "a"
         },
         {
           "id": "mq3-38",
@@ -3267,20 +3267,20 @@ export const seedData = {
           "title": "Property Accumulation via Spreading",
           "question": "const base = { x: 1 };\nconst point = { ...base, y: 2, x: 3 };\nconsole.log(point.x);",
           "options": [
-            { "id": "o81", "option": "a", "text": "3", "correct": true, "selected": false },
-            { "id": "o82", "option": "b", "text": "1", "correct": false, "selected": false }
+            { "id": "o82", "option": "a", "text": "1", "correct": false, "selected": false },
+            { "id": "o81", "option": "b", "text": "3", "correct": true, "selected": false }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "mq3-42",
           "title": "Substring Match Inclusion Check",
           "question": "const msg = 'Welcome administrator';\nconsole.log(msg.includes('admin'));",
           "options": [
-            { "id": "o84", "option": "a", "text": "false", "correct": false, "selected": false },
-            { "id": "o83", "option": "b", "text": "true", "correct": true, "selected": false }
+            { "id": "o83", "option": "a", "text": "true", "correct": true, "selected": false },
+            { "id": "o84", "option": "b", "text": "false", "correct": false, "selected": false }
           ],
-          "correctAnswer": "b"
+          "correctAnswer": "a"
         },
         {
           "id": "mq3-43",
@@ -3327,10 +3327,10 @@ export const seedData = {
           "title": "String Character Transformations",
           "question": "const label = 'Item';\nconsole.log(label.toUpperCase() === 'ITEM');",
           "options": [
-            { "id": "o94", "option": "a", "text": "false", "correct": false, "selected": false },
-            { "id": "o93", "option": "b", "text": "true", "correct": true, "selected": false }
+            { "id": "o93", "option": "a", "text": "true", "correct": true, "selected": false },
+            { "id": "o94", "option": "b", "text": "false", "correct": false, "selected": false }
           ],
-          "correctAnswer": "b"
+          "correctAnswer": "a"
         },
         {
           "id": "mq3-48",
@@ -3504,20 +3504,20 @@ export const seedData = {
           "title": "Basic Ternary Execution",
           "question": "const isActive = true;\nconst status = isActive ? 'Active' : 'Inactive';\nconsole.log(status);",
           "options": [
-            { "id": "o2", "option": "a", "text": "'Inactive'", "correct": false },
-            { "id": "o1", "option": "b", "text": "'Active'", "correct": true }
+            { "id": "o1", "option": "a", "text": "'Active'", "correct": true },
+            { "id": "o2", "option": "b", "text": "'Inactive'", "correct": false }
           ],
-          "correctAnswer": "b"
+          "correctAnswer": "a"
         },
         {
           "id": "toq1-02",
           "title": "Falsy Condition Evaluation",
           "question": "const score = 0;\nconst result = score ? 'Has Score' : 'No Score';\nconsole.log(result);",
           "options": [
-            { "id": "o3", "option": "a", "text": "'No Score'", "correct": true },
-            { "id": "o4", "option": "b", "text": "'Has Score'", "correct": false }
+            { "id": "o4", "option": "a", "text": "'Has Score'", "correct": false },
+            { "id": "o3", "option": "b", "text": "'No Score'", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "toq1-03",
@@ -3570,20 +3570,20 @@ export const seedData = {
           "title": "Basic Boolean AND Evaluation",
           "question": "const hasKey = true;\nconst hasPermission = false;\nconst canEnter = hasKey && hasPermission;\nconsole.log(canEnter);",
           "options": [
-            { "id": "o2", "option": "a", "text": "true", "correct": false },
-            { "id": "o1", "option": "b", "text": "false", "correct": true }
+            { "id": "o1", "option": "a", "text": "false", "correct": true },
+            { "id": "o2", "option": "b", "text": "true", "correct": false }
           ],
-          "correctAnswer": "b"
+          "correctAnswer": "a"
         },
         {
           "id": "laq1-02",
           "title": "Short Circuit with Falsy Value",
           "question": "const points = 0;\nconst status = points && 'Active Player';\nconsole.log(status);",
           "options": [
-            { "id": "o3", "option": "a", "text": "0", "correct": true },
-            { "id": "o4", "option": "b", "text": "'Active Player'", "correct": false }
+            { "id": "o4", "option": "a", "text": "'Active Player'", "correct": false },
+            { "id": "o3", "option": "b", "text": "0", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "laq1-03",
@@ -3600,10 +3600,10 @@ export const seedData = {
           "title": "Multiple Chain Evaluation Short Circuit",
           "question": "const result = 'Hello' && '' && 'World';\nconsole.log(result);",
           "options": [
-            { "id": "o7", "option": "a", "text": "''", "correct": true },
-            { "id": "o8", "option": "b", "text": "'World'", "correct": false }
+            { "id": "o8", "option": "a", "text": "'World'", "correct": false },
+            { "id": "o7", "option": "b", "text": "''", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "laq1-05",
@@ -3643,10 +3643,10 @@ export const seedData = {
           "title": "Logical OR Falsy Fallback",
           "question": "const userTheme = '';\nconst defaultTheme = 'dark';\nconst theme = userTheme || defaultTheme;\nconsole.log(theme);",
           "options": [
-            { "id": "o2", "option": "a", "text": "''", "correct": false },
-            { "id": "o1", "option": "b", "text": "'dark'", "correct": true }
+            { "id": "o1", "option": "a", "text": "'dark'", "correct": true },
+            { "id": "o2", "option": "b", "text": "''", "correct": false }
           ],
-          "correctAnswer": "b"
+          "correctAnswer": "a"
         },
         {
           "id": "onq1-02",
@@ -3663,10 +3663,10 @@ export const seedData = {
           "title": "Logical OR with Numeric Zero",
           "question": "const customTimeout = 0;\nconst timeout = customTimeout || 3000;\nconsole.log(timeout);",
           "options": [
-            { "id": "o6", "option": "a", "text": "0", "correct": false },
-            { "id": "o5", "option": "b", "text": "3000", "correct": true }
+            { "id": "o5", "option": "a", "text": "3000", "correct": true },
+            { "id": "o6", "option": "b", "text": "0", "correct": false }
           ],
-          "correctAnswer": "b"
+          "correctAnswer": "a"
         },
         {
           "id": "onq1-04",
@@ -3693,10 +3693,10 @@ export const seedData = {
           "title": "Chained Logical OR Evaluation",
           "question": "const input = false || null || 'Success';\nconsole.log(input);",
           "options": [
-            { "id": "o11", "option": "a", "text": "'Success'", "correct": true },
-            { "id": "o12", "option": "b", "text": "null", "correct": false }
+            { "id": "o12", "option": "a", "text": "null", "correct": false },
+            { "id": "o11", "option": "b", "text": "'Success'", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "onq1-07",
@@ -3713,10 +3713,10 @@ export const seedData = {
           "title": "Chained Nullish Coalescing Operators",
           "question": "const score = undefined ?? null ?? 10;\nconsole.log(score);",
           "options": [
-            { "id": "o20", "option": "a", "text": "null", "correct": false },
-            { "id": "o19", "option": "b", "text": "10", "correct": true }
+            { "id": "o19", "option": "a", "text": "10", "correct": true },
+            { "id": "o20", "option": "b", "text": "null", "correct": false }
           ],
-          "correctAnswer": "b"
+          "correctAnswer": "a"
         }
       ],
       "tasks": [
@@ -3756,20 +3756,20 @@ export const seedData = {
           "title": "Inverting Empty String Falsy Value",
           "question": "const username = '';\nconsole.log(!username);",
           "options": [
-            { "id": "o4", "option": "a", "text": "false", "correct": false },
-            { "id": "o3", "option": "b", "text": "true", "correct": true }
+            { "id": "o3", "option": "a", "text": "true", "correct": true },
+            { "id": "o4", "option": "b", "text": "false", "correct": false }
           ],
-          "correctAnswer": "b"
+          "correctAnswer": "a"
         },
         {
           "id": "lnq1-05",
           "title": "NOT Operator with Numeric Zero",
           "question": "const totalItems = 0;\nconsole.log(!totalItems);",
           "options": [
-            { "id": "o10", "option": "a", "text": "false", "correct": false },
-            { "id": "o9", "option": "b", "text": "true", "correct": true }
+            { "id": "o9", "option": "a", "text": "true", "correct": true },
+            { "id": "o10", "option": "b", "text": "false", "correct": false }
           ],
-          "correctAnswer": "b"
+          "correctAnswer": "a"
         },
         {
           "id": "lnq1-06",
@@ -3786,10 +3786,10 @@ export const seedData = {
           "title": "Inverting a Truthy Object Reference",
           "question": "const profile = { name: 'Alex' };\nconsole.log(!profile);",
           "options": [
-            { "id": "o13", "option": "a", "text": "false", "correct": true },
-            { "id": "o14", "option": "b", "text": "true", "correct": false }
+            { "id": "o14", "option": "a", "text": "true", "correct": false },
+            { "id": "o13", "option": "b", "text": "false", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "lnq1-09",
@@ -3930,10 +3930,10 @@ export const seedData = {
           "title": "Accessing Existing Nested Properties",
           "question": "const user = { profile: { name: 'Alice' } };\nconsole.log(user.profile?.name);",
           "options": [
-            { "id": "o2", "option": "a", "text": "undefined", "correct": false },
-            { "id": "o1", "option": "b", "text": "'Alice'", "correct": true }
+            { "id": "o1", "option": "a", "text": "'Alice'", "correct": true },
+            { "id": "o2", "option": "b", "text": "undefined", "correct": false }
           ],
-          "correctAnswer": "b"
+          "correctAnswer": "a"
         },
         {
           "id": "ocq1-02",
@@ -3950,10 +3950,10 @@ export const seedData = {
           "title": "Optional Chaining on Null Objects",
           "question": "const product = null;\nconsole.log(product?.price);",
           "options": [
-            { "id": "o5", "option": "a", "text": "undefined", "correct": true },
-            { "id": "o6", "option": "b", "text": "TypeError", "correct": false }
+            { "id": "o6", "option": "a", "text": "TypeError", "correct": false },
+            { "id": "o5", "option": "b", "text": "undefined", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "ocq1-04",
@@ -3980,20 +3980,20 @@ export const seedData = {
           "title": "Combining Optional Chain and Nullish Coalescing",
           "question": "const user = { settings: null };\nconst theme = user.settings?.theme ?? 'light';\nconsole.log(theme);",
           "options": [
-            { "id": "o16", "option": "a", "text": "null", "correct": false },
-            { "id": "o15", "option": "b", "text": "'light'", "correct": true }
+            { "id": "o15", "option": "a", "text": "'light'", "correct": true },
+            { "id": "o16", "option": "b", "text": "null", "correct": false }
           ],
-          "correctAnswer": "b"
+          "correctAnswer": "a"
         },
         {
           "id": "ocq1-09",
           "title": "Optional Chaining Array Element Access",
           "question": "const data = { scores: [90, 85] };\nconsole.log(data.scores?.[0]);",
           "options": [
-            { "id": "o17", "option": "a", "text": "90", "correct": true },
-            { "id": "o18", "option": "b", "text": "undefined", "correct": false }
+            { "id": "o18", "option": "a", "text": "undefined", "correct": false },
+            { "id": "o17", "option": "b", "text": "90", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "ocq1-10",
@@ -4038,20 +4038,20 @@ export const seedData = {
           "title": "Precedence Challenge with Coupon and Totals",
           "question": "const hasCoupon = true;\nconst isVIP = false;\nconst total = 40;\nconst isEligible = hasCoupon || isVIP && total > 50;\nconsole.log(isEligible);",
           "options": [
-            { "id": "o6", "option": "a", "text": "false", "correct": false, "selected": false },
-            { "id": "o5", "option": "b", "text": "true", "correct": true, "selected": false }
+            { "id": "o5", "option": "a", "text": "true", "correct": true, "selected": false },
+            { "id": "o6", "option": "b", "text": "false", "correct": false, "selected": false }
           ],
-          "correctAnswer": "b"
+          "correctAnswer": "a"
         },
         {
           "id": "lcq1-04",
           "title": "Enforced Parentheses Checking for Cart Rules",
           "question": "const hasCoupon = true;\nconst isVIP = false;\nconst total = 40;\nconst isEligible = (hasCoupon || isVIP) && total > 50;\nconsole.log(isEligible);",
           "options": [
-            { "id": "o7", "option": "a", "text": "false", "correct": true, "selected": false },
-            { "id": "o8", "option": "b", "text": "true", "correct": false, "selected": false }
+            { "id": "o8", "option": "a", "text": "true", "correct": false, "selected": false },
+            { "id": "o7", "option": "b", "text": "false", "correct": true, "selected": false }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "lcq1-05",
@@ -4088,10 +4088,10 @@ export const seedData = {
           "title": "Complex Truthy Check with Function Execution",
           "question": "let trackingFlag = false;\nconst logAction = () => {\n  trackingFlag = true;\n  return 'Logged';\n};\nconst access = (false || true) && logAction();\nconsole.log(trackingFlag);",
           "options": [
-            { "id": "o15", "option": "a", "text": "true", "correct": true, "selected": false },
-            { "id": "o16", "option": "b", "text": "false", "correct": false, "selected": false }
+            { "id": "o16", "option": "a", "text": "false", "correct": false, "selected": false },
+            { "id": "o15", "option": "b", "text": "true", "correct": true, "selected": false }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "lcq1-09",
@@ -4136,10 +4136,10 @@ export const seedData = {
           "title": "Ternary Operator Basic Assignment",
           "question": "const isMember = true;\nconst discount = isMember ? 0.1 : 0;\nconsole.log(discount);",
           "options": [
-            { "id": "o1", "option": "a", "text": "0.1", "correct": true },
-            { "id": "o2", "option": "b", "text": "0", "correct": false }
+            { "id": "o2", "option": "a", "text": "0", "correct": false },
+            { "id": "o1", "option": "b", "text": "0.1", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-02",
@@ -4166,20 +4166,20 @@ export const seedData = {
           "title": "Logical AND Short-Circuiting with Truthy Base",
           "question": "const isLoggedIn = true;\nconst view = isLoggedIn && 'Dashboard';\nconsole.log(view);",
           "options": [
-            { "id": "o7", "option": "a", "text": "'Dashboard'", "correct": true },
-            { "id": "o8", "option": "b", "text": "true", "correct": false }
+            { "id": "o8", "option": "a", "text": "true", "correct": false },
+            { "id": "o7", "option": "b", "text": "'Dashboard'", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-05",
           "title": "Logical AND Guarding with Falsy Value",
           "question": "const items = 0;\nconst message = items && 'Items available';\nconsole.log(message);",
           "options": [
-            { "id": "o9", "option": "a", "text": "0", "correct": true },
-            { "id": "o10", "option": "b", "text": "'Items available'", "correct": false }
+            { "id": "o10", "option": "a", "text": "'Items available'", "correct": false },
+            { "id": "o9", "option": "b", "text": "0", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-06",
@@ -4216,20 +4216,20 @@ export const seedData = {
           "title": "Nullish Coalescing Resolving Null",
           "question": "const serverPayload = null;\nconst payload = serverPayload ?? 'No Data';\nconsole.log(payload);",
           "options": [
-            { "id": "o17", "option": "a", "text": "'No Data'", "correct": true },
-            { "id": "o18", "option": "b", "text": "null", "correct": false }
+            { "id": "o18", "option": "a", "text": "null", "correct": false },
+            { "id": "o17", "option": "b", "text": "'No Data'", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-10",
           "title": "Logical NOT Truthy Coercion",
           "question": "const val = 'hello';\nconsole.log(!val);",
           "options": [
-            { "id": "o19", "option": "a", "text": "false", "correct": true },
-            { "id": "o20", "option": "b", "text": "true", "correct": false }
+            { "id": "o20", "option": "a", "text": "true", "correct": false },
+            { "id": "o19", "option": "b", "text": "false", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-11",
@@ -4246,20 +4246,20 @@ export const seedData = {
           "title": "Optional Chaining Safe Object Extraction",
           "question": "const apiResponse = { data: { code: 200 } };\nconsole.log(apiResponse.data?.code);",
           "options": [
-            { "id": "o23", "option": "a", "text": "200", "correct": true },
-            { "id": "o24", "option": "b", "text": "undefined", "correct": false }
+            { "id": "o24", "option": "a", "text": "undefined", "correct": false },
+            { "id": "o23", "option": "b", "text": "200", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-13",
           "title": "Optional Chaining for Extraneous Properties",
           "question": "const employee = { name: 'Luis' };\nconsole.log(employee.benefits?.health);",
           "options": [
-            { "id": "o25", "option": "a", "text": "undefined", "correct": true },
-            { "id": "o26", "option": "b", "text": "ReferenceError", "correct": false }
+            { "id": "o26", "option": "a", "text": "ReferenceError", "correct": false },
+            { "id": "o25", "option": "b", "text": "undefined", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-14",
@@ -4286,10 +4286,10 @@ export const seedData = {
           "title": "Nullish Coalescing with Numeric Zero Check",
           "question": "const horizontalOffset = 0;\nconst renderingPosition = horizontalOffset ?? 100;\nconsole.log(renderingPosition);",
           "options": [
-            { "id": "o31", "option": "a", "text": "0", "correct": true },
-            { "id": "o32", "option": "b", "text": "100", "correct": false }
+            { "id": "o32", "option": "a", "text": "100", "correct": false },
+            { "id": "o31", "option": "b", "text": "0", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-17",
@@ -4306,30 +4306,30 @@ export const seedData = {
           "title": "Parentheses Explicit Hierarchy Overriding",
           "question": "const canAccess = false && (true || true);\nconsole.log(canAccess);",
           "options": [
-            { "id": "o35", "option": "a", "text": "false", "correct": true },
-            { "id": "o36", "option": "b", "text": "true", "correct": false }
+            { "id": "o36", "option": "a", "text": "true", "correct": false },
+            { "id": "o35", "option": "b", "text": "false", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-19",
           "title": "Ternary with Explicit Comparison Logic",
           "question": "const userAge = 16;\nconst accessible = userAge >= 18 ? 'yes' : 'no';\nconsole.log(accessible);",
           "options": [
-            { "id": "o37", "option": "a", "text": "'no'", "correct": true },
-            { "id": "o38", "option": "b", "text": "'yes'", "correct": false }
+            { "id": "o38", "option": "a", "text": "'yes'", "correct": false },
+            { "id": "o37", "option": "b", "text": "'no'", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-20",
           "title": "Logical AND Short Circuit Tracker",
           "question": "let executed = false;\nconst run = () => {\n  executed = true;\n  return 'Done';\n};\nconst step = false && run();\nconsole.log(executed);",
           "options": [
-            { "id": "o39", "option": "a", "text": "false", "correct": true },
-            { "id": "o40", "option": "b", "text": "true", "correct": false }
+            { "id": "o40", "option": "a", "text": "true", "correct": false },
+            { "id": "o39", "option": "b", "text": "false", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-21",
@@ -4356,10 +4356,10 @@ export const seedData = {
           "title": "Logical NOT on NaN Operational Target",
           "question": "const uninitializedNumber = NaN;\nconsole.log(!uninitializedNumber);",
           "options": [
-            { "id": "o45", "option": "a", "text": "true", "correct": true },
-            { "id": "o46", "option": "b", "text": "false", "correct": false }
+            { "id": "o46", "option": "a", "text": "false", "correct": false },
+            { "id": "o45", "option": "b", "text": "true", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-24",
@@ -4386,20 +4386,20 @@ export const seedData = {
           "title": "Ternary with Boolean Returns Evaluation",
           "question": "const itemStock = 5;\nconst restockNecessary = itemStock < 10 ? true : false;\nconsole.log(restockNecessary);",
           "options": [
-            { "id": "o51", "option": "a", "text": "true", "correct": true },
-            { "id": "o52", "option": "b", "text": "false", "correct": false }
+            { "id": "o52", "option": "a", "text": "false", "correct": false },
+            { "id": "o51", "option": "b", "text": "true", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-27",
           "title": "Logical AND and Operator Precedence Cascade",
           "question": "const evaluationResult = true && 'first' || 'second';\nconsole.log(evaluationResult);",
           "options": [
-            { "id": "o53", "option": "a", "text": "'first'", "correct": true },
-            { "id": "o54", "option": "b", "text": "'second'", "correct": false }
+            { "id": "o54", "option": "a", "text": "'second'", "correct": false },
+            { "id": "o53", "option": "b", "text": "'first'", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-28",
@@ -4416,10 +4416,10 @@ export const seedData = {
           "title": "Nullish Coalescing Over Empty Object Targets",
           "question": "const trackingProfile = {};\nconst activeNode = trackingProfile ?? { status: 'offline' };\nconsole.log(activeNode);",
           "options": [
-            { "id": "o57", "option": "a", "text": "{}", "correct": true },
-            { "id": "o58", "option": "b", "text": "{ status: 'offline' }", "correct": false }
+            { "id": "o58", "option": "a", "text": "{ status: 'offline' }", "correct": false },
+            { "id": "o57", "option": "b", "text": "{}", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-30",
@@ -4456,10 +4456,10 @@ export const seedData = {
           "title": "Logical OR Intercepting Truthy Expressions",
           "question": "const primaryToken = 'auth-token';\nconst operationalToken = primaryToken || 'refresh-token';\nconsole.log(operationalToken);",
           "options": [
-            { "id": "o65", "option": "a", "text": "'auth-token'", "correct": true },
-            { "id": "o66", "option": "b", "text": "'refresh-token'", "correct": false }
+            { "id": "o66", "option": "a", "text": "'refresh-token'", "correct": false },
+            { "id": "o65", "option": "b", "text": "'auth-token'", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-34",
@@ -4486,20 +4486,20 @@ export const seedData = {
           "title": "Optional Chaining Defensively Navigating Middle Null Branches",
           "question": "const matrix = { layerOne: null };\nconsole.log(matrix.layerOne?.layerTwo?.layerThree);",
           "options": [
-            { "id": "o71", "option": "a", "text": "undefined", "correct": true },
-            { "id": "o72", "option": "b", "text": "TypeError", "correct": false }
+            { "id": "o72", "option": "a", "text": "TypeError", "correct": false },
+            { "id": "o71", "option": "b", "text": "undefined", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-37",
           "title": "Ternary Evaluation via Compound Logical Condition Block",
           "question": "const userIsAdmin = true;\nconst systemIsUnlocked = false;\nconst runtimeStatus = userIsAdmin && systemIsUnlocked ? 'Write' : 'Read';\nconsole.log(runtimeStatus);",
           "options": [
-            { "id": "o73", "option": "a", "text": "'Read'", "correct": true },
-            { "id": "o74", "option": "b", "text": "'Write'", "correct": false }
+            { "id": "o74", "option": "a", "text": "'Write'", "correct": false },
+            { "id": "o73", "option": "b", "text": "'Read'", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-38",
@@ -4536,40 +4536,40 @@ export const seedData = {
           "title": "Optional Chaining Nested Evaluation for Explicit False Properties",
           "question": "const terminalNode = { preferences: { sound: false } };\nconsole.log(terminalNode.preferences?.sound);",
           "options": [
-            { "id": "o81", "option": "a", "text": "false", "correct": true },
-            { "id": "o82", "option": "b", "text": "undefined", "correct": false }
+            { "id": "o82", "option": "a", "text": "undefined", "correct": false },
+            { "id": "o81", "option": "b", "text": "false", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-42",
           "title": "Ternary Variable Expression Execution Path Validation",
           "question": "const maximumCount = 100;\nconst currentTargetValue = maximumCount > 50 ? 'High' : 'Low';\nconsole.log(currentTargetValue);",
           "options": [
-            { "id": "o83", "option": "a", "text": "'High'", "correct": true },
-            { "id": "o84", "option": "b", "text": "'Low'", "correct": false }
+            { "id": "o84", "option": "a", "text": "'Low'", "correct": false },
+            { "id": "o83", "option": "b", "text": "'High'", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-43",
           "title": "Logical AND Short Circuit via Falsy NaN Values",
           "question": "const operationalFactor = NaN && 'Valid-Factor';\nconsole.log(operationalFactor);",
           "options": [
-            { "id": "o85", "option": "a", "text": "NaN", "correct": true },
-            { "id": "o86", "option": "b", "text": "'Valid-Factor'", "correct": false }
+            { "id": "o86", "option": "a", "text": "'Valid-Factor'", "correct": false },
+            { "id": "o85", "option": "b", "text": "NaN", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-44",
           "title": "Logical OR Extracting Last Variable Element in Chain Sequence",
           "question": "const evaluationOutcome = '' || 0 || false || 'Final-Resolution';\nconsole.log(evaluationOutcome);",
           "options": [
-            { "id": "o87", "option": "a", "text": "'Final-Resolution'", "correct": true },
-            { "id": "o88", "option": "b", "text": "false", "correct": false }
+            { "id": "o88", "option": "a", "text": "false", "correct": false },
+            { "id": "o87", "option": "b", "text": "'Final-Resolution'", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-45",
@@ -4616,10 +4616,10 @@ export const seedData = {
           "title": "Logical AND Short Circuit Sequence Tracker Involving Modification Methods",
           "question": "let verificationCount = 10;\nconst mutateState = () => {\n  verificationCount = verificationCount + 5;\n  return true;\n};\nconst resultNode = false && mutateState();\nconsole.log(verificationCount);",
           "options": [
-            { "id": "o97", "option": "a", "text": "10", "correct": true },
-            { "id": "o98", "option": "b", "text": "15", "correct": false }
+            { "id": "o98", "option": "a", "text": "15", "correct": false },
+            { "id": "o97", "option": "b", "text": "10", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-50",
@@ -4646,30 +4646,30 @@ export const seedData = {
           "title": "Short Circuit Chain with Zero Evaluation",
           "question": "const score = 0 && true || 'Fallback';\nconsole.log(score);",
           "options": [
-            { "id": "o103", "option": "a", "text": "'Fallback'", "correct": true },
-            { "id": "o104", "option": "b", "text": "0", "correct": false }
+            { "id": "o104", "option": "a", "text": "0", "correct": false },
+            { "id": "o103", "option": "b", "text": "'Fallback'", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-53",
           "title": "Optional Chaining Safely Guarding Property Chains",
           "question": "const coreDataPayload = { fetch: null };\nconsole.log(coreDataPayload.fetch?.data ?? 'Fallback-Stream');",
           "options": [
-            { "id": "o105", "option": "a", "text": "'Fallback-Stream'", "correct": true },
-            { "id": "o106", "option": "b", "text": "undefined", "correct": false }
+            { "id": "o106", "option": "a", "text": "undefined", "correct": false },
+            { "id": "o105", "option": "b", "text": "'Fallback-Stream'", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-54",
           "title": "Explicit Conditional Hierarchy Mapping Alternative",
           "question": "const trackingValue = 12;\nlet categorizer = 'Large';\nif (trackingValue < 10) {\n  categorizer = 'Small';\n} else if (trackingValue < 20) {\n  categorizer = 'Medium';\n}\nconsole.log(categorizer);",
           "options": [
-            { "id": "o107", "option": "a", "text": "'Medium'", "correct": true },
-            { "id": "o108", "option": "b", "text": "'Large'", "correct": false }
+            { "id": "o108", "option": "a", "text": "'Large'", "correct": false },
+            { "id": "o107", "option": "b", "text": "'Medium'", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-55",
@@ -4696,30 +4696,30 @@ export const seedData = {
           "title": "Nullish Coalescing Passing Predefined Empty Object Structural Frameworks",
           "question": "const applicationCache = {};\nconst fallbackBuffer = applicationCache ?? { data: 'empty' };\nconsole.log(fallbackBuffer);",
           "options": [
-            { "id": "o113", "option": "a", "text": "{}", "correct": true },
-            { "id": "o114", "option": "b", "text": "{ data: 'empty' }", "correct": false }
+            { "id": "o114", "option": "a", "text": "{ data: 'empty' }", "correct": false },
+            { "id": "o113", "option": "b", "text": "{}", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-58",
           "title": "Logical NOT on Truthy Pre-Evaluated Floating Point Numeric Elements",
           "question": "const scaleFactor = 0.001;\nconsole.log(!scaleFactor);",
           "options": [
-            { "id": "o115", "option": "a", "text": "false", "correct": true },
-            { "id": "o116", "option": "b", "text": "true", "correct": false }
+            { "id": "o116", "option": "a", "text": "true", "correct": false },
+            { "id": "o115", "option": "b", "text": "false", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-59",
           "title": "Optional Chaining Passing Deep Structurally Intact Object Chains",
           "question": "const profileNode = { parameters: { targets: [99] } };\nconsole.log(profileNode.parameters?.targets?.[0]);",
           "options": [
-            { "id": "o117", "option": "a", "text": "99", "correct": true },
-            { "id": "o118", "option": "b", "text": "undefined", "correct": false }
+            { "id": "o118", "option": "a", "text": "undefined", "correct": false },
+            { "id": "o117", "option": "b", "text": "99", "correct": true }
           ],
-          "correctAnswer": "a"
+          "correctAnswer": "b"
         },
         {
           "id": "meq4-60",
