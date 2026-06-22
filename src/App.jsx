@@ -103,7 +103,8 @@ function App() {
             ...opt,
             selected: false
           }))
-        }))
+        })),
+        tasks: exercise.tasks.map(task => ({...task, done: false}))
       }))
     };
     
