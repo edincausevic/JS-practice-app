@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { _GL } from "../globals/global";
 
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
 const CodeQuestion = ({title, description, result, solution, done, markAsDone, unmarkAsDone}) => {
 
   const [isSolutionVisible, setIsSolutionVisible] = useState(false)
@@ -34,7 +37,20 @@ const CodeQuestion = ({title, description, result, solution, done, markAsDone, u
             </div>
         </div>
         <div className="" >
-            {isSolutionVisible && <div className="code-block" >{solution}</div>}
+            {isSolutionVisible && <div className="code-block" >
+              <SyntaxHighlighter 
+                language={'javascript'} 
+                style={oneDark}
+                customStyle={{
+                  margin: 0,
+                  padding: '1rem',
+                  fontSize: '1.2rem',
+                  background: '#0b1120',
+                }}
+              >
+                {solution}
+              </SyntaxHighlighter>  
+            </div>}
         </div>
     </div>
   )

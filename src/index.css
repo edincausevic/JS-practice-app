@@ -17,6 +17,10 @@ body {
     width: 100%;
 }
 
+code {
+    background: #0b1120!important;
+}
+
 /* This overrides the inline transparent background */
 .challenge-title,
 .challenge-desc,
